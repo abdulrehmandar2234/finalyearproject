@@ -223,7 +223,11 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{url('logout')}}"><i data-feather="log-out"></i> <span>Log Out</span></a>
+                <form method="POST" action="{{ route('logout') }}">
+                  @csrf                  
+                  <button type="submit" class="nav-link btn"><i data-feather="log-out"></i> <span>{{ __('Log out') }}</span></button>
+              </form>
+              
               </li>
             </ul>
           </div>

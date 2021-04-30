@@ -116,7 +116,7 @@
                                         {{$product->discount}}
                                     </td>                                    
                                     <td>
-                                        <img src="{{ asset($product->getFirstMediaUrl('products')) }}" alt="product">
+                                        {{ $product->getFirstMedia('products') }}
                                     </td>
                                     <td>
                                         {{$product->rating}}

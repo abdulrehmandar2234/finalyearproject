@@ -11,6 +11,11 @@ use App\Http\Controllers\Admin\ScrapeProductController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\WebsiteController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\Slider;
+use App\Models\Website;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,8 +30,23 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::get('/', function () {
-    return view('welcome');
+    $sliders = Slider::all();
+    $websites = Website::all();
+    $products = Product::with('category')->take(6)->get();
+    $categories = Category::with('products')->get();
+    return view('frontend.index', compact('sliders', 'products', 'categories', 'websites'));
 });
+
+Route::get('/category/{id}', function ($slug) {
+    $selected_category = Category::where('slug', $slug)->with('products')->withCount('products')->get();
+    $products = Product::with('category')->take(6)->get();
+    $product_max_price = Product::max('price');
+    $product_min_price = Product::min('price');
+    $brands = Product::groupBy('brand')->get();
+    $categories = Category::with('products')->withCount('products')->get();
+    $websites = Website::with('products')->withCount('products')->get();
+    return view('frontend.category', compact('products', 'categories', 'websites', 'selected_category', 'brands', 'product_max_price', 'product_min_price'));
+})->name('specific_category');
 
 // Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
 Route::prefix('admin')->group(function () {
@@ -45,5 +65,8 @@ Route::prefix('admin')->group(function () {
         Route::get('scrape-products', ScrapeProductController::class)->name('scrape');
     });
 });
+Route::get('auth/social', [LoginController::class, 'show'])->name('social.login');
+Route::get('oauth/{driver}', [LoginController::class, 'redirectToProvider'])->name('social.oauth');
+Route::get('oauth/{driver}/callback', [LoginController::class, 'handleProviderCallback'])->name('social.callback');
 
 require __DIR__ . '/auth.php';

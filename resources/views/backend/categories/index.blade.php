@@ -26,56 +26,62 @@
                     <div class="table-responsive">
                         <table id="dataTableExample" class="table">
                             <thead>
-                            <tr>
-                                <th>
-                                    #
-                                </th>
-                                <th>
-                                    Name
-                                </th>
-                                <th>
-                                    Created At
-                                </th>
-                                <th>
-                                    Updated At
-                                </th>
-                                <th>
-                                    Actions
-                                </th>
-                            </tr>
+                                <tr>
+                                    <th>
+                                        #
+                                    </th>
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                        Slug
+                                    </th>
+                                    <th>
+                                        Created At
+                                    </th>
+                                    <th>
+                                        Updated At
+                                    </th>
+                                    <th>
+                                        Actions
+                                    </th>
+                                </tr>
                             </thead>
                             <tbody>
-                            @foreach($categories as $key=> $category)
-                                <tr>
-                                    <td>
-                                        {{ ++$key }}
-                                    </td>
+                                @foreach ($categories as $key => $category)
+                                    <tr>
+                                        <td>
+                                            {{ ++$key }}
+                                        </td>
 
-                                    <td>
-                                        {{$category->name}}
-                                    </td>
-                                    <td>
-                                        {{ \Carbon\Carbon::parse($category->created_at)->diffForhumans() }}
-                                    </td>
-                                    <td>
-                                        {{ \Carbon\Carbon::parse($category->updated_at)->diffForhumans() }}
-                                    </td>
-                                    <td>
-                                        <form class="d-inline-block" action="{{ route('categories.destroy',$category->id) }}"
-                                              method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-icon-text">
-                                                <i class="btn-icon-prepend" data-feather="trash"></i> Delete
-                                            </button>
-                                        </form>
-                                        <a href="{{ route('categories.edit',$category->id) }}"
-                                           class="btn btn-warning btn-icon-text">
-                                            <i class="btn-icon-prepend" data-feather="edit"></i> Edit
-                                        </a>
-                                    </td>
-                                </tr>
-                            @endforeach
+                                        <td>
+                                            {{ $category->name }}
+                                        </td>
+                                        <td>
+                                            {{ $category->slug }}
+                                        </td>
+                                        <td>
+                                            {{ \Carbon\Carbon::parse($category->created_at)->diffForhumans() }}
+                                        </td>
+                                        <td>
+                                            {{ \Carbon\Carbon::parse($category->updated_at)->diffForhumans() }}
+                                        </td>
+                                        <td>
+                                            <form class="d-inline-block"
+                                                action="{{ route('categories.destroy', $category->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-icon-text">
+                                                    <i class="btn-icon-prepend" data-feather="trash"></i> Delete
+                                                </button>
+                                            </form>
+                                            <a href="{{ route('categories.edit', $category->id) }}"
+                                                class="btn btn-warning btn-icon-text">
+                                                <i class="btn-icon-prepend" data-feather="edit"></i> Edit
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
 
                             </tbody>
                         </table>

@@ -18,6 +18,7 @@ class RequestController extends Controller
         $crawler = $client->request($request_type, $category_link);
         $index = 0;
         $nodes = $crawler->filter($main_listing_node);
+        
         $web_data = [];
         foreach ($nodes as $node) {
             $node = new Crawler($node);

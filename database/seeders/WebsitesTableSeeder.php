@@ -107,6 +107,12 @@ class WebsitesTableSeeder extends Seeder
                 'currency_id' => 1,    
                 'source' => 'src',    
             ],          
+            [
+                'name' => 'Amazon',
+                'link' => 'https://www.amazon.com/ref=nav_logo',      
+                'currency_id' => 1,    
+                'source' => 'srcset',    
+            ],    
         ];
         DB::table('websites')->insert($websites);    
     }

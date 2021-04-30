@@ -20,8 +20,7 @@ class SliderController extends Controller
     public function index()
     {
         try {
-            $sliders = Slider::all();
-
+            $sliders = Slider::all();            
             return view('backend.sliders.index', compact('sliders'));
         } catch (\Exception $e) {
             return $e->getMessage();
@@ -53,10 +52,10 @@ class SliderController extends Controller
         try {
             $slider = Slider::create($request->except('image', 'banner'));
             if (isset($request['image'])) {
-                $slider->addMediaFromRequest('image')->toMediaCollection('slider-image');
+                $slider->addMediaFromRequest('image')->withResponsiveImages()->toMediaCollection('slider-image');
             }
             if (isset($request['banner'])) {
-                $slider->addMediaFromRequest('banner')->toMediaCollection('slider-banner');
+                $slider->addMediaFromRequest('banner')->withResponsiveImages()->toMediaCollection('slider-banner');
             }
             return redirect()->route('sliders.index')->with('success', 'Slider created successfully');
         } catch (\Exception $e) {
@@ -103,11 +102,11 @@ class SliderController extends Controller
             $slider->update($request->except('image', 'banner'));
             if (isset($request['image'])) {
                 $slider->getFirstMedia('slider-image')->delete();
-                $slider->addMediaFromRequest('image')->toMediaCollection('slider-image');
+                $slider->addMediaFromRequest('image')->withResponsiveImages()->toMediaCollection('slider-image');
             }
             if (isset($request['banner'])) {
                 $slider->getFirstMedia('slider-banner')->delete();
-                $slider->addMediaFromRequest('banner')->toMediaCollection('slider-banner');
+                $slider->addMediaFromRequest('banner')->withResponsiveImages()->toMediaCollection('slider-banner');
             }
             return redirect()->route('sliders.index')->with('success', 'Slider updated successfully');
         } catch (\Exception $e) {

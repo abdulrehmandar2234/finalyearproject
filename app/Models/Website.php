@@ -30,4 +30,9 @@ class Website extends Model implements HasMedia
     {
         return $this->belongsTo(Currency::class);
     }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

@@ -71,7 +71,7 @@
                                         {{$website->name}}
                                     </td>
                                     <td>
-                                        <img src="{{ asset($website->getFirstMediaUrl('logos')) }}" alt="website logo">
+                                        {{ $website->getFirstMedia('logos') }}
                                     </td>
                                     <td>
                                         {{$website->link}}

@@ -54,7 +54,7 @@ class WebsiteController extends Controller
         try {
             $website = Website::create($request->except('logo'));
             if (isset($request['logo'])) {
-                $website->addMediaFromRequest('logo')->toMediaCollection('logos');
+                $website->addMediaFromRequest('logo')->withResponsiveImages()->toMediaCollection('logos');
             }
             return redirect()->route('websites.index')->with('success', 'Website added successfully');
         } catch (\Exception $e) {
@@ -102,7 +102,7 @@ class WebsiteController extends Controller
             $website->update($request->except('logo'));
             if (isset($request['logo'])) {
                 $website->getFirstMedia('logos')->delete();
-                $website->addMediaFromRequest('logo')->toMediaCollection('logos');
+                $website->addMediaFromRequest('logo')->withResponsiveImages()->toMediaCollection('logos');
             }
             return redirect()->route('websites.index')->with('success', 'Website updated successfully');
         } catch (\Exception $e) {
