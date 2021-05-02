@@ -140,14 +140,14 @@
                                         <!-- End Logo -->
 
                                         <!-- List -->
-                                        <ul id="headerSidebarList" class="u-header-collapse__nav">                                                                                       
+                                        <ul id="headerSidebarList" class="u-header-collapse__nav">
                                             @foreach ($categories as $category)
                                             <li class="u-has-submenu u-header-collapse__submenu">
                                                 <a class="u-header-collapse__nav-link" href="javascript:;" data-target="#headerSidebarMobilesCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarMobilesCollapse">
                                                     {{ $category->name }}
-                                                </a>                                              
+                                                </a>
                                             </li>
-                                            @endforeach                                                                                        
+                                            @endforeach
                                         </ul>
                                         <!-- End List -->
                                     </div>
@@ -173,7 +173,7 @@
                                 <!-- SVG Background Shape -->
                                 <div class="position-absolute right-0 bottom-0 left-0 z-index-n1">
                                     <img class="js-svg-injector" src="{{asset('assets/svg/components/wave-bottom-with-dots.svg')}}" alt="Image Description"
-                                    data-parent="#SVGwaveWithDots">
+                                   data-parent="#SVGwaveWithDots">
                                 </div>
                                 <!-- End SVG Background Shape -->
                             </footer>
@@ -186,12 +186,12 @@
             <!-- End Logo-offcanvas-menu -->
             <!-- Search Bar -->
             <div class="col d-none d-xl-block">
-                <form class="js-focus-state">
+                <form class="js-focus-state" method="GET" action="{{route('search_product')}}">
                     <label class="sr-only" for="searchproduct">Search</label>
                     <div class="input-group">
-                        <input type="email" class="form-control py-2 pl-5 font-size-15 border-right-0 height-40 border-width-2 rounded-left-pill border-primary" name="email" id="searchproduct-item" placeholder="Search for Products" aria-label="Search for Products" aria-describedby="searchProduct1" required>
-                        <div class="input-group-append">                        
-                            <button class="btn btn-primary height-40 py-2 px-3 rounded-right-pill" type="button" id="searchProduct1">
+                        <input type="text" class="form-control py-2 pl-5 font-size-15 border-right-0 height-40 border-width-2 rounded-left-pill border-primary" name="query" id="searchproduct-item" placeholder="Search for Products" aria-label="Search for Products" aria-describedby="searchProduct1" required>
+                        <div class="input-group-append">
+                            <button class="btn btn-primary height-40 py-2 px-3 rounded-right-pill" type="submit" id="searchProduct1">
                                 <span class="ec ec-search font-size-24"></span>
                             </button>
                         </div>

@@ -283,7 +283,7 @@
 
                                     <!-- Contact Us -->
                                     <li class="nav-item u-header__nav-item">
-                                        <a class="nav-link u-header__nav-link" href="#">Contact Us</a>
+                                        <a class="nav-link u-header__nav-link" href="{{route('contact-us.index')}}">Contact Us</a>
                                     </li>
                                     <!-- End Contact Us -->
                                 </ul>

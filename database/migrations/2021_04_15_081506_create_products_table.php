@@ -20,9 +20,9 @@ class CreateProductsTable extends Migration
             $table->string('title')->nullable();
             $table->string('description')->nullable();
             $table->string('brand')->nullable();
-            $table->string('price')->nullable();
+            $table->float('price')->nullable();
             $table->string('unit_price')->nullable();
-            $table->string('discount')->nullable();        
+            $table->string('discount')->nullable();
             $table->string('rating')->nullable();
             $table->string('product_link')->nullable();
             $table->string('last_updated')->nullable();

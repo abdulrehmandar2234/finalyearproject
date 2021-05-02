@@ -3,7 +3,7 @@
 
 <head>
     <!-- Title -->
-    <title>Shop | Price Comparing</title>
+    <title>Price Comparing</title>
 
     <!-- Required Meta Tags Always Come First -->
     <meta charset="utf-8">

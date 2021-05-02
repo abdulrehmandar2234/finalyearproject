@@ -21,7 +21,7 @@ class CreateProductNodesTable extends Migration
             $table->string('title')->nullable();
             $table->string('description')->nullable();
             $table->string('brand')->nullable();
-            $table->float('price')->nullable();
+            $table->string('price')->nullable();
             $table->string('unit_price')->nullable();
             $table->string('discount')->nullable();
             $table->string('image')->nullable();

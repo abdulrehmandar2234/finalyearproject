@@ -17,7 +17,7 @@ class ScrapeProductController extends Controller
      */
     public function __invoke()
     {
-        $category_links = CategoryLink::where('last_updated', null)->with('website.product_node')->get();                       
+        $category_links = CategoryLink::where('last_updated', null)->with('website.product_node')->get();
         // dd($category_links);
         $req = new RequestController();
         $pro_results = [];
@@ -26,7 +26,6 @@ class ScrapeProductController extends Controller
         foreach ($category_links as $category_link) {
 
             $node = $category_link->website->product_node;
-            
             if ($category_link->scrape_method == 'HTML') {
                 ini_set('max_execution_time', 0);
                 $pro_results = $req->category_url_scrapper($category_link['request_type'],
@@ -35,7 +34,7 @@ class ScrapeProductController extends Controller
                     $node['image_url'], $node['rating'], $node['product_link'], $node['product_url'], $node['substr'],
                     $node['explode'], $node['substr_strpos'],$node['str_replace'],$node['replace_with'],$node['append_str']);
             }
-             if ($category_link->scrape_method == 'API') {                
+             if ($category_link->scrape_method == 'API') {
                 ini_set('max_execution_time', 0);
                 $pro_results = $req->category_api_scrapper($category_link['request_type'],
                 $node['main_listing_node'], $category_link['category_link'], $node['title'],

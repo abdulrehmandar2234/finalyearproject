@@ -4,7 +4,7 @@
 <!-- plugin js for this page -->
 <script src="{{asset('assets/vendors/datatables.net/jquery.dataTables.js')}}"></script>
 <script src="{{asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js')}}"></script>
-  <!-- end plugin js for this page -->
+<!-- end plugin js for this page -->
 <!-- plugin js for this page -->
 <script src="{{asset('assets/vendors/chartjs/Chart.min.js')}}"></script>
 <script src="{{asset('assets/vendors/jquery.flot/jquery.flot.js')}}"></script>
@@ -27,12 +27,13 @@
 <!-- end custom js for this page -->
 <script src="{{asset('assets/js/file-upload.js')}}"></script>
 <script src="{{asset('assets/js/select2.js')}}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 <script src="{{asset('assets/vendors/moment/moment.min.js')}}"></script>
 <script src="{{asset('assets/vendors/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.js')}}"></script>
 
 <script src="{{asset('assets/js/bootstrap-maxlength.js')}}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <!-- partial:partials/success_error_msg.html -->
 @include('backend.partials.success_error_msg')
 <!-- partial -->
