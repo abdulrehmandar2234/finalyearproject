@@ -4,11 +4,16 @@
             <!-- Logo-offcanvas-menu -->
             <div class="col-auto">
                 <!-- Nav -->
-                <nav class="navbar navbar-expand u-header__navbar py-0 justify-content-xl-between max-width-270 min-width-270">
+                <nav
+                    class="navbar navbar-expand u-header__navbar py-0 justify-content-xl-between max-width-270 min-width-270">
                     <!-- Logo -->
-                    <a class="order-1 order-xl-0 navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="{{ url('/') }}" aria-label="Electro">
-                        <svg version="1.1" x="0px" y="0px" width="175.748px" height="42.52px" viewBox="0 0 175.748 42.52" enable-background="new 0 0 175.748 42.52" style="margin-bottom: 0;">
-                            <ellipse class="ellipse-bg" fill-rule="evenodd" clip-rule="evenodd" fill="#FDD700" cx="170.05" cy="36.341" rx="5.32" ry="5.367"></ellipse>
+                    <a class="order-1 order-xl-0 navbar-brand u-header__navbar-brand u-header__navbar-brand-center"
+                       href="{{ url('/') }}" aria-label="Electro">
+                        <svg version="1.1" x="0px" y="0px" width="175.748px" height="42.52px"
+                             viewBox="0 0 175.748 42.52" enable-background="new 0 0 175.748 42.52"
+                             style="margin-bottom: 0;">
+                            <ellipse class="ellipse-bg" fill-rule="evenodd" clip-rule="evenodd" fill="#FDD700"
+                                     cx="170.05" cy="36.341" rx="5.32" ry="5.367"></ellipse>
                             <path fill-rule="evenodd" clip-rule="evenodd" fill="#333E48" d="M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056
                                 C30.263,0.995,29.876,1.181,29.79,1.5c-0.148,0.548,0,1.568,0,2.427v36.459c0.265,0.221,0.506,0.465,0.725,0.734h6.187
                                 c0.2-0.25,0.423-0.477,0.669-0.678V1.387C37.124,1.185,36.9,0.959,36.701,0.71H30.514z M117.517,12.731
@@ -50,17 +55,18 @@
                     <!-- End Logo -->
 
                     <!-- Fullscreen Toggle Button -->
-                    <button id="sidebarHeaderInvokerMenu" type="button" class="navbar-toggler d-block btn u-hamburger mr-3 mr-xl-0"
-                        aria-controls="sidebarHeader"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        data-unfold-event="click"
-                        data-unfold-hide-on-scroll="false"
-                        data-unfold-target="#sidebarHeader1"
-                        data-unfold-type="css-animation"
-                        data-unfold-animation-in="fadeInLeft"
-                        data-unfold-animation-out="fadeOutLeft"
-                        data-unfold-duration="500">
+                    <button id="sidebarHeaderInvokerMenu" type="button"
+                            class="navbar-toggler d-block btn u-hamburger mr-3 mr-xl-0"
+                            aria-controls="sidebarHeader"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            data-unfold-event="click"
+                            data-unfold-hide-on-scroll="false"
+                            data-unfold-target="#sidebarHeader1"
+                            data-unfold-type="css-animation"
+                            data-unfold-animation-in="fadeInLeft"
+                            data-unfold-animation-out="fadeOutLeft"
+                            data-unfold-duration="500">
                         <span id="hamburgerTriggerMenu" class="u-hamburger__box">
                             <span class="u-hamburger__inner"></span>
                         </span>
@@ -77,17 +83,18 @@
                                 <!-- Toggle Button -->
                                 <div class="position-absolute top-0 right-0 z-index-2 pt-4 pr-4 bg-white">
                                     <button type="button" class="close ml-auto"
-                                        aria-controls="sidebarHeader"
-                                        aria-haspopup="true"
-                                        aria-expanded="false"
-                                        data-unfold-event="click"
-                                        data-unfold-hide-on-scroll="false"
-                                        data-unfold-target="#sidebarHeader1"
-                                        data-unfold-type="css-animation"
-                                        data-unfold-animation-in="fadeInLeft"
-                                        data-unfold-animation-out="fadeOutLeft"
-                                        data-unfold-duration="500">
-                                        <span aria-hidden="true"><i class="ec ec-close-remove text-gray-90 font-size-20"></i></span>
+                                            aria-controls="sidebarHeader"
+                                            aria-haspopup="true"
+                                            aria-expanded="false"
+                                            data-unfold-event="click"
+                                            data-unfold-hide-on-scroll="false"
+                                            data-unfold-target="#sidebarHeader1"
+                                            data-unfold-type="css-animation"
+                                            data-unfold-animation-in="fadeInLeft"
+                                            data-unfold-animation-out="fadeOutLeft"
+                                            data-unfold-duration="500">
+                                        <span aria-hidden="true"><i
+                                                class="ec ec-close-remove text-gray-90 font-size-20"></i></span>
                                     </button>
                                 </div>
                                 <!-- End Toggle Button -->
@@ -96,9 +103,14 @@
                                 <div class="js-scrollbar u-sidebar__body">
                                     <div id="headerSidebarContent" class="u-sidebar__content u-header-sidebar__content">
                                         <!-- Logo -->
-                                        <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center mb-3" href="{{ url('/') }}" aria-label="Electro">
-                                            <svg version="1.1" x="0px" y="0px" width="175.748px" height="42.52px" viewBox="0 0 175.748 42.52" enable-background="new 0 0 175.748 42.52" style="margin-bottom: 0;">
-                                                <ellipse class="ellipse-bg" fill-rule="evenodd" clip-rule="evenodd" fill="#FDD700" cx="170.05" cy="36.341" rx="5.32" ry="5.367"></ellipse>
+                                        <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center mb-3"
+                                           href="{{ url('/') }}" aria-label="Electro">
+                                            <svg version="1.1" x="0px" y="0px" width="175.748px" height="42.52px"
+                                                 viewBox="0 0 175.748 42.52" enable-background="new 0 0 175.748 42.52"
+                                                 style="margin-bottom: 0;">
+                                                <ellipse class="ellipse-bg" fill-rule="evenodd" clip-rule="evenodd"
+                                                         fill="#FDD700" cx="170.05" cy="36.341" rx="5.32"
+                                                         ry="5.367"></ellipse>
                                                 <path fill-rule="evenodd" clip-rule="evenodd" fill="#333E48" d="M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056
                                                     C30.263,0.995,29.876,1.181,29.79,1.5c-0.148,0.548,0,1.568,0,2.427v36.459c0.265,0.221,0.506,0.465,0.725,0.734h6.187
                                                     c0.2-0.25,0.423-0.477,0.669-0.678V1.387C37.124,1.185,36.9,0.959,36.701,0.71H30.514z M117.517,12.731
@@ -142,11 +154,14 @@
                                         <!-- List -->
                                         <ul id="headerSidebarList" class="u-header-collapse__nav">
                                             @foreach ($categories as $category)
-                                            <li class="u-has-submenu u-header-collapse__submenu">
-                                                <a class="u-header-collapse__nav-link" href="javascript:;" data-target="#headerSidebarMobilesCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarMobilesCollapse">
-                                                    {{ $category->name }}
-                                                </a>
-                                            </li>
+                                                <li class="u-has-submenu u-header-collapse__submenu">
+                                                    <a class="u-header-collapse__nav-link" href="javascript:;"
+                                                       data-target="#headerSidebarMobilesCollapse" role="button"
+                                                       data-toggle="collapse" aria-expanded="false"
+                                                       aria-controls="headerSidebarMobilesCollapse">
+                                                        {{ $category->name }}
+                                                    </a>
+                                                </li>
                                             @endforeach
                                         </ul>
                                         <!-- End List -->
@@ -172,8 +187,10 @@
 
                                 <!-- SVG Background Shape -->
                                 <div class="position-absolute right-0 bottom-0 left-0 z-index-n1">
-                                    <img class="js-svg-injector" src="{{asset('assets/svg/components/wave-bottom-with-dots.svg')}}" alt="Image Description"
-                                   data-parent="#SVGwaveWithDots">
+                                    <img class="js-svg-injector"
+                                         src="{{asset('assets/svg/components/wave-bottom-with-dots.svg')}}"
+                                         alt="Image Description"
+                                         data-parent="#SVGwaveWithDots">
                                 </div>
                                 <!-- End SVG Background Shape -->
                             </footer>
@@ -189,9 +206,13 @@
                 <form class="js-focus-state" method="GET" action="{{route('search_product')}}">
                     <label class="sr-only" for="searchproduct">Search</label>
                     <div class="input-group">
-                        <input type="text" class="form-control py-2 pl-5 font-size-15 border-right-0 height-40 border-width-2 rounded-left-pill border-primary" name="query" id="searchproduct-item" placeholder="Search for Products" aria-label="Search for Products" aria-describedby="searchProduct1" required>
+                        <input type="text"
+                               class="form-control py-2 pl-5 font-size-15 border-right-0 height-40 border-width-2 rounded-left-pill border-primary"
+                               name="query" id="searchproduct-item" placeholder="Search for Products"
+                               aria-label="Search for Products" aria-describedby="searchProduct1" required>
                         <div class="input-group-append">
-                            <button class="btn btn-primary height-40 py-2 px-3 rounded-right-pill" type="submit" id="searchProduct1">
+                            <button class="btn btn-primary height-40 py-2 px-3 rounded-right-pill" type="submit"
+                                    id="searchProduct1">
                                 <span class="ec ec-search font-size-24"></span>
                             </button>
                         </div>
@@ -205,72 +226,98 @@
                     <ul class="d-flex list-unstyled mb-0 align-items-center">
                         <!-- Search -->
                         <li class="col d-xl-none px-2 px-sm-3 position-static">
-                            <a id="searchClassicInvoker" class="font-size-22 text-gray-90 text-lh-1 btn-text-secondary" href="javascript:;" role="button"
-                                data-toggle="tooltip"
-                                data-placement="top"
-                                title="Search"
-                                aria-controls="searchClassic"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                                data-unfold-target="#searchClassic"
-                                data-unfold-type="css-animation"
-                                data-unfold-duration="300"
-                                data-unfold-delay="300"
-                                data-unfold-hide-on-scroll="true"
-                                data-unfold-animation-in="slideInUp"
-                                data-unfold-animation-out="fadeOut">
+                            <a id="searchClassicInvoker" class="font-size-22 text-gray-90 text-lh-1 btn-text-secondary"
+                               href="javascript:;" role="button"
+                               data-toggle="tooltip"
+                               data-placement="top"
+                               title="Search"
+                               aria-controls="searchClassic"
+                               aria-haspopup="true"
+                               aria-expanded="false"
+                               data-unfold-target="#searchClassic"
+                               data-unfold-type="css-animation"
+                               data-unfold-duration="300"
+                               data-unfold-delay="300"
+                               data-unfold-hide-on-scroll="true"
+                               data-unfold-animation-in="slideInUp"
+                               data-unfold-animation-out="fadeOut">
                                 <span class="ec ec-search"></span>
                             </a>
 
                             <!-- Input -->
-                            <div id="searchClassic" class="dropdown-menu dropdown-unfold dropdown-menu-right left-0 mx-2" aria-labelledby="searchClassicInvoker">
+                            <div id="searchClassic"
+                                 class="dropdown-menu dropdown-unfold dropdown-menu-right left-0 mx-2"
+                                 aria-labelledby="searchClassicInvoker">
                                 <form class="js-focus-state input-group px-3">
                                     <input class="form-control" type="search" placeholder="Search Product">
                                     <div class="input-group-append">
-                                        <button class="btn btn-primary px-3" type="button"><i class="font-size-18 ec ec-search"></i></button>
+                                        <button class="btn btn-primary px-3" type="button"><i
+                                                class="font-size-18 ec ec-search"></i></button>
                                     </div>
                                 </form>
                             </div>
                             <!-- End Input -->
                         </li>
                         <!-- End Search -->
-                        <li class="col d-none d-xl-block"><a href="../shop/compare.html" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="Compare"><i class="font-size-22 ec ec-compare"></i></a></li>
-                        <li class="col d-none d-xl-block"><a href="../shop/wishlist.html" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="Favorites"><i class="font-size-22 ec ec-favorites"></i></a></li>
-                        <li class="col d-xl-none px-2 px-sm-3"><a href="../shop/my-account.html" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="My Account"><i class="font-size-22 ec ec-user"></i></a></li>
+                        <li class="col d-none d-xl-block"><a href="../shop/compare.html" class="text-gray-90"
+                                                             data-toggle="tooltip" data-placement="top" title="Compare"><i
+                                    class="font-size-22 ec ec-compare"></i></a></li>
+                        <li class="col d-none d-xl-block"><a href="../shop/wishlist.html" class="text-gray-90"
+                                                             data-toggle="tooltip" data-placement="top"
+                                                             title="Favorites"><i
+                                    class="font-size-22 ec ec-favorites"></i></a></li>
+                        <li class="col d-xl-none px-2 px-sm-3"><a href="../shop/my-account.html" class="text-gray-90"
+                                                                  data-toggle="tooltip" data-placement="top"
+                                                                  title="My Account"><i
+                                    class="font-size-22 ec ec-user"></i></a></li>
                         <li class="col pr-xl-0 px-2 px-sm-3 d-xl-none">
-                            <a href="../shop/cart.html" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="Cart">
+                            <a href="{{route('cart.index')}}" class="text-gray-90 position-relative d-flex "
+                               data-toggle="tooltip" data-placement="top" title="Cart">
                                 <i class="font-size-22 ec ec-shopping-bag"></i>
-                                <span class="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">2</span>
-                                <span class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">$1785.00</span>
+                                @if(\Gloudemans\Shoppingcart\Facades\Cart::count() > 0)
+                                    <span
+                                        class="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">{{\Gloudemans\Shoppingcart\Facades\Cart::count()}}</span>
+                                @endif
+                                <span
+                                    class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">$1785.00</span>
                             </a>
                         </li>
                         <li class="col pr-xl-0 px-2 px-sm-3 d-none d-xl-block">
-                            <div id="basicDropdownHoverInvoker" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="Cart"
-                                aria-controls="basicDropdownHover"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                                data-unfold-event="click"
-                                data-unfold-target="#basicDropdownHover"
-                                data-unfold-type="css-animation"
-                                data-unfold-duration="300"
-                                data-unfold-delay="300"
-                                data-unfold-hide-on-scroll="true"
-                                data-unfold-animation-in="slideInUp"
-                                data-unfold-animation-out="fadeOut">
+                            <div id="basicDropdownHoverInvoker" class="text-gray-90 position-relative d-flex "
+                                 data-toggle="tooltip" data-placement="top" title="Cart"
+                                 aria-controls="basicDropdownHover"
+                                 aria-haspopup="true"
+                                 aria-expanded="false"
+                                 data-unfold-event="click"
+                                 data-unfold-target="#basicDropdownHover"
+                                 data-unfold-type="css-animation"
+                                 data-unfold-duration="300"
+                                 data-unfold-delay="300"
+                                 data-unfold-hide-on-scroll="true"
+                                 data-unfold-animation-in="slideInUp"
+                                 data-unfold-animation-out="fadeOut">
                                 <i class="font-size-22 ec ec-shopping-bag"></i>
-                                <span class="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">2</span>
-                                <span class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">$1785.00</span>
+                                @if(\Gloudemans\Shoppingcart\Facades\Cart::count() > 0)
+                                    <span
+                                        class="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">{{\Gloudemans\Shoppingcart\Facades\Cart::count()}}</span>
+                                @endif
+                                <span
+                                    class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">$1785.00</span>
                             </div>
-                            <div id="basicDropdownHover" class="cart-dropdown dropdown-menu dropdown-unfold border-top border-top-primary mt-3 border-width-2 border-left-0 border-right-0 border-bottom-0 left-auto right-0" aria-labelledby="basicDropdownHoverInvoker">
+                            <div id="basicDropdownHover"
+                                 class="cart-dropdown dropdown-menu dropdown-unfold border-top border-top-primary mt-3 border-width-2 border-left-0 border-right-0 border-bottom-0 left-auto right-0"
+                                 aria-labelledby="basicDropdownHoverInvoker">
                                 <ul class="list-unstyled px-3 pt-3">
                                     <li class="border-bottom pb-3 mb-3">
                                         <div class="">
                                             <ul class="list-unstyled row mx-n2">
                                                 <li class="px-2 col-auto">
-                                                    <img class="img-fluid" src="{{asset('assets/img/75X75/img1.jpg')}}" alt="Image Description">
+                                                    <img class="img-fluid" src="{{asset('assets/img/75X75/img1.jpg')}}"
+                                                         alt="Image Description">
                                                 </li>
                                                 <li class="px-2 col">
-                                                    <h5 class="text-blue font-size-14 font-weight-bold">Ultra Wireless S50 Headphones S50 with Bluetooth</h5>
+                                                    <h5 class="text-blue font-size-14 font-weight-bold">Ultra Wireless
+                                                        S50 Headphones S50 with Bluetooth</h5>
                                                     <span class="font-size-14">1 × $1,100.00</span>
                                                 </li>
                                                 <li class="px-2 col-auto">
@@ -283,10 +330,12 @@
                                         <div class="">
                                             <ul class="list-unstyled row mx-n2">
                                                 <li class="px-2 col-auto">
-                                                    <img class="img-fluid" src="{{asset('assets/img/75X75/img2.jpg')}}" alt="Image Description">
+                                                    <img class="img-fluid" src="{{asset('assets/img/75X75/img2.jpg')}}"
+                                                         alt="Image Description">
                                                 </li>
                                                 <li class="px-2 col">
-                                                    <h5 class="text-blue font-size-14 font-weight-bold">Widescreen NX Mini F1 SMART NX</h5>
+                                                    <h5 class="text-blue font-size-14 font-weight-bold">Widescreen NX
+                                                        Mini F1 SMART NX</h5>
                                                     <span class="font-size-14">1 × $685.00</span>
                                                 </li>
                                                 <li class="px-2 col-auto">
@@ -297,8 +346,11 @@
                                     </li>
                                 </ul>
                                 <div class="flex-center-between px-4 pt-2">
-                                    <a href="../shop/cart.html" class="btn btn-soft-secondary mb-3 mb-md-0 font-weight-normal px-5 px-md-4 px-lg-5">View cart</a>
-                                    <a href="../shop/checkout.html" class="btn btn-primary-dark-w ml-md-2 px-5 px-md-4 px-lg-5">Checkout</a>
+                                    <a href="{{route('cart.index')}}"
+                                       class="btn btn-soft-secondary mb-3 mb-md-0 font-weight-normal px-5 px-md-4 px-lg-5">View
+                                        cart</a>
+                                    <a href="../shop/checkout.html"
+                                       class="btn btn-primary-dark-w ml-md-2 px-5 px-md-4 px-lg-5">Checkout</a>
                                 </div>
                             </div>
                         </li>

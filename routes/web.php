@@ -12,7 +12,9 @@ use App\Http\Controllers\Admin\ScrapeProductController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\WebsiteController;
+use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\WishlistController;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Website;
@@ -30,6 +32,12 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::resource('/', HomeController::class);
+Route::get('/empty', function () {
+Cart::destroy();
+});
+
+Route::resource('/cart', CartController::class);
+Route::resource('/wishlist', WishlistController::class);
 Route::resource('contact-us', \App\Http\Controllers\Frontend\ContactUsController::class);
 Route::get('search', [HomeController::class, 'search'])->name('search_product');
 Route::get('/category/{slug}', function ($slug) {

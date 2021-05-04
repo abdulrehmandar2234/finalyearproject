@@ -60,7 +60,7 @@
                                     </td>
                                     <td>
                                         @foreach($role->permissions()->pluck('name')  as $v)
-                                            <label class="badge badge-primary">{{ $v }}</label>
+                                            <label class="badge badge-success">{{ $v }}</label>
                                         @endforeach
                                     </td>
                                     <td>

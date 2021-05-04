@@ -81,7 +81,7 @@
             </li>
             <li class="nav-item">
                 <a href="{{ route('contact.index') }}" class="nav-link">
-                    <i class="link-icon" data-feather="layout"></i>
+                    <i class="link-icon" data-feather="inbox"></i>
                     <span class="link-title">Contact Us</span>
                 </a>
             </li>
@@ -109,16 +109,6 @@
                     Dark
                 </label>
             </div>
-        </div>
-        <div class="theme-wrapper">
-            <h6 class="text-muted mb-2">Light Theme:</h6>
-            <a class="theme-item active" href="{{asset('demo_1/dashboard-one.html')}}">
-                <img src="{{asset('assets/images/screenshots/light.jpg')}}" alt="light theme">
-            </a>
-            <h6 class="text-muted mb-2">Dark Theme:</h6>
-            <a class="theme-item" href="{{asset('demo_2/dashboard-one.html')}}">
-                <img src="{{asset('assets/images/screenshots/dark.jpg')}}" alt="light theme">
-            </a>
         </div>
     </div>
 </nav>
