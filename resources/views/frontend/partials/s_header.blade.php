@@ -1,8 +1,8 @@
 <header id="header" class="u-header u-header-left-aligned-nav">
     <div class="u-header__section">
         <!-- Topbar -->
-        @include('frontend.partials.top_bar')
-        <!-- End Topbar -->
+    @include('frontend.partials.top_bar')
+    <!-- End Topbar -->
 
         <!-- Logo and Menu -->
         <div class="py-2 py-xl-4 bg-primary-down-lg">
@@ -15,14 +15,14 @@
                             class="navbar navbar-expand u-header__navbar py-0 justify-content-xl-between max-width-270 min-width-270">
                             <!-- Logo -->
                             <a class="order-1 order-xl-0 navbar-brand u-header__navbar-brand u-header__navbar-brand-center"
-                                href="{{ url('/') }}" aria-label="Electro">
+                               href="{{ url('/') }}" aria-label="Electro">
                                 <svg version="1.1" x="0px" y="0px" width="175.748px" height="42.52px"
-                                    viewBox="0 0 175.748 42.52" enable-background="new 0 0 175.748 42.52"
-                                    style="margin-bottom: 0;">
+                                     viewBox="0 0 175.748 42.52" enable-background="new 0 0 175.748 42.52"
+                                     style="margin-bottom: 0;">
                                     <ellipse class="ellipse-bg" fill-rule="evenodd" clip-rule="evenodd" fill="#FDD700"
-                                        cx="170.05" cy="36.341" rx="5.32" ry="5.367"></ellipse>
+                                             cx="170.05" cy="36.341" rx="5.32" ry="5.367"></ellipse>
                                     <path fill-rule="evenodd" clip-rule="evenodd" fill="#333E48"
-                                        d="M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056
+                                          d="M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056
                                         C30.263,0.995,29.876,1.181,29.79,1.5c-0.148,0.548,0,1.568,0,2.427v36.459c0.265,0.221,0.506,0.465,0.725,0.734h6.187
                                         c0.2-0.25,0.423-0.477,0.669-0.678V1.387C37.124,1.185,36.9,0.959,36.701,0.71H30.514z M117.517,12.731
                                         c-0.232-0.189-0.439-0.64-0.781-0.734c-0.754-0.209-2.039,0-3.121,0h-3.176V4.435c-0.232-0.189-0.439-0.639-0.781-0.733
@@ -64,12 +64,12 @@
 
                             <!-- Fullscreen Toggle Button -->
                             <button id="sidebarHeaderInvokerMenu" type="button"
-                                class="navbar-toggler d-block btn u-hamburger mr-3 mr-xl-0"
-                                aria-controls="sidebarHeader" aria-haspopup="true" aria-expanded="false"
-                                data-unfold-event="click" data-unfold-hide-on-scroll="false"
-                                data-unfold-target="#sidebarHeader1" data-unfold-type="css-animation"
-                                data-unfold-animation-in="fadeInLeft" data-unfold-animation-out="fadeOutLeft"
-                                data-unfold-duration="500">
+                                    class="navbar-toggler d-block btn u-hamburger mr-3 mr-xl-0"
+                                    aria-controls="sidebarHeader" aria-haspopup="true" aria-expanded="false"
+                                    data-unfold-event="click" data-unfold-hide-on-scroll="false"
+                                    data-unfold-target="#sidebarHeader1" data-unfold-type="css-animation"
+                                    data-unfold-animation-in="fadeInLeft" data-unfold-animation-out="fadeOutLeft"
+                                    data-unfold-duration="500">
                                 <span id="hamburgerTriggerMenu" class="u-hamburger__box">
                                     <span class="u-hamburger__inner"></span>
                                 </span>
@@ -80,17 +80,19 @@
 
                         <!-- ========== HEADER SIDEBAR ========== -->
                         <aside id="sidebarHeader1" class="u-sidebar u-sidebar--left"
-                            aria-labelledby="sidebarHeaderInvokerMenu">
+                               aria-labelledby="sidebarHeaderInvokerMenu">
                             <div class="u-sidebar__scroller">
                                 <div class="u-sidebar__container">
                                     <div class="u-header-sidebar__footer-offset pb-0">
                                         <!-- Toggle Button -->
                                         <div class="position-absolute top-0 right-0 z-index-2 pt-4 pr-7">
                                             <button type="button" class="close ml-auto" aria-controls="sidebarHeader"
-                                                aria-haspopup="true" aria-expanded="false" data-unfold-event="click"
-                                                data-unfold-hide-on-scroll="false" data-unfold-target="#sidebarHeader1"
-                                                data-unfold-type="css-animation" data-unfold-animation-in="fadeInLeft"
-                                                data-unfold-animation-out="fadeOutLeft" data-unfold-duration="500">
+                                                    aria-haspopup="true" aria-expanded="false" data-unfold-event="click"
+                                                    data-unfold-hide-on-scroll="false"
+                                                    data-unfold-target="#sidebarHeader1"
+                                                    data-unfold-type="css-animation"
+                                                    data-unfold-animation-in="fadeInLeft"
+                                                    data-unfold-animation-out="fadeOutLeft" data-unfold-duration="500">
                                                 <span aria-hidden="true"><i
                                                         class="ec ec-close-remove text-gray-90 font-size-20"></i></span>
                                             </button>
@@ -100,19 +102,20 @@
                                         <!-- Content -->
                                         <div class="js-scrollbar u-sidebar__body">
                                             <div id="headerSidebarContent"
-                                                class="u-sidebar__content u-header-sidebar__content">
+                                                 class="u-sidebar__content u-header-sidebar__content">
                                                 <!-- Logo -->
                                                 <a class="d-flex ml-0 navbar-brand u-header__navbar-brand u-header__navbar-brand-vertical"
-                                                    href="{{ url('/') }}" aria-label="Electro">
+                                                   href="{{ url('/') }}" aria-label="Electro">
                                                     <svg version="1.1" x="0px" y="0px" width="175.748px"
-                                                        height="42.52px" viewBox="0 0 175.748 42.52"
-                                                        enable-background="new 0 0 175.748 42.52"
-                                                        style="margin-bottom: 0;">
+                                                         height="42.52px" viewBox="0 0 175.748 42.52"
+                                                         enable-background="new 0 0 175.748 42.52"
+                                                         style="margin-bottom: 0;">
                                                         <ellipse class="ellipse-bg" fill-rule="evenodd"
-                                                            clip-rule="evenodd" fill="#FDD700" cx="170.05" cy="36.341"
-                                                            rx="5.32" ry="5.367"></ellipse>
+                                                                 clip-rule="evenodd" fill="#FDD700" cx="170.05"
+                                                                 cy="36.341"
+                                                                 rx="5.32" ry="5.367"></ellipse>
                                                         <path fill-rule="evenodd" clip-rule="evenodd" fill="#333E48"
-                                                            d="M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056
+                                                              d="M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056
                                                             C30.263,0.995,29.876,1.181,29.79,1.5c-0.148,0.548,0,1.568,0,2.427v36.459c0.265,0.221,0.506,0.465,0.725,0.734h6.187
                                                             c0.2-0.25,0.423-0.477,0.669-0.678V1.387C37.124,1.185,36.9,0.959,36.701,0.71H30.514z M117.517,12.731
                                                             c-0.232-0.189-0.439-0.64-0.781-0.734c-0.754-0.209-2.039,0-3.121,0h-3.176V4.435c-0.232-0.189-0.439-0.639-0.781-0.733
@@ -157,10 +160,10 @@
                                                     <!-- Home Section -->
                                                     <li class="u-has-submenu u-header-collapse__submenu">
                                                         <a class="u-header-collapse__nav-link"
-                                                            href="{{ url('/') }}" role="button"
-                                                            data-toggle="collapse" aria-expanded="false"
-                                                            aria-controls="headerSidebarHomeCollapse"
-                                                            data-target="#headerSidebarHomeCollapse">
+                                                           href="{{ url('/') }}" role="button"
+                                                           data-toggle="collapse" aria-expanded="false"
+                                                           aria-controls="headerSidebarHomeCollapse"
+                                                           data-target="#headerSidebarHomeCollapse">
                                                             Home
                                                         </a>
                                                     </li>
@@ -169,9 +172,9 @@
                                                     <!-- Shop Pages -->
                                                     <li class="u-has-submenu u-header-collapse__submenu">
                                                         <a class="u-header-collapse__nav-link" href="#"
-                                                            data-target="#headerSidebarPagesCollapse" role="button"
-                                                            data-toggle="collapse" aria-expanded="false"
-                                                            aria-controls="headerSidebarPagesCollapse">
+                                                           data-target="#headerSidebarPagesCollapse" role="button"
+                                                           data-toggle="collapse" aria-expanded="false"
+                                                           aria-controls="headerSidebarPagesCollapse">
                                                             Shop
                                                         </a>
                                                     </li>
@@ -180,9 +183,9 @@
                                                     <!-- Product Categories -->
                                                     <li class="u-has-submenu u-header-collapse__submenu">
                                                         <a class="u-header-collapse__nav-link" href="javascript:;"
-                                                            data-target="#headerSidebarBlogCollapse" role="button"
-                                                            data-toggle="collapse" aria-expanded="false"
-                                                            aria-controls="headerSidebarBlogCollapse">
+                                                           data-target="#headerSidebarBlogCollapse" role="button"
+                                                           data-toggle="collapse" aria-expanded="false"
+                                                           aria-controls="headerSidebarBlogCollapse">
                                                             Product Categories
                                                         </a>
                                                     </li>
@@ -191,9 +194,9 @@
                                                     <!-- Single Product Pages -->
                                                     <li class="u-has-submenu u-header-collapse__submenu">
                                                         <a class="u-header-collapse__nav-link r" href="javascript:;"
-                                                            data-target="#headerSidebarShopCollapse" role="button"
-                                                            data-toggle="collapse" aria-expanded="false"
-                                                            aria-controls="headerSidebarShopCollapse">
+                                                           data-target="#headerSidebarShopCollapse" role="button"
+                                                           data-toggle="collapse" aria-expanded="false"
+                                                           aria-controls="headerSidebarShopCollapse">
                                                             Single Product Pages
                                                         </a>
                                                     </li>
@@ -202,9 +205,9 @@
                                                     <!-- Ecommerce Pages -->
                                                     <li class="u-has-submenu u-header-collapse__submenu">
                                                         <a class="u-header-collapse__nav-link" href="javascript:;"
-                                                            data-target="#headerSidebarDemosCollapse" role="button"
-                                                            data-toggle="collapse" aria-expanded="false"
-                                                            aria-controls="headerSidebarDemosCollapse">
+                                                           data-target="#headerSidebarDemosCollapse" role="button"
+                                                           data-toggle="collapse" aria-expanded="false"
+                                                           aria-controls="headerSidebarDemosCollapse">
                                                             Ecommerce Pages
                                                         </a>
                                                     </li>
@@ -213,9 +216,9 @@
                                                     <!-- Shop Columns -->
                                                     <li class="u-has-submenu u-header-collapse__submenu">
                                                         <a class="u-header-collapse__nav-link" href="javascript:;"
-                                                            data-target="#headerSidebardocsCollapse" role="button"
-                                                            data-toggle="collapse" aria-expanded="false"
-                                                            aria-controls="headerSidebardocsCollapse">
+                                                           data-target="#headerSidebardocsCollapse" role="button"
+                                                           data-toggle="collapse" aria-expanded="false"
+                                                           aria-controls="headerSidebardocsCollapse">
                                                             Shop Columns
                                                         </a>
                                                     </li>
@@ -224,9 +227,9 @@
                                                     <!-- Blog Pages -->
                                                     <li class="u-has-submenu u-header-collapse__submenu">
                                                         <a class="u-header-collapse__nav-link" href="javascript:;"
-                                                            data-target="#headerSidebarblogsCollapse" role="button"
-                                                            data-toggle="collapse" aria-expanded="false"
-                                                            aria-controls="headerSidebarblogsCollapse">
+                                                           data-target="#headerSidebarblogsCollapse" role="button"
+                                                           data-toggle="collapse" aria-expanded="false"
+                                                           aria-controls="headerSidebarblogsCollapse">
                                                             Blog Pages
                                                         </a>
                                                     </li>
@@ -254,8 +257,8 @@
                                     <li class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover"
                                         data-animation-in="slideInUp" data-animation-out="fadeOut">
                                         <a id="HomeMegaMenu" class="nav-link u-header__nav-link"
-                                            href="{{ url('/') }}" aria-haspopup="true" aria-expanded="false"
-                                            aria-labelledby="HomeSubMenu">Home</a>
+                                           href="{{ url('/') }}" aria-haspopup="true" aria-expanded="false"
+                                           aria-labelledby="HomeSubMenu">Home</a>
                                     </li>
                                     <!-- End Home -->
 
@@ -264,8 +267,8 @@
                                     <li class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover"
                                         data-animation-in="slideInUp" data-animation-out="fadeOut">
                                         <a id="blogMegaMenu" class="nav-link u-header__nav-link" href="#"
-                                            aria-haspopup="true" aria-expanded="false"
-                                            aria-labelledby="blogSubMenu">Blog</a>
+                                           aria-haspopup="true" aria-expanded="false"
+                                           aria-labelledby="blogSubMenu">Blog</a>
                                     </li>
                                     <!-- End Blog -->
 
@@ -283,7 +286,8 @@
 
                                     <!-- Contact Us -->
                                     <li class="nav-item u-header__nav-item">
-                                        <a class="nav-link u-header__nav-link" href="{{route('contact-us.index')}}">Contact Us</a>
+                                        <a class="nav-link u-header__nav-link" href="{{route('contact-us.index')}}">Contact
+                                            Us</a>
                                     </li>
                                     <!-- End Contact Us -->
                                 </ul>
@@ -304,7 +308,7 @@
                                 </div>
                                 <div class="email">
                                     E-mail: <a href="mailto:info@electro.com?subject=Help Need"
-                                        class="text-gray-90">info@electro.com</a>
+                                               class="text-gray-90">info@electro.com</a>
                                 </div>
                             </div>
                         </div>
@@ -317,20 +321,20 @@
                                 <!-- Search -->
                                 <li class="col d-xl-none px-2 px-sm-3 position-static">
                                     <a id="searchClassicInvoker"
-                                        class="font-size-22 text-gray-90 text-lh-1 btn-text-secondary"
-                                        href="javascript:;" role="button" data-toggle="tooltip" data-placement="top"
-                                        title="Search" aria-controls="searchClassic" aria-haspopup="true"
-                                        aria-expanded="false" data-unfold-target="#searchClassic"
-                                        data-unfold-type="css-animation" data-unfold-duration="300"
-                                        data-unfold-delay="300" data-unfold-hide-on-scroll="true"
-                                        data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
+                                       class="font-size-22 text-gray-90 text-lh-1 btn-text-secondary"
+                                       href="javascript:;" role="button" data-toggle="tooltip" data-placement="top"
+                                       title="Search" aria-controls="searchClassic" aria-haspopup="true"
+                                       aria-expanded="false" data-unfold-target="#searchClassic"
+                                       data-unfold-type="css-animation" data-unfold-duration="300"
+                                       data-unfold-delay="300" data-unfold-hide-on-scroll="true"
+                                       data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
                                         <span class="ec ec-search"></span>
                                     </a>
 
                                     <!-- Input -->
                                     <div id="searchClassic"
-                                        class="dropdown-menu dropdown-unfold dropdown-menu-right left-0 mx-2"
-                                        aria-labelledby="searchClassicInvoker">
+                                         class="dropdown-menu dropdown-unfold dropdown-menu-right left-0 mx-2"
+                                         aria-labelledby="searchClassicInvoker">
                                         <form class="js-focus-state input-group px-3">
                                             <input class="form-control" type="search" placeholder="Search Product">
                                             <div class="input-group-append">
@@ -343,22 +347,27 @@
                                 </li>
                                 <!-- End Search -->
                                 <li class="col d-none d-xl-block"><a href="../shop/compare.html" class="text-gray-90"
-                                        data-toggle="tooltip" data-placement="top" title="Compare"><i
+                                                                     data-toggle="tooltip" data-placement="top"
+                                                                     title="Compare"><i
                                             class="font-size-22 ec ec-compare"></i></a></li>
-                                <li class="col d-none d-xl-block"><a href="../shop/wishlist.html" class="text-gray-90"
-                                        data-toggle="tooltip" data-placement="top" title="Favorites"><i
+                                <li class="col d-none d-xl-block"><a href="{{route('wishlist.index')}}"
+                                                                     class="text-gray-90"
+                                                                     data-toggle="tooltip" data-placement="top"
+                                                                     title="Favorites"><i
                                             class="font-size-22 ec ec-favorites"></i></a></li>
                                 <li class="col d-xl-none px-2 px-sm-3"><a href="../shop/my-account.html"
-                                        class="text-gray-90" data-toggle="tooltip" data-placement="top"
-                                        title="My Account"><i class="font-size-22 ec ec-user"></i></a></li>
+                                                                          class="text-gray-90" data-toggle="tooltip"
+                                                                          data-placement="top"
+                                                                          title="My Account"><i
+                                            class="font-size-22 ec ec-user"></i></a></li>
                                 <li class="col pr-xl-0 px-2 px-sm-3">
                                     <a href="{{route('cart.index')}}" class="text-gray-90 position-relative d-flex "
-                                        data-toggle="tooltip" data-placement="top" title="Cart">
+                                       data-toggle="tooltip" data-placement="top" title="Cart">
                                         <i class="font-size-22 ec ec-shopping-bag"></i>
                                         <span
                                             class="width-22 height-22 bg-dark position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12 text-white">2</span>
                                         <span
-                                            class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">$1785.00</span>
+                                            class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">${{\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->total()}}</span>
                                     </a>
                                 </li>
                             </ul>
@@ -382,11 +391,12 @@
                                 <!-- Card -->
                                 <div class="card border-0 rounded-0">
                                     <div class="card-header bg-primary rounded-0 card-collapse border-0"
-                                        id="basicsHeadingOne">
+                                         id="basicsHeadingOne">
                                         <button type="button"
-                                            class="btn-link btn-remove-focus btn-block d-flex card-btn py-3 text-lh-1 px-4 shadow-none btn-primary rounded-top-lg border-0 font-weight-bold text-gray-90"
-                                            data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="true"
-                                            aria-controls="basicsCollapseOne">
+                                                class="btn-link btn-remove-focus btn-block d-flex card-btn py-3 text-lh-1 px-4 shadow-none btn-primary rounded-top-lg border-0 font-weight-bold text-gray-90"
+                                                data-toggle="collapse" data-target="#basicsCollapseOne"
+                                                aria-expanded="true"
+                                                aria-controls="basicsCollapseOne">
                                             <span class="pl-1 text-gray-90">Shop By Categories</span>
                                             <span class="text-gray-90 ml-3">
                                                 <span class="ec ec-arrow-down-search"></span>
@@ -394,12 +404,12 @@
                                         </button>
                                     </div>
                                     <div id="basicsCollapseOne" class="collapse vertical-menu v1"
-                                        aria-labelledby="basicsHeadingOne" data-parent="#basicsAccordion">
+                                         aria-labelledby="basicsHeadingOne" data-parent="#basicsAccordion">
                                         <div class="card-body p-0">
                                             <nav
                                                 class="js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space hs-menu-initialized">
                                                 <div id="navBar"
-                                                    class="collapse navbar-collapse u-header__navbar-collapse">
+                                                     class="collapse navbar-collapse u-header__navbar-collapse">
                                                     <ul
                                                         class="navbar-nav u-header__navbar-nav border-primary border-top-0">
                                                         <!-- Nav Item MegaMenu -->
@@ -408,13 +418,13 @@
                                                                 data-event="hover" data-animation-in="slideInUp"
                                                                 data-animation-out="fadeOut" data-position="left">
                                                                 <a id="basicMegaMenu"
-                                                                    class="nav-link u-header__nav-link"
-                                                                    href="{{ route('specific_category', $category->slug) }}"
-                                                                    aria-haspopup="true"
-                                                                    aria-expanded="false">{{ $category->name }}</a>
+                                                                   class="nav-link u-header__nav-link"
+                                                                   href="{{ route('specific_category', $category->slug) }}"
+                                                                   aria-haspopup="true"
+                                                                   aria-expanded="false">{{ $category->name }}</a>
                                                             </li>
-                                                        @endforeach
-                                                        <!-- End Nav Item MegaMenu-->
+                                                    @endforeach
+                                                    <!-- End Nav Item MegaMenu-->
                                                     </ul>
                                                 </div>
                                             </nav>
@@ -434,12 +444,12 @@
                             <label class="sr-only" for="searchProduct">Search</label>
                             <div class="input-group">
                                 <input type="email"
-                                    class="form-control py-2 pl-5 font-size-15 border-0 height-40 rounded-left-pill"
-                                    name="email" id="searchProduct" placeholder="Search for Products"
-                                    aria-label="Search for Products" aria-describedby="searchProduct1" required>
+                                       class="form-control py-2 pl-5 font-size-15 border-0 height-40 rounded-left-pill"
+                                       name="email" id="searchProduct" placeholder="Search for Products"
+                                       aria-label="Search for Products" aria-describedby="searchProduct1" required>
                                 <div class="input-group-append">
                                     <button class="btn btn-dark height-40 py-2 px-3 rounded-right-pill" type="button"
-                                        id="searchProduct1">
+                                            id="searchProduct1">
                                         <span class="ec ec-search font-size-24"></span>
                                     </button>
                                 </div>
@@ -453,20 +463,21 @@
                         <div class="d-flex">
                             <ul class="d-flex list-unstyled mb-0">
                                 <li class="col"><a href="../shop/compare.html" class="text-gray-90"
-                                        data-toggle="tooltip" data-placement="top" title="Compare"><i
+                                                   data-toggle="tooltip" data-placement="top" title="Compare"><i
                                             class="font-size-22 ec ec-compare"></i></a></li>
-                                <li class="col"><a href="../shop/wishlist.html" class="text-gray-90"
-                                        data-toggle="tooltip" data-placement="top" title="Favorites"><i
+                                <li class="col"><a href="{{route('wishlist.index')}}" class="text-gray-90"
+                                                   data-toggle="tooltip" data-placement="top" title="Favorites"><i
                                             class="font-size-22 ec ec-favorites"></i></a></li>
                                 <li class="col pr-0">
                                     <a href="{{route('cart.index')}}" class="text-gray-90 position-relative d-flex "
-                                        data-toggle="tooltip" data-placement="top" title="Cart">
+                                       data-toggle="tooltip" data-placement="top" title="Cart">
                                         <i class="font-size-22 ec ec-shopping-bag"></i>
-                                        @if(\Gloudemans\Shoppingcart\Facades\Cart::count()>0)
-                                        <span
-                                            class="width-22 height-22 bg-dark position-absolute flex-content-center text-white rounded-circle left-12 top-8 font-weight-bold font-size-12">{{\Gloudemans\Shoppingcart\Facades\Cart::count()}}</span>
+                                        @if(\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->count() > 0)
+                                            <span
+                                                class="width-22 height-22 bg-dark position-absolute flex-content-center text-white rounded-circle left-12 top-8 font-weight-bold font-size-12">{{\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->count()}}</span>
                                         @endif
-                                        <span class="font-weight-bold font-size-16 text-gray-90 ml-3">$1785.00</span>
+                                        <span
+                                            class="font-weight-bold font-size-16 text-gray-90 ml-3">${{\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->total()}}</span>
                                     </a>
                                 </li>
                             </ul>

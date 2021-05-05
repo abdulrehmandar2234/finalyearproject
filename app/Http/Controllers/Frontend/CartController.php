@@ -46,7 +46,14 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        Cart::add($request->id, $request->title, 1, $request->price)->associate(Product::class);
+        $duplicates = Cart::instance('default')->search(function ($cartItem, $rowId) use ($request) {
+            return $cartItem->id === $request->id;
+        });
+
+        if ($duplicates->isNotEmpty()) {
+            return back()->with('error', 'Item is already in your cart!');
+        }
+        Cart::instance('default')->add($request->id, $request->title, 1, $request->price)->associate(Product::class);
         return back()->with('success', 'Product added to cart successfully.');
     }
 
@@ -92,7 +99,7 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        Cart::remove($id);
+        Cart::instance('default')->remove($id);
         return back()->with('success', 'Product remove from cart successfully.');
     }
 }

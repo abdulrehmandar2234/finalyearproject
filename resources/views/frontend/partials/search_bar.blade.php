@@ -262,7 +262,7 @@
                         <li class="col d-none d-xl-block"><a href="../shop/compare.html" class="text-gray-90"
                                                              data-toggle="tooltip" data-placement="top" title="Compare"><i
                                     class="font-size-22 ec ec-compare"></i></a></li>
-                        <li class="col d-none d-xl-block"><a href="../shop/wishlist.html" class="text-gray-90"
+                        <li class="col d-none d-xl-block"><a href="{{route('wishlist.index')}}" class="text-gray-90"
                                                              data-toggle="tooltip" data-placement="top"
                                                              title="Favorites"><i
                                     class="font-size-22 ec ec-favorites"></i></a></li>
@@ -274,12 +274,12 @@
                             <a href="{{route('cart.index')}}" class="text-gray-90 position-relative d-flex "
                                data-toggle="tooltip" data-placement="top" title="Cart">
                                 <i class="font-size-22 ec ec-shopping-bag"></i>
-                                @if(\Gloudemans\Shoppingcart\Facades\Cart::count() > 0)
+                                @if(\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->count() > 0)
                                     <span
-                                        class="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">{{\Gloudemans\Shoppingcart\Facades\Cart::count()}}</span>
+                                        class="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">{{\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->count()}}</span>
                                 @endif
                                 <span
-                                    class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">$1785.00</span>
+                                    class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">${{\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->total()}}</span>
                             </a>
                         </li>
                         <li class="col pr-xl-0 px-2 px-sm-3 d-none d-xl-block">
@@ -297,12 +297,12 @@
                                  data-unfold-animation-in="slideInUp"
                                  data-unfold-animation-out="fadeOut">
                                 <i class="font-size-22 ec ec-shopping-bag"></i>
-                                @if(\Gloudemans\Shoppingcart\Facades\Cart::count() > 0)
+                                @if(\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->count() > 0)
                                     <span
                                         class="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">{{\Gloudemans\Shoppingcart\Facades\Cart::count()}}</span>
                                 @endif
                                 <span
-                                    class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">$1785.00</span>
+                                    class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">${{\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->total()}}</span>
                             </div>
                             <div id="basicDropdownHover"
                                  class="cart-dropdown dropdown-menu dropdown-unfold border-top border-top-primary mt-3 border-width-2 border-left-0 border-right-0 border-bottom-0 left-auto right-0"

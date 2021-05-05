@@ -1,3 +1,11 @@
+@section('styles')
+    <style>
+        .remove_cart {
+            border: none;
+            background-color: white;
+        }
+    </style>
+@endsection
 @extends('layouts.shop')
 @section('content')
     <!-- breadcrumb -->
@@ -38,21 +46,27 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @forelse(\Gloudemans\Shoppingcart\Facades\Cart::instance('wishlist')->content() as $wishlist)
                         <tr>
                             <td class="text-center">
-                                <a href="#" class="text-gray-32 font-size-26">×</a>
+                                <form action="{{route('wishlist.destroy',$wishlist->rowId)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="text-gray-32 font-size-26 remove_cart">×</button>
+                                </form>
                             </td>
+
                             <td class="d-none d-md-table-cell">
                                 <a href="#"><img class="img-fluid max-width-100 p-1 border border-color-1"
-                                                 src="../../assets/img/300X300/img6.jpg" alt="Image Description"></a>
+                                                 src="{{$wishlist->model->getFirstMediaUrl('products')}}" alt="Image Description"></a>
                             </td>
 
                             <td data-title="Product">
-                                <a href="#" class="text-gray-90">Ultra Wireless S50 Headphones S50 with Bluetooth</a>
+                                <a href="#" class="text-gray-90">{{$wishlist->model->title}}</a>
                             </td>
 
                             <td data-title="Unit Price">
-                                <span class="">$1,100.00</span>
+                                <span class="">${{$wishlist->model->price}}</span>
                             </td>
 
                             <td data-title="Stock Status">
@@ -62,12 +76,18 @@
                             </td>
 
                             <td>
-                                <button type="button"
+                                <form action="{{route('switch_to_cart',$wishlist->rowId)}}" method="POST">
+                                    @csrf
+                                <button type="submit"
                                         class="btn btn-soft-secondary mb-3 mb-md-0 font-weight-normal px-5 px-md-4 px-lg-5 w-100 w-md-auto">
                                     Add to Cart
                                 </button>
+                                </form>
                             </td>
                         </tr>
+                        @empty
+                            <h4>No Product in Wishlist</h4>
+                        @endforelse
                         </tbody>
                     </table>
                 </div>

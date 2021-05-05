@@ -1,6 +1,6 @@
 @section('styles')
     <style>
-        #remove_cart {
+        .remove_cart {
             border: none;
             background-color: white;
         }
@@ -44,13 +44,13 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @forelse(\Gloudemans\Shoppingcart\Facades\Cart::content() as $cart)
+                    @forelse(\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->content() as $cart)
                         <tr class="">
                             <td class="text-center">
                                 <form action="{{route('cart.destroy',$cart->rowId)}}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" id="remove_cart" class="text-gray-32 font-size-26">×</button>
+                                    <button type="submit" class="text-gray-32 font-size-26 remove_cart">×</button>
                                 </form>
                             </td>
                             <td class="d-none d-md-table-cell">
@@ -130,11 +130,11 @@
                         <tbody>
                         <tr class="cart-subtotal">
                             <th>Subtotal</th>
-                            <td data-title="Subtotal"><span class="amount">${{Cart::subtotal()}}</span></td>
+                            <td data-title="Subtotal"><span class="amount">${{Cart::instance('default')->subtotal()}}</span></td>
                         </tr>
                         <tr class="order-total">
                             <th>Total</th>
-                            <td data-title="Total"><strong><span class="amount">${{Cart::total()}}</span></strong></td>
+                            <td data-title="Total"><strong><span class="amount">${{Cart::instance('default')->total()}}</span></strong></td>
                         </tr>
                         </tbody>
                     </table>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Website;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
 class WishlistController extends Controller
@@ -45,7 +46,15 @@ class WishlistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $duplicates = Cart::instance('wishlist')->search(function ($wishlist, $rowId) use ($request) {
+            return $wishlist->id === $request->id;
+        });
+
+        if ($duplicates->isNotEmpty()) {
+            return back()->with('error', 'Item is already in your wishlist!');
+        }
+        Cart::instance('wishlist')->add($request->id, $request->title, 1, $request->price)->associate(Product::class);
+        return back()->with('success', 'Product added to wishlist successfully.');
     }
 
     /**
@@ -88,8 +97,24 @@ class WishlistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Cart $cart)
     {
-        //
+        dd($cart);
+        Cart::instance('wishlist')->remove($id);
+        return back()->with('success', 'Product remove from wishlist successfully.');
+    }
+
+    public function switch_to_cart($id)
+    {
+        $item = Cart::instance('wishlist')->get($id);
+        Cart::instance('wishlist')->remove($id);
+        $duplicates = Cart::instance('default')->search(function ($cartItem, $rowId) use ($id) {
+            return $rowId === $id;
+        });
+        if ($duplicates->isNotEmpty()) {
+            return back()->with('error', 'Item is already in your cart!');
+        }
+        Cart::instance('default')->add($item->id, $item->name, 1, $item->price)->associate(Product::class);
+        return back()->with('success', 'Product has been move to cart successfully.');
     }
 }

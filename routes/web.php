@@ -33,9 +33,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('/', HomeController::class);
 Route::get('/empty', function () {
-Cart::destroy();
+    Cart::instance('wishlist')->destroy();
+    Cart::instance('default')->destroy();
 });
-
+Route::post('/switch-to-cart{id}', [WishlistController::class, 'switch_to_cart'])->name('switch_to_cart');
 Route::resource('/cart', CartController::class);
 Route::resource('/wishlist', WishlistController::class);
 Route::resource('contact-us', \App\Http\Controllers\Frontend\ContactUsController::class);
