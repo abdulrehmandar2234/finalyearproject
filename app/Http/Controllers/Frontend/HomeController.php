@@ -8,6 +8,8 @@ use App\Models\Product;
 use App\Models\Slider;
 use App\Models\Website;
 use Illuminate\Http\Request;
+use Spatie\Searchable\ModelSearchAspect;
+use Spatie\Searchable\Search;
 
 class HomeController extends Controller
 {
@@ -20,85 +22,42 @@ class HomeController extends Controller
     {
         $sliders = Slider::all();
         $websites = Website::all();
-        $products = Product::with('category')->take(6)->get();
-        $categories = Category::with('products')->get();
+        $products = Product::with('category')->take(50)->get();
+        $categories = Category::all();
         return view('frontend.index', compact('sliders', 'products', 'categories', 'websites'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 
     public function search()
     {
-        $products = Product::where('title', 'LIKE', '%' . request()->input('query') . '%')->with('category')->take(6)->get();
+        $products = Product::where('title', 'LIKE', '%' . request()->input('query') . '%')->with('category')->take(50)->get();
+//        $products = (new Search())
+//            ->registerModel(Product::class, function(ModelSearchAspect $modelSearchAspect) {
+//                $modelSearchAspect
+//                    ->addSearchableAttribute('title') // return results for partial matches on usernames                 return results that exactly match the e-mail address
+//                    ->active()
+//                    ->with('category');
+//            })->registerModel(Category::class, function(ModelSearchAspect $modelSearchAspect) {
+//                $modelSearchAspect
+//                    ->addSearchableAttribute('name') // return results for partial matches on usernames                 return results that exactly match the e-mail address
+//                    ->active()
+//                    ->with('product');
+//            });
+//            dd($products);
         $product_max_price = Product::max('price');
         $product_min_price = Product::min('price');
         $brands = Product::groupBy('brand')->get();
-        $categories = Category::with('products')->withCount('products')->get();
-        $websites = Website::with('products')->withCount('products')->get();
+        $categories = Category::withCount('products')->get();
+        $websites = Website::withCount('products')->get();
         return view('frontend.search', compact('products', 'categories', 'websites', 'brands', 'product_max_price', 'product_min_price'));
+    }
+
+    public function category($slug){
+        $selected_category = Category::where('slug', $slug)->firstOrFail()->with('products')->withCount('products')->get();
+        $product_max_price = Product::max('price');
+        $product_min_price = Product::min('price');
+        $brands = Product::groupBy('brand')->get();
+        $categories = Category::withCount('products')->get();
+        $websites = Website::withCount('products')->get();
+        return view('frontend.category', compact('categories', 'websites', 'selected_category', 'brands', 'product_max_price', 'product_min_price'));
     }
 }

@@ -53,7 +53,7 @@
                                 <i class="ec ec-user mr-1"></i> Dashboard
                             </a>
                             @else
-                                <a href="{{route('dashboard')}}" class="text-dark">
+                                <a href="{{route('my-account.index')}}" class="text-dark">
                                     <i class="ec ec-user mr-1"></i> Go to Profile
                                 </a>
                             @endif

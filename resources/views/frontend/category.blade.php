@@ -172,143 +172,6 @@
                         <button type="submit" class="btn px-4 btn-primary-dark-w py-2 rounded-lg">Filter</button>
                     </div>
                 </div>
-                <div class="mb-8">
-                    <div class="border-bottom border-color-1 mb-5">
-                        <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">Latest Products</h3>
-                    </div>
-                    <ul class="list-unstyled">
-                        <li class="mb-4">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <a href="../shop/single-product-fullwidth.html" class="d-block width-75">
-                                        <img class="img-fluid" src="../../assets/img/300X300/img1.jpg"
-                                             alt="Image Description">
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <h3 class="text-lh-1dot2 font-size-14 mb-0"><a
-                                            href="../shop/single-product-fullwidth.html">Notebook Black Spire V Nitro
-                                            VN7-591G</a></h3>
-                                    <div class="text-warning text-ls-n2 font-size-16 mb-1" style="width: 80px;">
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="far fa-star text-muted"></small>
-                                    </div>
-                                    <div class="font-weight-bold">
-                                        <del class="font-size-11 text-gray-9 d-block">$2299.00</del>
-                                        <ins class="font-size-15 text-red text-decoration-none d-block">$1999.00</ins>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="mb-4">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <a href="../shop/single-product-fullwidth.html" class="d-block width-75">
-                                        <img class="img-fluid" src="../../assets/img/300X300/img3.jpg"
-                                             alt="Image Description">
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <h3 class="text-lh-1dot2 font-size-14 mb-0"><a
-                                            href="../shop/single-product-fullwidth.html">Notebook Black Spire V Nitro
-                                            VN7-591G</a></h3>
-                                    <div class="text-warning text-ls-n2 font-size-16 mb-1" style="width: 80px;">
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="far fa-star text-muted"></small>
-                                    </div>
-                                    <div class="font-weight-bold font-size-15">
-                                        $499.00
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="mb-4">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <a href="../shop/single-product-fullwidth.html" class="d-block width-75">
-                                        <img class="img-fluid" src="../../assets/img/300X300/img5.jpg"
-                                             alt="Image Description">
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <h3 class="text-lh-1dot2 font-size-14 mb-0"><a
-                                            href="../shop/single-product-fullwidth.html">Tablet Thin EliteBook Revolve
-                                            810
-                                            G6</a></h3>
-                                    <div class="text-warning text-ls-n2 font-size-16 mb-1" style="width: 80px;">
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="far fa-star text-muted"></small>
-                                    </div>
-                                    <div class="font-weight-bold font-size-15">
-                                        $100.00
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="mb-4">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <a href="../shop/single-product-fullwidth.html" class="d-block width-75">
-                                        <img class="img-fluid" src="../../assets/img/300X300/img6.jpg"
-                                             alt="Image Description">
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <h3 class="text-lh-1dot2 font-size-14 mb-0"><a
-                                            href="../shop/single-product-fullwidth.html">Notebook Purple
-                                            G952VX-T7008T</a>
-                                    </h3>
-                                    <div class="text-warning text-ls-n2 font-size-16 mb-1" style="width: 80px;">
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="far fa-star text-muted"></small>
-                                    </div>
-                                    <div class="font-weight-bold">
-                                        <del class="font-size-11 text-gray-9 d-block">$2299.00</del>
-                                        <ins class="font-size-15 text-red text-decoration-none d-block">$1999.00</ins>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="mb-4">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <a href="../shop/single-product-fullwidth.html" class="d-block width-75">
-                                        <img class="img-fluid" src="../../assets/img/300X300/img10.png"
-                                             alt="Image Description">
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <h3 class="text-lh-1dot2 font-size-14 mb-0"><a
-                                            href="../shop/single-product-fullwidth.html">Laptop Yoga 21 80JH0035GE
-                                            W8.1</a>
-                                    </h3>
-                                    <div class="text-warning text-ls-n2 font-size-16 mb-1" style="width: 80px;">
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="far fa-star text-muted"></small>
-                                    </div>
-                                    <div class="font-weight-bold font-size-15">
-                                        $1200.00
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
             </div>
             <div class="col-xl-9 col-wd-9gdot5">
                 <!-- Shop-control-bar Title -->
@@ -405,14 +268,13 @@
                     <div class="tab-pane fade pt-2 show active" id="pills-one-example1" role="tabpanel"
                          aria-labelledby="pills-one-example1-tab" data-target-group="groups">
                         <ul class="row list-unstyled products-group no-gutters">
-
-                            @forelse ($categories[0]['products'] as $product)
+                            @forelse ($selected_category[0]['products'] as $product)
                                 <li class="col-6 col-md-3 col-wd-2gdot4 product-item">
                                     <div class="product-item__outer h-100">
                                         <div class="product-item__inner px-xl-4 p-3">
                                             <div class="product-item__body pb-xl-2">
                                                 <div class="mb-2"><a href="#"
-                                                                     class="font-size-12 text-gray-5">{{ $product->category->name }}</a>
+                                                                     class="font-size-12 text-gray-5">{{ $product->name }}</a>
                                                 </div>
                                                 <h5 class="mb-1 product-item__title"><a href="#"
                                                                                         class="text-blue font-weight-bold">{{ $product->title }}</a>
@@ -447,14 +309,12 @@
                             @empty
                                 <h4>No Product Found</h4>
                             @endforelse
-
-
                         </ul>
                     </div>
                     <div class="tab-pane fade pt-2" id="pills-three-example1" role="tabpanel"
                          aria-labelledby="pills-three-example1-tab" data-target-group="groups">
                         <ul class="d-block list-unstyled products-group prodcut-list-view">
-                            @forelse ($products as $product)
+                            @forelse ($selected_category[0]['products'] as $product)
                                 <li class="product-item remove-divider">
                                     <div class="product-item__outer w-100">
                                         <div class="product-item__inner remove-prodcut-hover py-4 row">
@@ -512,7 +372,7 @@
                     <div class="tab-pane fade pt-2" id="pills-four-example1" role="tabpanel"
                          aria-labelledby="pills-four-example1-tab" data-target-group="groups">
                         <ul class="d-block list-unstyled products-group prodcut-list-view-small">
-                            @forelse ($categories[0]['products'] as $product)
+                            @forelse ($selected_category[0]['products'] as $product)
                                 <li class="product-item remove-divider">
                                     <div class="product-item__outer w-100">
                                         <div class="product-item__inner remove-prodcut-hover py-4 row">

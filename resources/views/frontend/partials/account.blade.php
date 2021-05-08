@@ -160,7 +160,7 @@
                                                     <span class="fas fa-user"></span>
                                                 </span>
                                             </div>
-                                            <input type="email" class="form-control" name="email" id="signupEmail" placeholder="Email" aria-label="Email" aria-describedby="signupEmailLabel" value="{{ old('email') }}" required autocomplete="email"
+                                            <input type="email" name="email" class="form-control" id="signupEmail" placeholder="Email" aria-label="Email" aria-describedby="signupEmailLabel" value="{{ old('email') }}" required autocomplete="email"
                                             data-msg="Please enter a valid email address."
                                             data-error-class="u-has-error"
                                             data-success-class="u-has-success">

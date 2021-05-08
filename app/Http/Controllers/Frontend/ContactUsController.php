@@ -21,9 +21,8 @@ class ContactUsController extends Controller
     {
         try {
             $websites = Website::all();
-            $products = Product::with('category')->take(6)->get();
-            $categories = Category::with('products')->get();
-            return view('frontend.contact', compact('products', 'categories', 'websites'));
+            $categories = Category::all();
+            return view('frontend.contact', compact('categories', 'websites'));
         } catch (\Exception $e) {
             return $e->getMessage();
         }

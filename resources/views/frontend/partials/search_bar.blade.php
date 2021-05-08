@@ -155,10 +155,7 @@
                                         <ul id="headerSidebarList" class="u-header-collapse__nav">
                                             @foreach ($categories as $category)
                                                 <li class="u-has-submenu u-header-collapse__submenu">
-                                                    <a class="u-header-collapse__nav-link" href="javascript:;"
-                                                       data-target="#headerSidebarMobilesCollapse" role="button"
-                                                       data-toggle="collapse" aria-expanded="false"
-                                                       aria-controls="headerSidebarMobilesCollapse">
+                                                    <a class="u-header-collapse__nav-link" href="{{route('specific_category',$category->slug)}}"                                                     >
                                                         {{ $category->name }}
                                                     </a>
                                                 </li>
@@ -248,10 +245,11 @@
                             <div id="searchClassic"
                                  class="dropdown-menu dropdown-unfold dropdown-menu-right left-0 mx-2"
                                  aria-labelledby="searchClassicInvoker">
-                                <form class="js-focus-state input-group px-3">
-                                    <input class="form-control" type="search" placeholder="Search Product">
+                                <form class="js-focus-state input-group px-3" method="GET" action="{{route('search_product')}}">
+                                    @csrf
+                                    <input class="form-control" name="query" type="search" placeholder="Search Product">
                                     <div class="input-group-append">
-                                        <button class="btn btn-primary px-3" type="button"><i
+                                        <button class="btn btn-primary px-3" type="submit"><i
                                                 class="font-size-18 ec ec-search"></i></button>
                                     </div>
                                 </form>
@@ -266,7 +264,7 @@
                                                              data-toggle="tooltip" data-placement="top"
                                                              title="Favorites"><i
                                     class="font-size-22 ec ec-favorites"></i></a></li>
-                        <li class="col d-xl-none px-2 px-sm-3"><a href="../shop/my-account.html" class="text-gray-90"
+                        <li class="col d-xl-none px-2 px-sm-3"><a href="{{route('my-account.index')}}" class="text-gray-90"
                                                                   data-toggle="tooltip" data-placement="top"
                                                                   title="My Account"><i
                                     class="font-size-22 ec ec-user"></i></a></li>

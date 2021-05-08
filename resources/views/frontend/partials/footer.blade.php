@@ -19,8 +19,8 @@
                                     <div class="font-size-15">${{ $product->price }}</div>
                                 </div>
                             </div>
-                        </li>                           
-                        @endforeach                        
+                        </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                                 <del class="font-size-12 text-gray-9 ml-2">$250.00</del>
                             </div>
                         </div>
-                    </li>                  
+                    </li>
                     @endforeach
                 </ul>
             </div>
@@ -68,7 +68,7 @@
                                 <div class="font-size-15">${{ $product->price }}</div>
                             </div>
                         </div>
-                    </li>                   
+                    </li>
                     @endforeach
                 </ul>
             </div>

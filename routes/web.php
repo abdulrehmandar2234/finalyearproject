@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\WebsiteController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\ProfileController;
 use App\Http\Controllers\Frontend\WishlistController;
 use App\Models\Category;
 use App\Models\Product;
@@ -36,22 +37,14 @@ Route::get('/empty', function () {
     Cart::instance('wishlist')->destroy();
     Cart::instance('default')->destroy();
 });
+Route::view('my-account','frontend.account');
+Route::resource('/my-account', \App\Http\Controllers\Frontend\AccountController::class);
 Route::post('/switch-to-cart{id}', [WishlistController::class, 'switch_to_cart'])->name('switch_to_cart');
 Route::resource('/cart', CartController::class);
 Route::resource('/wishlist', WishlistController::class);
-Route::resource('contact-us', \App\Http\Controllers\Frontend\ContactUsController::class);
-Route::get('search', [HomeController::class, 'search'])->name('search_product');
-Route::get('/category/{slug}', function ($slug) {
-    $selected_category = Category::where('slug', $slug)->with('products')->firstOrFail()->withCount('products')->get();
-    $products = Product::with('category')->take(6)->get();
-    $product_max_price = Product::max('price');
-    $product_min_price = Product::min('price');
-    $brands = Product::groupBy('brand')->get();
-    $categories = Category::with('products')->withCount('products')->get();
-    $websites = Website::with('products')->withCount('products')->get();
-    return view('frontend.category', compact('products', 'categories', 'websites', 'selected_category', 'brands', 'product_max_price', 'product_min_price'));
-})->name('specific_category');
-
+Route::resource('/contact-us', \App\Http\Controllers\Frontend\ContactUsController::class);
+Route::get('/search', [HomeController::class, 'search'])->name('search_product');
+Route::get('/category/{slug}', [HomeController::class, 'category'])->name('specific_category');
 // Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {
@@ -70,6 +63,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
     Route::resource('category-links', CategoryLinkController::class);
     Route::resource('contact', ContactUsController::class);
     Route::get('scrape-products', ScrapeProductController::class)->name('scrape');
+});
+Route::group(['middleware' => ['auth']], function () {
+Route::post('/update-profile', [ProfileController::class, 'changePassword'])->name('change.password');
+Route::post('/update-password', [ProfileController::class, 'update'])->name('profile.update');
 });
 
 Route::get('auth/social', [LoginController::class, 'show'])->name('social.login');

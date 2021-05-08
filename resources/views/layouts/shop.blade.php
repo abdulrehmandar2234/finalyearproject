@@ -15,123 +15,34 @@
 
 <body>
 
-    <!-- ========== HEADER ========== -->
-    @include('frontend.partials.s_header')
-    <!-- ========== END HEADER ========== -->
+<!-- ========== HEADER ========== -->
+@include('frontend.partials.s_header')
+<!-- ========== END HEADER ========== -->
 
-    <!-- ========== MAIN CONTENT ========== -->
-    <main id="content" role="main">
-        @yield('content')
-    </main>
-    <!-- ========== END MAIN CONTENT ========== -->
+<!-- ========== MAIN CONTENT ========== -->
+<main id="content" role="main">
+    @yield('content')
+</main>
+<!-- ========== END MAIN CONTENT ========== -->
 
-    <!-- ========== FOOTER ========== -->
-    <footer>
-        <!-- Footer-top-widget -->
-        <div class="container d-none d-lg-block mb-3">
+<!-- ========== FOOTER ========== -->
+<footer>
+    <!-- Footer-newsletter -->
+@include('frontend.partials.news_letter')
+<!-- End Footer-newsletter -->
+    <!-- Footer-bottom-widgets -->
+    <div class="pt-8 pb-4 bg-gray-13">
+        <div class="container mt-1">
             <div class="row">
-                <div class="col-wd-3 col-lg-4">
-                    <div class="widget-column">
-                        <div class="border-bottom border-color-1 mb-5">
-                            <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">Most Favorite</h3>
-                        </div>
-                        <ul class="list-unstyled products-group">
-                            @foreach ($products->take(3) as $product)
-                                <li class="product-item product-item__list row no-gutters mb-6 remove-divider">
-                                    <div class="col-auto">
-                                        <a href="#" class="d-block width-75 text-center"><img class="img-fluid"
-                                                src="{{ $product->getFirstMediaUrl('products') }}"
-                                                alt="Image Description"></a>
-                                    </div>
-                                    <div class="col pl-4 d-flex flex-column">
-                                        <h5 class="product-item__title mb-0"><a href="#"
-                                                class="text-blue font-weight-bold">{{ $product->title }}</a></h5>
-                                        <div class="prodcut-price mt-auto">
-                                            <div class="font-size-15">${{ $product->price }}</div>
-                                        </div>
-                                    </div>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-wd-3 col-lg-4">
-                    <div class="border-bottom border-color-1 mb-5">
-                        <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">Onsale Products</h3>
-                    </div>
-                    <ul class="list-unstyled products-group">
-                        @foreach ($products->take(3) as $product)
-                            <li class="product-item product-item__list row no-gutters mb-6 remove-divider">
-                                <div class="col-auto">
-                                    <a href="#" class="d-block width-75 text-center"><img class="img-fluid"
-                                            src="{{ $product->getFirstMediaUrl('products') }}"
-                                            alt="Image Description"></a>
-                                </div>
-                                <div class="col pl-4 d-flex flex-column">
-                                    <h5 class="product-item__title mb-0"><a href="#"
-                                            class="text-blue font-weight-bold">{{ $product->title }}</a></h5>
-                                    <div class="prodcut-price mt-auto flex-horizontal-center">
-                                        <ins class="font-size-15 text-decoration-none">${{ $product->price }}</ins>
-                                        <del class="font-size-12 text-gray-9 ml-2">$250.00</del>
-                                    </div>
-                                </div>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
-                <div class="col-wd-3 col-lg-4">
-                    <div class="border-bottom border-color-1 mb-5">
-                        <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">Top Rated Products</h3>
-                    </div>
-                    <ul class="list-unstyled products-group">
-                        @foreach ($products->take(3) as $product)
-                            <li class="product-item product-item__list row no-gutters mb-6 remove-divider">
-                                <div class="col-auto">
-                                    <a href="#" class="d-block width-75 text-center"><img class="img-fluid"
-                                            src="{{ $product->getFirstMediaUrl('products') }}"
-                                            alt="Image Description"></a>
-                                </div>
-                                <div class="col pl-4 d-flex flex-column">
-                                    <h5 class="product-item__title mb-0"><a href="#"
-                                            class="text-blue font-weight-bold">{{ $product->title }}</a></h5>
-                                    <div class="text-warning mb-2">
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                    </div>
-                                    <div class="prodcut-price mt-auto">
-                                        <div class="font-size-15">${{ $product->price }}</div>
-                                    </div>
-                                </div>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
-                <div class="col-wd-3 d-none d-wd-block">
-                    <a href="#" class="d-block"><img class="img-fluid" src="{{ asset('assets/img/330X360/img1.jpg') }}"
-                            alt="Image Description"></a>
-                </div>
-            </div>
-        </div>
-        <!-- End Footer-top-widget -->
-        <!-- Footer-newsletter -->
-        @include('frontend.partials.news_letter')
-        <!-- End Footer-newsletter -->
-        <!-- Footer-bottom-widgets -->
-        <div class="pt-8 pb-4 bg-gray-13">
-            <div class="container mt-1">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <div class="mb-6">
-                            <a href="#" class="d-inline-block">
-                                <svg version="1.1" x="0px" y="0px" width="156px" height="37px"
-                                    viewBox="0 0 175.748 42.52" enable-background="new 0 0 175.748 42.52">
-                                    <ellipse fill-rule="evenodd" clip-rule="evenodd" fill="#FDD700" cx="170.05"
-                                        cy="36.341" rx="5.32" ry="5.367"></ellipse>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#333E48"
-                                        d="M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056
+                <div class="col-lg-5">
+                    <div class="mb-6">
+                        <a href="#" class="d-inline-block">
+                            <svg version="1.1" x="0px" y="0px" width="156px" height="37px"
+                                 viewBox="0 0 175.748 42.52" enable-background="new 0 0 175.748 42.52">
+                                <ellipse fill-rule="evenodd" clip-rule="evenodd" fill="#FDD700" cx="170.05"
+                                         cy="36.341" rx="5.32" ry="5.367"></ellipse>
+                                <path fill-rule="evenodd" clip-rule="evenodd" fill="#333E48"
+                                      d="M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056
                                     C30.263,0.995,29.876,1.181,29.79,1.5c-0.148,0.548,0,1.568,0,2.427v36.459c0.265,0.221,0.506,0.465,0.725,0.734h6.187
                                     c0.2-0.25,0.423-0.477,0.669-0.678V1.387C37.124,1.185,36.9,0.959,36.701,0.71H30.514z M117.517,12.731
                                     c-0.232-0.189-0.439-0.64-0.781-0.734c-0.754-0.209-2.039,0-3.121,0h-3.176V4.435c-0.232-0.189-0.439-0.639-0.781-0.733
@@ -166,295 +77,296 @@
                                     c0.404-1.031-0.365-1.502-0.891-2.088c-2.543-2.835-6.66-5.377-11.704-5.137c-6.02,0.288-10.218,3.697-12.484,7.846
                                     c-1.293,2.365-1.951,5.158-1.729,8.408c0.209,3.053,1.191,5.496,2.619,7.508c2.842,4.004,7.385,6.973,13.656,6.377
                                     c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.929,31.364,90.843,30.485,88.812,29.55z">
-                                    </path>
-                                </svg>
-                            </a>
-                        </div>
-                        <div class="mb-4">
-                            <div class="row no-gutters">
-                                <div class="col-auto">
-                                    <i class="ec ec-support text-primary font-size-56"></i>
-                                </div>
-                                <div class="col pl-3">
-                                    <div class="font-size-13 font-weight-light">Got questions? Call us 24/7!</div>
-                                    <a href="tel:+80080018588" class="font-size-20 text-gray-90">(800) 8001-8588, </a><a
-                                        href="tel:+0600874548" class="font-size-20 text-gray-90">(0600) 874 548</a>
-                                </div>
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="mb-4">
+                        <div class="row no-gutters">
+                            <div class="col-auto">
+                                <i class="ec ec-support text-primary font-size-56"></i>
                             </div>
-                        </div>
-                        <div class="mb-4">
-                            <h6 class="mb-1 font-weight-bold">Contact info</h6>
-                            <address class="">
-                                17 Princess Road, London, Greater London NW1 8JR, UK
-                            </address>
-                        </div>
-                        <div class="my-4 my-md-4">
-                            <ul class="list-inline mb-0 opacity-7">
-                                <li class="list-inline-item mr-0">
-                                    <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
-                                        href="#">
-                                        <span class="fab fa-facebook-f btn-icon__inner"></span>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item mr-0">
-                                    <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
-                                        href="#">
-                                        <span class="fab fa-google btn-icon__inner"></span>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item mr-0">
-                                    <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
-                                        href="#">
-                                        <span class="fab fa-twitter btn-icon__inner"></span>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item mr-0">
-                                    <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
-                                        href="#">
-                                        <span class="fab fa-github btn-icon__inner"></span>
-                                    </a>
-                                </li>
-                            </ul>
+                            <div class="col pl-3">
+                                <div class="font-size-13 font-weight-light">Got questions? Call us 24/7!</div>
+                                <a href="tel:+80080018588" class="font-size-20 text-gray-90">(800) 8001-8588, </a><a
+                                    href="tel:+0600874548" class="font-size-20 text-gray-90">(0600) 874 548</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-7">
-                        <div class="row">
-                            <div class="col-12 col-md mb-4 mb-md-0">
-                                <h6 class="mb-3 font-weight-bold">Find it Fast</h6>
-                                <!-- List Group -->
-                                <ul
-                                    class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
-                                    <li><a class="list-group-item list-group-item-action"
-                                            href="../shop/product-categories-5-column-sidebar.html">Laptops &
-                                            Computers</a></li>
-                                    <li><a class="list-group-item list-group-item-action"
-                                            href="../shop/product-categories-5-column-sidebar.html">Cameras &
-                                            Photography</a></li>
-                                    <li><a class="list-group-item list-group-item-action"
-                                            href="../shop/product-categories-5-column-sidebar.html">Smart Phones &
-                                            Tablets</a></li>
-                                    <li><a class="list-group-item list-group-item-action"
-                                            href="../shop/product-categories-5-column-sidebar.html">Video Games &
-                                            Consoles</a></li>
-                                    <li><a class="list-group-item list-group-item-action"
-                                            href="../shop/product-categories-5-column-sidebar.html">TV & Audio</a></li>
-                                    <li><a class="list-group-item list-group-item-action"
-                                            href="../shop/product-categories-5-column-sidebar.html">Gadgets</a></li>
-                                    <li><a class="list-group-item list-group-item-action"
-                                            href="../shop/product-categories-5-column-sidebar.html">Car Electronic &
-                                            GPS</a></li>
-                                </ul>
-                                <!-- End List Group -->
-                            </div>
+                    <div class="mb-4">
+                        <h6 class="mb-1 font-weight-bold">Contact info</h6>
+                        <address class="">
+                            17 Princess Road, London, Greater London NW1 8JR, UK
+                        </address>
+                    </div>
+                    <div class="my-4 my-md-4">
+                        <ul class="list-inline mb-0 opacity-7">
+                            <li class="list-inline-item mr-0">
+                                <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
+                                   href="#">
+                                    <span class="fab fa-facebook-f btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
+                                   href="#">
+                                    <span class="fab fa-google btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
+                                   href="#">
+                                    <span class="fab fa-twitter btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
+                                   href="#">
+                                    <span class="fab fa-github btn-icon__inner"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="row">
+                        <div class="col-12 col-md mb-4 mb-md-0">
+                            <h6 class="mb-3 font-weight-bold">Find it Fast</h6>
+                            <!-- List Group -->
+                            <ul
+                                class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
+                                <li><a class="list-group-item list-group-item-action"
+                                       href="../shop/product-categories-5-column-sidebar.html">Laptops &
+                                        Computers</a></li>
+                                <li><a class="list-group-item list-group-item-action"
+                                       href="../shop/product-categories-5-column-sidebar.html">Cameras &
+                                        Photography</a></li>
+                                <li><a class="list-group-item list-group-item-action"
+                                       href="../shop/product-categories-5-column-sidebar.html">Smart Phones &
+                                        Tablets</a></li>
+                                <li><a class="list-group-item list-group-item-action"
+                                       href="../shop/product-categories-5-column-sidebar.html">Video Games &
+                                        Consoles</a></li>
+                                <li><a class="list-group-item list-group-item-action"
+                                       href="../shop/product-categories-5-column-sidebar.html">TV & Audio</a></li>
+                                <li><a class="list-group-item list-group-item-action"
+                                       href="../shop/product-categories-5-column-sidebar.html">Gadgets</a></li>
+                                <li><a class="list-group-item list-group-item-action"
+                                       href="../shop/product-categories-5-column-sidebar.html">Car Electronic &
+                                        GPS</a></li>
+                            </ul>
+                            <!-- End List Group -->
+                        </div>
 
-                            <div class="col-12 col-md mb-4 mb-md-0">
-                                <!-- List Group -->
-                                <ul
-                                    class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent mt-md-6">
-                                    <li><a class="list-group-item list-group-item-action"
-                                            href="../shop/product-categories-5-column-sidebar.html">Printers & Ink</a>
-                                    </li>
-                                    <li><a class="list-group-item list-group-item-action"
-                                            href="../shop/product-categories-5-column-sidebar.html">Software</a></li>
-                                    <li><a class="list-group-item list-group-item-action"
-                                            href="../shop/product-categories-5-column-sidebar.html">Office Supplies</a>
-                                    </li>
-                                    <li><a class="list-group-item list-group-item-action"
-                                            href="../shop/product-categories-5-column-sidebar.html">Computer
-                                            Components</a></li>
-                                    <li><a class="list-group-item list-group-item-action"
-                                            href="../shop/product-categories-5-column-sidebar.html">Accesories</a></li>
-                                </ul>
-                                <!-- End List Group -->
-                            </div>
+                        <div class="col-12 col-md mb-4 mb-md-0">
+                            <!-- List Group -->
+                            <ul
+                                class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent mt-md-6">
+                                <li><a class="list-group-item list-group-item-action"
+                                       href="../shop/product-categories-5-column-sidebar.html">Printers & Ink</a>
+                                </li>
+                                <li><a class="list-group-item list-group-item-action"
+                                       href="../shop/product-categories-5-column-sidebar.html">Software</a></li>
+                                <li><a class="list-group-item list-group-item-action"
+                                       href="../shop/product-categories-5-column-sidebar.html">Office Supplies</a>
+                                </li>
+                                <li><a class="list-group-item list-group-item-action"
+                                       href="../shop/product-categories-5-column-sidebar.html">Computer
+                                        Components</a></li>
+                                <li><a class="list-group-item list-group-item-action"
+                                       href="../shop/product-categories-5-column-sidebar.html">Accesories</a></li>
+                            </ul>
+                            <!-- End List Group -->
+                        </div>
 
-                            <div class="col-12 col-md mb-4 mb-md-0">
-                                <h6 class="mb-3 font-weight-bold">Customer Care</h6>
-                                <!-- List Group -->
-                                <ul
-                                    class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
-                                    <li><a class="list-group-item list-group-item-action"
-                                            href="../shop/my-account.html">My Account</a></li>
-                                    <li><a class="list-group-item list-group-item-action"
-                                            href="../shop/track-your-order.html">Order Tracking</a></li>
-                                    <li><a class="list-group-item list-group-item-action"
-                                            href="../shop/wishlist.html">Wish List</a></li>
-                                    <li><a class="list-group-item list-group-item-action"
-                                            href="../home/terms-and-conditions.html">Customer Service</a></li>
-                                    <li><a class="list-group-item list-group-item-action"
-                                            href="../home/terms-and-conditions.html">Returns / Exchange</a></li>
-                                    <li><a class="list-group-item list-group-item-action"
-                                            href="../home/faq.html">FAQs</a></li>
-                                    <li><a class="list-group-item list-group-item-action"
-                                            href="../home/terms-and-conditions.html">Product Support</a></li>
-                                </ul>
-                                <!-- End List Group -->
-                            </div>
+                        <div class="col-12 col-md mb-4 mb-md-0">
+                            <h6 class="mb-3 font-weight-bold">Customer Care</h6>
+                            <!-- List Group -->
+                            <ul
+                                class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
+                                <li><a class="list-group-item list-group-item-action"
+                                       href="../shop/my-account.html">My Account</a></li>
+                                <li><a class="list-group-item list-group-item-action"
+                                       href="../shop/track-your-order.html">Order Tracking</a></li>
+                                <li><a class="list-group-item list-group-item-action"
+                                       href="../shop/wishlist.html">Wish List</a></li>
+                                <li><a class="list-group-item list-group-item-action"
+                                       href="../home/terms-and-conditions.html">Customer Service</a></li>
+                                <li><a class="list-group-item list-group-item-action"
+                                       href="../home/terms-and-conditions.html">Returns / Exchange</a></li>
+                                <li><a class="list-group-item list-group-item-action"
+                                       href="../home/faq.html">FAQs</a></li>
+                                <li><a class="list-group-item list-group-item-action"
+                                       href="../home/terms-and-conditions.html">Product Support</a></li>
+                            </ul>
+                            <!-- End List Group -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End Footer-bottom-widgets -->
-        <!-- Footer-copy-right -->
-        <div class="bg-gray-14 py-2">
-            <div class="container">
-                <div class="flex-center-between d-block d-md-flex">
-                    <div class="mb-3 mb-md-0">© <a href="{{ url('/') }}"
-                            class="font-weight-bold text-gray-90">Electro</a> - All rights Reserved</div>
-                    <div class="text-md-right">
+    </div>
+    <!-- End Footer-bottom-widgets -->
+    <!-- Footer-copy-right -->
+    <div class="bg-gray-14 py-2">
+        <div class="container">
+            <div class="flex-center-between d-block d-md-flex">
+                <div class="mb-3 mb-md-0">© <a href="{{ url('/') }}"
+                                               class="font-weight-bold text-gray-90">Electro</a> - All rights Reserved
+                </div>
+                <div class="text-md-right">
                         <span class="d-inline-block bg-white border rounded p-1">
                             <img class="max-width-5" src="{{ asset('assets/img/100X60/img1.jpg') }}"
-                                alt="Image Description">
+                                 alt="Image Description">
                         </span>
-                        <span class="d-inline-block bg-white border rounded p-1">
+                    <span class="d-inline-block bg-white border rounded p-1">
                             <img class="max-width-5" src="{{ asset('assets/img/100X60/img2.jpg') }}"
-                                alt="Image Description">
+                                 alt="Image Description">
                         </span>
-                        <span class="d-inline-block bg-white border rounded p-1">
+                    <span class="d-inline-block bg-white border rounded p-1">
                             <img class="max-width-5" src="{{ asset('assets/img/100X60/img3.jpg') }}"
-                                alt="Image Description">
+                                 alt="Image Description">
                         </span>
-                        <span class="d-inline-block bg-white border rounded p-1">
+                    <span class="d-inline-block bg-white border rounded p-1">
                             <img class="max-width-5" src="{{ asset('assets/img/100X60/img4.jpg') }}"
-                                alt="Image Description">
+                                 alt="Image Description">
                         </span>
-                        <span class="d-inline-block bg-white border rounded p-1">
+                    <span class="d-inline-block bg-white border rounded p-1">
                             <img class="max-width-5" src="{{ asset('assets/img/100X60/img5.jpg') }}"
-                                alt="Image Description">
+                                 alt="Image Description">
                         </span>
-                    </div>
                 </div>
             </div>
         </div>
-        <!-- End Footer-copy-right -->
-    </footer>
-    <!-- ========== END FOOTER ========== -->
+    </div>
+    <!-- End Footer-copy-right -->
+</footer>
+<!-- ========== END FOOTER ========== -->
 
-    <!-- ========== SECONDARY CONTENTS ========== -->
-    <!-- Account Sidebar Navigation -->
-    @include('frontend.partials.account')
-    <!-- End Account Sidebar Navigation -->
-    <!-- ========== END SECONDARY CONTENTS ========== -->
-    <!-- Go to Top -->
-    <a class="js-go-to u-go-to" href="#" data-position='{"bottom": 15, "right": 15 }' data-type="fixed"
-        data-offset-top="400" data-compensation="#header" data-show-effect="slideInUp" data-hide-effect="slideOutDown">
-        <span class="fas fa-arrow-up u-go-to__inner"></span>
-    </a>
-    <!-- End Go to Top -->
-    @include('frontend.partials.scripts')
-    @yield('scripts')
-    <!-- JS Plugins Init. -->
-    <script>
-        $(window).on('load', function() {
-            // initialization of HSMegaMenu component
-            $('.js-mega-menu').HSMegaMenu({
-                event: 'hover',
-                direction: 'horizontal',
-                pageContainer: $('.container'),
-                breakpoint: 767.98,
-                hideTimeOut: 0
-            });
+<!-- ========== SECONDARY CONTENTS ========== -->
+<!-- Account Sidebar Navigation -->
+@include('frontend.partials.account')
+<!-- End Account Sidebar Navigation -->
+<!-- ========== END SECONDARY CONTENTS ========== -->
+<!-- Go to Top -->
+<a class="js-go-to u-go-to" href="#" data-position='{"bottom": 15, "right": 15 }' data-type="fixed"
+   data-offset-top="400" data-compensation="#header" data-show-effect="slideInUp" data-hide-effect="slideOutDown">
+    <span class="fas fa-arrow-up u-go-to__inner"></span>
+</a>
+<!-- End Go to Top -->
+@include('frontend.partials.scripts')
+@yield('scripts')
+<!-- JS Plugins Init. -->
+<script>
+    $(window).on('load', function () {
+        // initialization of HSMegaMenu component
+        $('.js-mega-menu').HSMegaMenu({
+            event: 'hover',
+            direction: 'horizontal',
+            pageContainer: $('.container'),
+            breakpoint: 767.98,
+            hideTimeOut: 0
+        });
+    });
+
+    $(document).on('ready', function () {
+        // initialization of header
+        $.HSCore.components.HSHeader.init($('#header'));
+
+        // initialization of animation
+        $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
+
+        // initialization of unfold component
+        $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+            afterOpen: function () {
+                $(this).find('input[type="search"]').focus();
+            }
         });
 
-        $(document).on('ready', function() {
-            // initialization of header
-            $.HSCore.components.HSHeader.init($('#header'));
-
-            // initialization of animation
-            $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
-
-            // initialization of unfold component
-            $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
-                afterOpen: function() {
-                    $(this).find('input[type="search"]').focus();
-                }
-            });
-
-            // initialization of HSScrollNav component
-            $.HSCore.components.HSScrollNav.init($('.js-scroll-nav'), {
-                duration: 700
-            });
-
-            // initialization of quantity counter
-            $.HSCore.components.HSQantityCounter.init('.js-quantity');
-
-            // initialization of popups
-            $.HSCore.components.HSFancyBox.init('.js-fancybox');
-
-            // initialization of countdowns
-            var countdowns = $.HSCore.components.HSCountdown.init('.js-countdown', {
-                yearsElSelector: '.js-cd-years',
-                monthsElSelector: '.js-cd-months',
-                daysElSelector: '.js-cd-days',
-                hoursElSelector: '.js-cd-hours',
-                minutesElSelector: '.js-cd-minutes',
-                secondsElSelector: '.js-cd-seconds'
-            });
-
-            // initialization of malihu scrollbar
-            $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
-
-            // initialization of forms
-            $.HSCore.components.HSFocusState.init();
-
-            // initialization of form validation
-            $.HSCore.components.HSValidation.init('.js-validate', {
-                rules: {
-                    confirmPassword: {
-                        equalTo: '#signupPassword'
-                    }
-                }
-            });
-
-            // initialization of forms
-            $.HSCore.components.HSRangeSlider.init('.js-range-slider');
-
-            // initialization of show animations
-            $.HSCore.components.HSShowAnimation.init('.js-animation-link');
-
-            // initialization of fancybox
-            $.HSCore.components.HSFancyBox.init('.js-fancybox');
-
-            // initialization of slick carousel
-            $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
-
-            // initialization of go to
-            $.HSCore.components.HSGoTo.init('.js-go-to');
-
-            // initialization of hamburgers
-            $.HSCore.components.HSHamburgers.init('#hamburgerTrigger');
-
-            // initialization of unfold component
-            $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
-                beforeClose: function() {
-                    $('#hamburgerTrigger').removeClass('is-active');
-                },
-                afterClose: function() {
-                    $('#headerSidebarList .collapse.show').collapse('hide');
-                }
-            });
-
-            $('#headerSidebarList [data-toggle="collapse"]').on('click', function(e) {
-                e.preventDefault();
-
-                var target = $(this).data('target');
-
-                if ($(this).attr('aria-expanded') === "true") {
-                    $(target).collapse('hide');
-                } else {
-                    $(target).collapse('show');
-                }
-            });
-
-            // initialization of unfold component
-            $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
-
-            // initialization of select picker
-            $.HSCore.components.HSSelectPicker.init('.js-select');
+        // initialization of HSScrollNav component
+        $.HSCore.components.HSScrollNav.init($('.js-scroll-nav'), {
+            duration: 700
         });
 
-    </script>
+        // initialization of quantity counter
+        $.HSCore.components.HSQantityCounter.init('.js-quantity');
+
+        // initialization of popups
+        $.HSCore.components.HSFancyBox.init('.js-fancybox');
+
+        // initialization of countdowns
+        var countdowns = $.HSCore.components.HSCountdown.init('.js-countdown', {
+            yearsElSelector: '.js-cd-years',
+            monthsElSelector: '.js-cd-months',
+            daysElSelector: '.js-cd-days',
+            hoursElSelector: '.js-cd-hours',
+            minutesElSelector: '.js-cd-minutes',
+            secondsElSelector: '.js-cd-seconds'
+        });
+
+        // initialization of malihu scrollbar
+        $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+
+        // initialization of forms
+        $.HSCore.components.HSFocusState.init();
+
+        // initialization of form validation
+        $.HSCore.components.HSValidation.init('.js-validate', {
+            rules: {
+                confirmPassword: {
+                    equalTo: '#signupPassword'
+                }
+            }
+        });
+
+        // initialization of forms
+        $.HSCore.components.HSRangeSlider.init('.js-range-slider');
+
+        // initialization of show animations
+        $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+
+        // initialization of fancybox
+        $.HSCore.components.HSFancyBox.init('.js-fancybox');
+
+        // initialization of slick carousel
+        $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+
+        // initialization of go to
+        $.HSCore.components.HSGoTo.init('.js-go-to');
+
+        // initialization of hamburgers
+        $.HSCore.components.HSHamburgers.init('#hamburgerTrigger');
+
+        // initialization of unfold component
+        $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+            beforeClose: function () {
+                $('#hamburgerTrigger').removeClass('is-active');
+            },
+            afterClose: function () {
+                $('#headerSidebarList .collapse.show').collapse('hide');
+            }
+        });
+
+        $('#headerSidebarList [data-toggle="collapse"]').on('click', function (e) {
+            e.preventDefault();
+
+            var target = $(this).data('target');
+
+            if ($(this).attr('aria-expanded') === "true") {
+                $(target).collapse('hide');
+            } else {
+                $(target).collapse('show');
+            }
+        });
+
+        // initialization of unfold component
+        $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
+
+        // initialization of select picker
+        $.HSCore.components.HSSelectPicker.init('.js-select');
+    });
+
+</script>
 </body>
 
 </html>
