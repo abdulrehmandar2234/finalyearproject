@@ -58,7 +58,7 @@
                     <ul class="navbar-nav u-header__navbar-nav">
                         <!-- Best Promotions -->
                         <li class="nav-item u-header__nav-item">
-                            <a class="nav-link u-header__nav-link" href="#" aria-haspopup="true" aria-expanded="false"
+                            <a class="nav-link u-header__nav-link" href="{{route('best_promotions')}}" aria-haspopup="true" aria-expanded="false"
                                aria-labelledby="pagesSubMenu">Best Promotions</a>
                         </li>
                         <!-- End Best Promotions -->

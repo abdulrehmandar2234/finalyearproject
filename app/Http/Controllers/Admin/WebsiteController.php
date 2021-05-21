@@ -46,7 +46,7 @@ class WebsiteController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(WebsiteRequest $request)
@@ -65,7 +65,7 @@ class WebsiteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -76,7 +76,7 @@ class WebsiteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit(Website $website)
@@ -92,8 +92,8 @@ class WebsiteController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(WebsiteUpdateRequest $request, Website $website)
@@ -101,8 +101,10 @@ class WebsiteController extends Controller
         try {
             $website->update($request->except('logo'));
             if (isset($request['logo'])) {
-                $website->getFirstMedia('logos')->delete();
-                $website->addMediaFromRequest('logo')->withResponsiveImages()->toMediaCollection('logos');
+                if($website->getFirstMedia('logos')){
+                    $website->getFirstMedia('logos')->delete();
+                }
+                $website->addMediaFromRequest('logo')->toMediaCollection('logos');
             }
             return redirect()->route('websites.index')->with('success', 'Website updated successfully');
         } catch (\Exception $e) {
@@ -113,7 +115,7 @@ class WebsiteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Website $website)
@@ -125,6 +127,7 @@ class WebsiteController extends Controller
             return $e->getMessage();
         }
     }
+
     public function delete_image($obj, $image_path, $image_name)
     {
         try {

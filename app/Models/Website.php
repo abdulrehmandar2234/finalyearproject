@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Website extends Model implements HasMedia
 {
@@ -19,6 +20,15 @@ class Website extends Model implements HasMedia
             ->addMediaCollection('logos')
             ->useFallbackUrl('media/logo-placeholder.jpg')
             ->useFallbackPath(public_path('media/logo-placeholder.jpg'));
+    }
+
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this->addMediaConversion('logo-resize')
+            ->width(40)
+            ->height(40)
+            ->sharpen(10)
+            ->performOnCollections('logos');
     }
 
     public function product_node()

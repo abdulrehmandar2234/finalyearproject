@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\Searchable\Searchable;
 use Spatie\Searchable\SearchResult;
 
@@ -23,6 +24,13 @@ class Product extends Model implements HasMedia, Searchable
             ->useFallbackPath(public_path('media/product-placeholder.png'));
     }
 
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this->addMediaConversion('thumb')
+            ->width(75)
+            ->height(75)
+            ->sharpen(10);
+    }
     public function getSearchResult(): SearchResult
     {
         $url = route('search_product');

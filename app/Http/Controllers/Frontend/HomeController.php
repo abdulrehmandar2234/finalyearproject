@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Slider;
 use App\Models\Website;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Spatie\Searchable\ModelSearchAspect;
 use Spatie\Searchable\Search;
@@ -22,9 +23,10 @@ class HomeController extends Controller
     {
         $sliders = Slider::all();
         $websites = Website::all();
-        $products = Product::with('category')->take(50)->get();
+        $products = Product::with('category','website')->take(50)->get();
+        $discounted_products = Product::where('discount', '!=', '')->with('category')->take(50)->get();
         $categories = Category::all();
-        return view('frontend.index', compact('sliders', 'products', 'categories', 'websites'));
+        return view('frontend.index', compact('sliders', 'discounted_products', 'products', 'categories', 'websites'));
     }
 
     public function search()
@@ -51,7 +53,8 @@ class HomeController extends Controller
         return view('frontend.search', compact('products', 'categories', 'websites', 'brands', 'product_max_price', 'product_min_price'));
     }
 
-    public function category($slug){
+    public function category($slug)
+    {
         $selected_category = Category::where('slug', $slug)->firstOrFail()->with('products')->withCount('products')->get();
         $product_max_price = Product::max('price');
         $product_min_price = Product::min('price');
@@ -59,5 +62,16 @@ class HomeController extends Controller
         $categories = Category::withCount('products')->get();
         $websites = Website::withCount('products')->get();
         return view('frontend.category', compact('categories', 'websites', 'selected_category', 'brands', 'product_max_price', 'product_min_price'));
+    }
+
+    public function bestPromotions()
+    {
+        $products = Product::where('discount', '!=', '')->with('category')->take(50)->get();
+        $product_max_price = Product::max('price');
+        $product_min_price = Product::min('price');
+        $brands = Product::groupBy('brand')->get();
+        $categories = Category::withCount('products')->get();
+        $websites = Website::withCount('products')->get();
+        return view('frontend.promotions', compact('products', 'categories', 'websites', 'brands', 'product_max_price', 'product_min_price'));
     }
 }

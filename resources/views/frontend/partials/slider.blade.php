@@ -9,10 +9,10 @@
             </ol>
 
             <div class="carousel-inner">
-                @foreach($sliders as $slider)                
+                @foreach($sliders as $slider)
                     <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                         <div class="bg-img-hero"
-                             style="background-image: url({{$slider->getFirstMediaUrl('slider-banner')}});">
+                             style="background-image: url({{$slider->getFirstMediaUrl('slider-banner','slider-resize')}});">
                             <div class="container min-height-420 overflow-hidden">
                                 <div class="js-slide bg-img-hero-center">
                                     <div class="row min-height-420 py-7 py-md-0">
@@ -51,11 +51,11 @@
                                                 </a>
                                                 @endif
                                         </div>
-                                        @if(!empty($slider->getFirstMedia('slider-image')))
+                                        @if(!empty($slider->getFirstMedia('slider-image', 'slider-resize')))
                                             <div class="col-xl-5 col-6  d-flex align-items-center"
                                                  data-scs-animation-in="zoomIn"
                                                  data-scs-animation-delay="500">
-                                                 {{ $slider->getFirstMedia('slider-image')}}
+                                                 {{ $slider->getFirstMedia('slider-image', 'slider-resize')}}
                                             </div>
                                         @endif
                                     </div>

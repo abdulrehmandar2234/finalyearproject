@@ -104,7 +104,9 @@ class ProductController extends Controller
         try {
             $product->update($request->except('image'));
             if (isset($request['image'])) {
-                $product->getFirstMedia('products')->delete();
+                if($product->getFirstMedia('products')){
+                    $product->getFirstMedia('products')->delete();
+                }
                 $product->addMediaFromRequest('image')->toMediaCollection('products');
             }
             return redirect()->route('products.index')->with('success', 'Product created successfully');

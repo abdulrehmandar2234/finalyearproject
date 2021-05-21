@@ -10,6 +10,7 @@
 
     @include('frontend.partials.styles')
     @yield('styles')
+    @livewireStyles
 </head>
 
 <body>
@@ -250,5 +251,6 @@
 <!-- End Go to Top -->
 @include('frontend.partials.scripts')
 @yield('scripts')
+@livewireScripts
 </body>
 </html>
