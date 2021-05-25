@@ -7,10 +7,6 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Slider;
 use App\Models\Website;
-use Gloudemans\Shoppingcart\Facades\Cart;
-use Illuminate\Http\Request;
-use Spatie\Searchable\ModelSearchAspect;
-use Spatie\Searchable\Search;
 
 class HomeController extends Controller
 {
@@ -23,7 +19,7 @@ class HomeController extends Controller
     {
         $sliders = Slider::all();
         $websites = Website::all();
-        $products = Product::with('category','website')->take(50)->get();
+        $products = Product::with('category', 'website')->take(50)->get();
         $discounted_products = Product::where('discount', '!=', '')->with('category')->take(50)->get();
         $categories = Category::all();
         return view('frontend.index', compact('sliders', 'discounted_products', 'products', 'categories', 'websites'));

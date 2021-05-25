@@ -4,6 +4,39 @@
             border: none;
             background-color: white;
         }
+
+        .list-result {
+            position: absolute;
+            z-index: 99;
+            background: #fff;
+            margin: 15px !important;
+            border: 1px solid #f1f1f1;
+        }
+
+        .list-result ul {
+            list-style: none;
+            padding: 15px;
+            margin: 0;
+        }
+
+        .ser-txt-clr {
+            font-weight: 600;
+            border: none;
+            background: transparent;
+        }
+
+        .list-result ul li {
+            padding: 5px 10px;
+        }
+
+        .list-result ul li:hover {
+            background-color: #f7f7f7;
+        }
+
+        .sear-field {
+            position: relative;
+        }
+
     </style>
 @endsection
 @extends('layouts.frontend')

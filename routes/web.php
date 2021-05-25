@@ -12,13 +12,11 @@ use App\Http\Controllers\Admin\ScrapeProductController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\WebsiteController;
+use App\Http\Controllers\Frontend\AccountController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ProfileController;
 use App\Http\Controllers\Frontend\WishlistController;
-use App\Models\Category;
-use App\Models\Product;
-use App\Models\Website;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,8 +35,8 @@ Route::get('/empty', function () {
     Cart::instance('wishlist')->destroy();
     Cart::instance('default')->destroy();
 });
-Route::view('my-account','frontend.account');
-Route::resource('/my-account', \App\Http\Controllers\Frontend\AccountController::class);
+Route::view('my-account', 'frontend.account');
+Route::resource('/my-account', AccountController::class);
 Route::post('/switch-to-cart{id}', [WishlistController::class, 'switch_to_cart'])->name('switch_to_cart');
 Route::resource('/cart', CartController::class);
 Route::resource('/wishlist', WishlistController::class);
@@ -66,8 +64,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
     Route::get('scrape-products', ScrapeProductController::class)->name('scrape');
 });
 Route::group(['middleware' => ['auth']], function () {
-Route::post('/update-profile', [ProfileController::class, 'changePassword'])->name('change.password');
-Route::post('/update-password', [ProfileController::class, 'update'])->name('profile.update');
+    Route::post('/update-profile', [ProfileController::class, 'changePassword'])->name('change.password');
+    Route::post('/update-password', [ProfileController::class, 'update'])->name('profile.update');
 });
 
 Route::get('auth/social', [LoginController::class, 'show'])->name('social.login');

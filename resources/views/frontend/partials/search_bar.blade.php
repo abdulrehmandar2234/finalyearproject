@@ -199,23 +199,7 @@
             </div>
             <!-- End Logo-offcanvas-menu -->
             <!-- Search Bar -->
-            <div class="col d-none d-xl-block">
-                <form class="js-focus-state" method="GET" action="{{route('search_product')}}">
-                    <label class="sr-only" for="searchproduct">Search</label>
-                    <div class="input-group">
-                        <input type="text"
-                               class="form-control py-2 pl-5 font-size-15 border-right-0 height-40 border-width-2 rounded-left-pill border-primary"
-                               name="query" id="searchproduct-item" placeholder="Search for Products"
-                               aria-label="Search for Products" aria-describedby="searchProduct1" required>
-                        <div class="input-group-append">
-                            <button class="btn btn-primary height-40 py-2 px-3 rounded-right-pill" type="submit"
-                                    id="searchProduct1">
-                                <span class="ec ec-search font-size-24"></span>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+            @livewire('search-drop-down')
             <!-- End Search Bar -->
             <!-- Header Icons -->
             <div class="col col-xl-auto text-right text-xl-left pl-0 pl-xl-3 position-static">
