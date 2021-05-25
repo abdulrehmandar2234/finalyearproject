@@ -103,8 +103,19 @@
                                     <div class="border-top pt-2 flex-center-between flex-wrap">
                                         <a href="#" class="text-gray-6 font-size-13"><i
                                                 class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                        <a href="#" class="text-gray-6 font-size-13"><i
-                                                class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a>
+                                        <form action="{{route('wishlist.store')}}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="id"
+                                                   value="{{$product->id}}">
+                                            <input type="hidden" name="title"
+                                                   value="{{$product->title}}">
+                                            <input type="hidden" name="price"
+                                                   value="{{$product->price}}">
+                                            <button class="text-gray-6 font-size-13 mx-wd-3 wishlist-btn"><i
+                                                    class="ec ec-favorites mr-1 font-size-15"></i>
+                                                Wishlist
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -172,9 +183,19 @@
                                         class="flex-horizontal-center justify-content-between justify-content-wd-center flex-wrap">
                                         <a href="#" class="text-gray-6 font-size-13 mx-wd-3"><i
                                                 class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                        <a href="#"
-                                           class="text-gray-6 font-size-13 mx-wd-3"><i
-                                                class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a>
+                                        <form action="{{route('wishlist.store')}}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="id"
+                                                   value="{{$product->id}}">
+                                            <input type="hidden" name="title"
+                                                   value="{{$product->title}}">
+                                            <input type="hidden" name="price"
+                                                   value="{{$product->price}}">
+                                            <button class="text-gray-6 font-size-13 mx-wd-3 wishlist-btn"><i
+                                                    class="ec ec-favorites mr-1 font-size-15"></i>
+                                                Wishlist
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -260,8 +281,19 @@
                                         class="flex-horizontal-center justify-content-between justify-content-wd-center flex-wrap border-top pt-3">
                                         <a href="#" class="text-gray-6 font-size-13 mx-wd-3"><i
                                                 class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                        <a href="#" class="text-gray-6 font-size-13 mx-wd-3"><i
-                                                class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a>
+                                        <form action="{{route('wishlist.store')}}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="id"
+                                                   value="{{$product->id}}">
+                                            <input type="hidden" name="title"
+                                                   value="{{$product->title}}">
+                                            <input type="hidden" name="price"
+                                                   value="{{$product->price}}">
+                                            <button class="text-gray-6 font-size-13 mx-wd-3 wishlist-btn"><i
+                                                    class="ec ec-favorites mr-1 font-size-15"></i>
+                                                Wishlist
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
