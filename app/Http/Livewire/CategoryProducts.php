@@ -5,9 +5,9 @@ namespace App\Http\Livewire;
 use App\Models\Product;
 use Livewire\Component;
 
-class ProductLists extends Component
+class CategoryProducts extends Component
 {
-    public $products, $discounted_products;
+    public $selected_category;
     public $product;
 
     public function getProduct($id)
@@ -17,6 +17,6 @@ class ProductLists extends Component
 
     public function render()
     {
-        return view('livewire.product-lists');
+        return view('livewire.category-products');
     }
 }

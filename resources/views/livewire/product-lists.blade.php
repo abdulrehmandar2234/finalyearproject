@@ -12,7 +12,7 @@
                 <div class="modal-body">
                     <div class="container">
                         <div class="d-flex justify-content-center">
-                            <div wire:loading >
+                            <div wire:loading>
                                 <img src="{{asset('media/loader.gif')}}" alt="loader">
                             </div>
                         </div>
@@ -83,32 +83,32 @@
                                                 src="{{ $product->getFirstMediaUrl('products') }}"
                                                 alt="Image Description"></a>
                                     </div>
-                                    <div class="flex-center-between mb-1">
-                                        <div
-                                            class="prodcut-price d-flex align-items-center flex-wrap position-relative">
-                                            <ins
-                                                class="font-size-20 text-red text-decoration-none mr-2">
-                                                ${{ $product->price }}</ins>
-                                            <del
-                                                class="font-size-12 tex-gray-6 position-absolute bottom-100">
-                                                $2
-                                                299,00
-                                            </del>
-                                        </div>
-                                        <div class="d-none d-xl-block prodcut-add-cart">
-                                            <form action="{{route('cart.store')}}" method="POST">
-                                                @csrf
-                                                <input type="hidden" name="id"
-                                                       value="{{$product->id}}">
-                                                <input type="hidden" name="title"
-                                                       value="{{$product->title}}">
-                                                <input type="hidden" name="price"
-                                                       value="{{$product->price}}">
-                                                <button type="submit"
-                                                        class="btn-add-cart btn-primary transition-3d-hover">
-                                                    <i class="ec ec-add-to-cart"></i></button>
-                                            </form>
-                                        </div>
+                                </div>
+                                <div class="flex-center-between mb-1">
+                                    <div
+                                        class="prodcut-price d-flex align-items-center flex-wrap position-relative">
+                                        <ins
+                                            class="font-size-20 text-red text-decoration-none mr-2">
+                                            ${{ $product->price }}</ins>
+                                        <del
+                                            class="font-size-12 tex-gray-6 position-absolute bottom-100">
+                                            $2
+                                            299,00
+                                        </del>
+                                    </div>
+                                    <div class="d-none d-xl-block prodcut-add-cart">
+                                        <form action="{{route('cart.store')}}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="id"
+                                                   value="{{$product->id}}">
+                                            <input type="hidden" name="title"
+                                                   value="{{$product->title}}">
+                                            <input type="hidden" name="price"
+                                                   value="{{$product->price}}">
+                                            <button type="submit"
+                                                    class="btn-add-cart btn-primary transition-3d-hover">
+                                                <i class="ec ec-add-to-cart"></i></button>
+                                        </form>
                                     </div>
                                 </div>
                                 <div class="product-item__footer">
@@ -167,23 +167,32 @@
                                                 src="{{ $product->getFirstMediaUrl('products') }}"
                                                 alt="Image Description"></a>
                                     </div>
-                                    <div class="flex-center-between mb-1">
-                                        <div
-                                            class="prodcut-price d-flex align-items-center flex-wrap position-relative">
-                                            <ins
-                                                class="font-size-20 text-red text-decoration-none mr-2">
-                                                ${{ $product->price }}</ins>
-                                            <del
-                                                class="font-size-12 tex-gray-6 position-absolute bottom-100">
-                                                $2
-                                                299,00
-                                            </del>
-                                        </div>
-                                        <div class="d-none d-xl-block prodcut-add-cart">
-                                            <a href="#"
-                                               class="btn-add-cart btn-primary transition-3d-hover"><i
-                                                    class="ec ec-add-to-cart"></i></a>
-                                        </div>
+                                </div>
+                                <div class="flex-center-between mb-1">
+                                    <div
+                                        class="prodcut-price d-flex align-items-center flex-wrap position-relative">
+                                        <ins
+                                            class="font-size-20 text-red text-decoration-none mr-2">
+                                            ${{ $product->price }}</ins>
+                                        <del
+                                            class="font-size-12 tex-gray-6 position-absolute bottom-100">
+                                            $2
+                                            299,00
+                                        </del>
+                                    </div>
+                                    <div class="d-none d-xl-block prodcut-add-cart">
+                                        <form action="{{route('cart.store')}}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="id"
+                                                   value="{{$product->id}}">
+                                            <input type="hidden" name="title"
+                                                   value="{{$product->title}}">
+                                            <input type="hidden" name="price"
+                                                   value="{{$product->price}}">
+                                            <button type="submit"
+                                                    class="btn-add-cart btn-primary transition-3d-hover">
+                                                <i class="ec ec-add-to-cart"></i></button>
+                                        </form>
                                     </div>
                                 </div>
                                 <div class="product-item__footer">
@@ -231,23 +240,32 @@
                                                 src="{{ $product->getFirstMediaUrl('products') }}"
                                                 alt="Image Description"></a>
                                     </div>
-                                    <div class="flex-center-between mb-1">
-                                        <div
-                                            class="prodcut-price d-flex align-items-center flex-wrap position-relative">
-                                            <ins
-                                                class="font-size-20 text-red text-decoration-none mr-2">
-                                                ${{ $product->price }}</ins>
-                                            <del
-                                                class="font-size-12 tex-gray-6 position-absolute bottom-100">
-                                                $2
-                                                299,00
-                                            </del>
-                                        </div>
-                                        <div class="d-none d-xl-block prodcut-add-cart">
-                                            <a href="#"
-                                               class="btn-add-cart btn-primary transition-3d-hover"><i
-                                                    class="ec ec-add-to-cart"></i></a>
-                                        </div>
+                                </div>
+                                <div class="flex-center-between mb-1">
+                                    <div
+                                        class="prodcut-price d-flex align-items-center flex-wrap position-relative">
+                                        <ins
+                                            class="font-size-20 text-red text-decoration-none mr-2">
+                                            ${{ $product->price }}</ins>
+                                        <del
+                                            class="font-size-12 tex-gray-6 position-absolute bottom-100">
+                                            $2
+                                            299,00
+                                        </del>
+                                    </div>
+                                    <div class="d-none d-xl-block prodcut-add-cart">
+                                        <form action="{{route('cart.store')}}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="id"
+                                                   value="{{$product->id}}">
+                                            <input type="hidden" name="title"
+                                                   value="{{$product->title}}">
+                                            <input type="hidden" name="price"
+                                                   value="{{$product->price}}">
+                                            <button type="submit"
+                                                    class="btn-add-cart btn-primary transition-3d-hover">
+                                                <i class="ec ec-add-to-cart"></i></button>
+                                        </form>
                                     </div>
                                 </div>
                                 <div class="product-item__footer">
