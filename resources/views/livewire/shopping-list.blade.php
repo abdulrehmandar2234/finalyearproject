@@ -22,23 +22,20 @@
                                                                                      src="{{ $product->product->getFirstMediaUrl('products') }}"
                                                                                      alt="Image Description"></a>
                                     </div>
-                                    <div class="flex-center-between mb-1">
-                                        <div class="prodcut-price">
-                                            <div class="text-gray-100">${{ $product->product->price }}</div>
-                                        </div>
-                                        <div class="d-none d-xl-block prodcut-add-cart">
-                                            <a href="#"
-                                               class="btn-add-cart btn-primary transition-3d-hover"><i
-                                                    class="ec ec-add-to-cart"></i></a>
-                                        </div>
+                                </div>
+                                <div class="flex-center-between mb-1">
+                                    <div class="prodcut-price">
+                                        <div class="text-gray-100">${{ $product->product->price }}</div>
+                                    </div>
+                                    <div class="d-none d-xl-block prodcut-add-cart">
+                                            @include('frontend.partials.cart_form')
                                     </div>
                                 </div>
                                 <div class="product-item__footer">
                                     <div class="border-top pt-2 flex-center-between flex-wrap">
                                         <a href="#" class="text-gray-6 font-size-13"><i
                                                 class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                        <a href="#" class="text-gray-6 font-size-13"><i
-                                                class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a>
+                                        @include('frontend.partials.wishlist_form')
                                     </div>
                                 </div>
                             </div>
@@ -71,9 +68,7 @@
                                             <div class="text-gray-100">${{ $product->product->price }}</div>
                                         </div>
                                         <div class="d-none d-xl-block prodcut-add-cart">
-                                            <a href="#"
-                                               class="btn-add-cart btn-primary transition-3d-hover"><i
-                                                    class="ec ec-add-to-cart"></i></a>
+                                                @include('frontend.partials.cart_form')
                                         </div>
                                     </div>
                                 </div>
@@ -81,8 +76,9 @@
                                     <div class="border-top pt-2 flex-center-between flex-wrap">
                                         <a href="#" class="text-gray-6 font-size-13"><i
                                                 class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                        <a href="#" class="text-gray-6 font-size-13"><i
-                                                class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a>
+                                        <div class="prodcut-add-cart">
+                                            @include('frontend.partials.wishlist_form')
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -130,18 +126,14 @@
                                             <div class="text-gray-100">${{ $product->product->price }}</div>
                                         </div>
                                         <div class="prodcut-add-cart">
-                                            <a href="#"
-                                               class="btn btn-sm btn-block btn-primary-dark btn-wide transition-3d-hover">Add
-                                                to cart</a>
+                                            @include('frontend.partials.cart_form')
                                         </div>
                                     </div>
                                     <div
                                         class="flex-horizontal-center justify-content-between justify-content-wd-center flex-wrap">
                                         <a href="#" class="text-gray-6 font-size-13 mx-wd-3"><i
                                                 class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                        <a href="#"
-                                           class="text-gray-6 font-size-13 mx-wd-3"><i
-                                                class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a>
+                                        @include('frontend.partials.wishlist_form')
                                     </div>
                                 </div>
                             </div>
@@ -185,18 +177,14 @@
                                             <div class="text-gray-100">${{ $product->product->price }}</div>
                                         </div>
                                         <div class="prodcut-add-cart">
-                                            <a href="#"
-                                               class="btn btn-sm btn-block btn-primary-dark btn-wide transition-3d-hover">Add
-                                                to cart</a>
+                                            @include('frontend.partials.cart_form')
                                         </div>
                                     </div>
                                     <div
                                         class="flex-horizontal-center justify-content-between justify-content-wd-center flex-wrap">
                                         <a href="#" class="text-gray-6 font-size-13 mx-wd-3"><i
                                                 class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                        <a href="#"
-                                           class="text-gray-6 font-size-13 mx-wd-3"><i
-                                                class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a>
+                                            @include('frontend.partials.wishlist_form')
                                     </div>
                                 </div>
                             </div>
@@ -264,17 +252,14 @@
                                             <div class="text-gray-100">${{ $product->product->price }}</div>
                                         </div>
                                         <div class="prodcut-add-cart">
-                                            <a href="#"
-                                               class="btn-add-cart btn-primary transition-3d-hover"><i
-                                                    class="ec ec-add-to-cart"></i></a>
+                                            @include('frontend.partials.cart_form')
                                         </div>
                                     </div>
                                     <div
                                         class="flex-horizontal-center justify-content-between justify-content-wd-center flex-wrap border-top pt-3">
                                         <a href="#" class="text-gray-6 font-size-13 mx-wd-3"><i
                                                 class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                        <a href="#" class="text-gray-6 font-size-13 mx-wd-3"><i
-                                                class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a>
+                                        @include('frontend.partials.wishlist_form')
                                     </div>
                                 </div>
                             </div>
@@ -338,17 +323,16 @@
                                             <div class="text-gray-100">${{ $product->product->price }}</div>
                                         </div>
                                         <div class="prodcut-add-cart">
-                                            <a href="#"
-                                               class="btn-add-cart btn-primary transition-3d-hover"><i
-                                                    class="ec ec-add-to-cart"></i></a>
+                                            @include('frontend.partials.cart_form')
                                         </div>
                                     </div>
                                     <div
                                         class="flex-horizontal-center justify-content-between justify-content-wd-center flex-wrap border-top pt-3">
                                         <a href="#" class="text-gray-6 font-size-13 mx-wd-3"><i
                                                 class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                        <a href="#" class="text-gray-6 font-size-13 mx-wd-3"><i
-                                                class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a>
+                                        <div class="prodcut-add-cart">
+                                            @include('frontend.partials.wishlist_form')
+                                        </div>
                                     </div>
                                 </div>
                             </div>

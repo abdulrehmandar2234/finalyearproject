@@ -69,7 +69,7 @@
                                          data-target=".bd-example-modal-lg">
                                         <div class="pr-lg-10">
                                             <div class="mb-2"><a
-                                                    href="{{ $product->category->slug }}"
+                                                    href="{{ route('specific_category', $product->category->slug) }}"
                                                     class="font-size-12 text-gray-5">{{ $product->category->name }}</a>
                                             </div>
                                             <h5 class="mb-2 product-item__title"><a

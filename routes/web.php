@@ -35,7 +35,7 @@ Route::get('/empty', function () {
     Cart::instance('wishlist')->destroy();
     Cart::instance('default')->destroy();
 });
-Route::view('my-account', 'frontend.account');
+
 Route::resource('/my-account', AccountController::class);
 Route::post('/switch-to-cart/{id}', [WishlistController::class, 'switch_to_cart'])->name('switch_to_cart');
 Route::resource('/cart', CartController::class);

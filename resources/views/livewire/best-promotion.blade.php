@@ -4,7 +4,6 @@
         <div class="tab-pane fade pt-2 show active" id="pills-one-example1" role="tabpanel"
              aria-labelledby="pills-one-example1-tab" data-target-group="groups">
             <ul class="row list-unstyled products-group no-gutters">
-
                 @forelse ($products as $product)
                     <li class="col-6 col-md-3 col-wd-2gdot4 product-item" wire:click="getProduct({{$product->id}})">
                         <div class="product-item__outer h-100">
@@ -22,14 +21,14 @@
                                                                                      src="{{ $product->getFirstMediaUrl('products') }}"
                                                                                      alt="Image Description"></a>
                                     </div>
-                                    <div class="flex-center-between mb-1">
-                                        <div class="prodcut-price">
-                                            <div class="text-gray-100">${{ $product->price }}</div>
-                                        </div>
-                                        <div class="d-none d-xl-block prodcut-add-cart">
-                                            <a href="#"
-                                               class="btn-add-cart btn-primary transition-3d-hover"><i
-                                                    class="ec ec-add-to-cart"></i></a>
+                                </div>
+                                <div class="flex-center-between mb-1">
+                                    <div class="prodcut-price">
+                                        <div class="text-gray-100">${{ $product->price }}</div>
+                                    </div>
+                                    <div class="d-none d-xl-block prodcut-add-cart">
+                                        <div class="prodcut-add-cart">
+                                            @include('frontend.partials.cart_form')
                                         </div>
                                     </div>
                                 </div>
@@ -37,8 +36,7 @@
                                     <div class="border-top pt-2 flex-center-between flex-wrap">
                                         <a href="#" class="text-gray-6 font-size-13"><i
                                                 class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                        <a href="#" class="text-gray-6 font-size-13"><i
-                                                class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a>
+                                        @include('frontend.partials.wishlist_form')
                                     </div>
                                 </div>
                             </div>
@@ -47,8 +45,6 @@
                 @empty
                     <h4>No Product Found</h4>
                 @endforelse
-
-
             </ul>
         </div>
         <div class="tab-pane fade pt-2" id="pills-three-example1" role="tabpanel"
@@ -70,7 +66,7 @@
                                 <div class="product-item__body col-6 col-md-5">
                                     <div class="pr-lg-10">
                                         <div class="mb-2"><a
-                                                href="{{ $product->category->slug }}"
+                                                href="{{ route('specific_category', $product->category->slug) }}"
                                                 class="font-size-12 text-gray-5">{{ $product->category->name }}</a>
                                         </div>
                                         <h5 class="mb-2 product-item__title"><a
@@ -88,18 +84,14 @@
                                             <div class="text-gray-100">${{ $product->price }}</div>
                                         </div>
                                         <div class="prodcut-add-cart">
-                                            <a href="#"
-                                               class="btn btn-sm btn-block btn-primary-dark btn-wide transition-3d-hover">Add
-                                                to cart</a>
+                                            @include('frontend.partials.cart_form')
                                         </div>
                                     </div>
                                     <div
                                         class="flex-horizontal-center justify-content-between justify-content-wd-center flex-wrap">
                                         <a href="#" class="text-gray-6 font-size-13 mx-wd-3"><i
                                                 class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                        <a href="#"
-                                           class="text-gray-6 font-size-13 mx-wd-3"><i
-                                                class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a>
+                                        @include('frontend.partials.wishlist_form')
                                     </div>
                                 </div>
                             </div>
@@ -167,17 +159,14 @@
                                             <div class="text-gray-100">${{ $product->price }}</div>
                                         </div>
                                         <div class="prodcut-add-cart">
-                                            <a href="#"
-                                               class="btn-add-cart btn-primary transition-3d-hover"><i
-                                                    class="ec ec-add-to-cart"></i></a>
+                                            @include('frontend.partials.cart_form')
                                         </div>
                                     </div>
                                     <div
                                         class="flex-horizontal-center justify-content-between justify-content-wd-center flex-wrap border-top pt-3">
                                         <a href="#" class="text-gray-6 font-size-13 mx-wd-3"><i
                                                 class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                        <a href="#" class="text-gray-6 font-size-13 mx-wd-3"><i
-                                                class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a>
+                                            @include('frontend.partials.wishlist_form')
                                     </div>
                                 </div>
                             </div>

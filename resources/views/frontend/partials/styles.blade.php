@@ -52,9 +52,8 @@
     }
 
     .scroll {
-        height: 200px;
+        height: 150px;
         overflow-y: scroll;
-        margin-right: 5px;
     }
 
 </style>

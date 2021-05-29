@@ -12,7 +12,8 @@
                 <div class="container">
                     <div class="d-flex justify-content-center">
                         <div wire:loading>
-                            <img src="{{asset('media/loader.gif')}}" alt="loader">
+{{--                            <img src="{{asset('media/loader.gif')}}" alt="loader">--}}
+                            <img src="{{asset('assets/svg/preloaders/circle-preloader.svg')}}" alt="loader">
                         </div>
                     </div>
 
@@ -27,7 +28,7 @@
                             <div class="col-sm">
                                 <div>
                                     @if(isset($product))
-                                        <h4>{{$product->title}}</h4>
+                                        <h5>{{$product->title}}</h5>
                                     @endif
                                 </div>
                                 @if(isset($product))

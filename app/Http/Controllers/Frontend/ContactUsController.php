@@ -6,9 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactUs\ContactUsRequest;
 use App\Models\Category;
 use App\Models\ContactUs;
-use App\Models\Product;
+use App\Models\ShoppingCart;
 use App\Models\Website;
-use Illuminate\Http\Request;
 
 class ContactUsController extends Controller
 {
@@ -20,9 +19,11 @@ class ContactUsController extends Controller
     public function index()
     {
         try {
+            $carts = ShoppingCart::where('user_id', auth()->id())->with('product', 'user')->get();
+            $total = ShoppingCart::where('user_id', auth()->id())->sum('price');
             $websites = Website::all();
             $categories = Category::all();
-            return view('frontend.contact', compact('categories', 'websites'));
+            return view('frontend.contact', compact('categories', 'websites', 'carts', 'total'));
         } catch (\Exception $e) {
             return $e->getMessage();
         }

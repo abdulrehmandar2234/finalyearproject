@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\ShoppingCart;
 use App\Models\Website;
 use Illuminate\Http\Request;
 
@@ -17,9 +18,11 @@ class AccountController extends Controller
     public function index()
     {
         try {
+            $carts = ShoppingCart::where('user_id', auth()->id())->with('product', 'user')->get();
+            $total = ShoppingCart::where('user_id', auth()->id())->sum('price');
             $websites = Website::all();
             $categories = Category::all();
-            return view('frontend.account', compact( 'websites','categories'));
+            return view('frontend.account', compact( 'websites','categories','carts','total'));
         } catch (\Exception $e) {
             return $e->getMessage();
         }
