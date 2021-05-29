@@ -20,7 +20,8 @@
                         <div class="row">
                             <div class="col-sm">
                                 @if(isset($product))
-                                    {{$product->getFirstMedia('products')}}
+                                    <img src="{{$product->getFirstMediaUrl('products')}}" alt="" height="200px"
+                                         width="200px">
                                 @endif
                             </div>
                             <div class="col-sm">
@@ -42,11 +43,43 @@
                                 <div class="widget-column">
                                     <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18"> Other
                                         Stores</h3>
-                                    <ul class="list-unstyled products-group"
-                                        id="modal_related_products" style="max-height: 200px;">
+                                    <br>
+                                    <ul class="list-unstyled products-group scroll">
+                                        @if(isset($stores))
+                                            @foreach($stores as $store)
+                                                <li class="product-item product-item__list row no-gutters mb-6 remove-divider">
+                                                    <div class="col-auto">
+                                                        <a href="{{$store->product_link}}"
+                                                           class="d-block width-75 text-center" target="_blank">
+                                                            <img class="img-fluid"
+                                                                 src="{{$store->website->getFirstMediaUrl('logos','logo-resize')}}"
+                                                                 alt="Image Description"></a>
+                                                    </div>
+                                                    <div class="col pl-4 d-flex flex-column">
+                                                        <div class="font-size-15">
+                                                            ${{$store->price}}
+                                                        </div>
+                                                        <div class="font-size-15">
+
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        @endif
                                     </ul>
                                 </div>
                             </div>
+                        </div>
+                        <hr>
+                        <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18"> Relevant Products</h3>
+                        <br>
+                        <div class="product-item">
+                                @if(isset($stores))
+                                    @foreach($stores as $store)
+                                        <img src="{{$store->getFirstMediaUrl('products')}}" alt="" height="150px"
+                                             width="150px">
+                                    @endforeach
+                                @endif
                         </div>
                     </div>
                 </div>

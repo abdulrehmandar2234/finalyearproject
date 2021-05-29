@@ -40,6 +40,23 @@
         border: none;
         background-color: transparent;
     }
+
+    .scroll::-webkit-scrollbar {
+        width: 5px; /* width of the entire scrollbar */
+    }
+
+    .scroll::-webkit-scrollbar-thumb {
+        background-color: #fed700; /* color of the scroll thumb */
+        border-radius: 20px; /* roundness of the scroll thumb */
+
+    }
+
+    .scroll {
+        height: 200px;
+        overflow-y: scroll;
+        margin-right: 5px;
+    }
+
 </style>
 
 <!-- Favicon -->

@@ -139,6 +139,7 @@
       <path value="$PROJECT_DIR$/vendor/hardevine/shoppingcart" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-searchable" />
       <path value="$PROJECT_DIR$/vendor/livewire/livewire" />
+      <path value="$PROJECT_DIR$/vendor/nicolaslopezj/searchable" />
     </include_path>
   </component>
   <component name="PhpUnit">

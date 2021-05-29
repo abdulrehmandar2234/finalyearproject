@@ -72,7 +72,7 @@
 
                         <!-- Shopping Lists -->
                         <li class="nav-item u-header__nav-item">
-                            <a class="nav-link u-header__nav-link" href="#" aria-haspopup="true"
+                            <a class="nav-link u-header__nav-link" href="{{route('shopping_lists')}}" aria-haspopup="true"
                                aria-expanded="false">Shopping Lists</a>
                         </li>
                         <!-- End Shopping Lists -->

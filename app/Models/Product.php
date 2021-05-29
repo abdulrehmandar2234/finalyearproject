@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Nicolaslopezj\Searchable\SearchableTrait;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -12,7 +13,7 @@ use Spatie\Searchable\SearchResult;
 
 class Product extends Model implements HasMedia, Searchable
 {
-    use HasFactory, InteractsWithMedia;
+    use HasFactory, InteractsWithMedia, SearchableTrait;
 
     protected $guarded = [];
 
@@ -31,6 +32,7 @@ class Product extends Model implements HasMedia, Searchable
             ->height(75)
             ->sharpen(10);
     }
+
     public function getSearchResult(): SearchResult
     {
         $url = route('search_product');
@@ -41,6 +43,19 @@ class Product extends Model implements HasMedia, Searchable
             $url
         );
     }
+
+    protected $searchable = [
+        /**
+         * Columns and their priority in search results.
+         * Columns with higher values are more important.
+         * Columns with equal values have equal importance.
+         *
+         * @var array
+         */
+        'columns' => [
+            'products.title' => 10,
+        ],
+    ];
 
     public function category()
     {
