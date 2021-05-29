@@ -44,61 +44,119 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @forelse(\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->content() as $cart)
-                        <tr class="">
-                            <td class="text-center">
-                                <form action="{{route('cart.destroy',$cart->rowId)}}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="text-gray-32 font-size-26 remove_cart">×</button>
-                                </form>
-                            </td>
-                            <td class="d-none d-md-table-cell">
-                                <a href="#"><img class="img-fluid max-width-100 p-1 border border-color-1"
-                                                 src="{{$cart->model->getFirstMediaUrl('products')}}"
-                                                 alt="Image Description"></a>
-                            </td>
+                    @guest
+                        @forelse(\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->content() as $cart)
+                            <tr class="">
+                                <td class="text-center">
+                                    <form action="{{route('cart.destroy',$cart->rowId)}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-gray-32 font-size-26 remove_cart">×</button>
+                                    </form>
+                                </td>
+                                <td class="d-none d-md-table-cell">
+                                    <a href="#"><img class="img-fluid max-width-100 p-1 border border-color-1"
+                                                     src="{{$cart->model->getFirstMediaUrl('products')}}"
+                                                     alt="Image Description"></a>
+                                </td>
 
-                            <td data-title="Product">
-                                <a href="#" class="text-gray-90">{{$cart->model->title}}</a>
-                            </td>
+                                <td data-title="Product">
+                                    <a href="#" class="text-gray-90">{{$cart->model->title}}</a>
+                                </td>
 
-                            <td data-title="Price">
-                                <span class="">${{$cart->model->price}}</span>
-                            </td>
+                                <td data-title="Price">
+                                    <span class="">${{$cart->model->price}}</span>
+                                </td>
 
-                            <td data-title="Quantity">
-                                <span class="sr-only">Quantity</span>
-                                <!-- Quantity -->
-                                <div class="border rounded-pill py-1 width-122 w-xl-80 px-3 border-color-1">
-                                    <div class="js-quantity row align-items-center">
-                                        <div class="col">
-                                            <input
-                                                class="js-result form-control h-auto border-0 rounded p-0 shadow-none"
-                                                type="text" value="1">
-                                        </div>
-                                        <div class="col-auto pr-1">
-                                            <a class="js-minus btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0"
-                                               href="javascript:;">
-                                                <small class="fas fa-minus btn-icon__inner"></small>
-                                            </a>
-                                            <a class="js-plus btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0"
-                                               href="javascript:;">
-                                                <small class="fas fa-plus btn-icon__inner"></small>
-                                            </a>
+                                <td data-title="Quantity">
+                                    <span class="sr-only">Quantity</span>
+                                    <!-- Quantity -->
+                                    <div class="border rounded-pill py-1 width-122 w-xl-80 px-3 border-color-1">
+                                        <div class="js-quantity row align-items-center">
+                                            <div class="col">
+                                                <input
+                                                    class="js-result form-control h-auto border-0 rounded p-0 shadow-none"
+                                                    type="text" value="1">
+                                            </div>
+                                            <div class="col-auto pr-1">
+                                                <a class="js-minus btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0"
+                                                   href="javascript:;">
+                                                    <small class="fas fa-minus btn-icon__inner"></small>
+                                                </a>
+                                                <a class="js-plus btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0"
+                                                   href="javascript:;">
+                                                    <small class="fas fa-plus btn-icon__inner"></small>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- End Quantity -->
-                            </td>
+                                    <!-- End Quantity -->
+                                </td>
 
-                            <td data-title="Total">
-                                <span class="">${{$cart->model->price}}</span>
-                            </td>
-                        </tr>
-                    @empty
-                        <h4>No Product in Cart</h4>
-                    @endforelse
+                                <td data-title="Total">
+                                    <span class="">${{$cart->model->price}}</span>
+                                </td>
+                            </tr>
+                        @empty
+                            <h4>No Product in Cart</h4>
+                        @endforelse
+                    @else
+                        @forelse($carts as $cart)
+                            <tr class="">
+                                <td class="text-center">
+                                    <form action="{{route('cart.destroy',$cart->id)}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-gray-32 font-size-26 remove_cart">×</button>
+                                    </form>
+                                </td>
+                                <td class="d-none d-md-table-cell">
+                                    <a href="#"><img class="img-fluid max-width-100 p-1 border border-color-1"
+                                                     src="{{$cart->product->getFirstMediaUrl('products')}}"
+                                                     alt="Image Description"></a>
+                                </td>
+
+                                <td data-title="Product">
+                                    <a href="#" class="text-gray-90">{{$cart->product->title}}</a>
+                                </td>
+
+                                <td data-title="Price">
+                                    <span class="">${{$cart->product->price}}</span>
+                                </td>
+
+                                <td data-title="Quantity">
+                                    <span class="sr-only">Quantity</span>
+                                    <!-- Quantity -->
+                                    <div class="border rounded-pill py-1 width-122 w-xl-80 px-3 border-color-1">
+                                        <div class="js-quantity row align-items-center">
+                                            <div class="col">
+                                                <input
+                                                    class="js-result form-control h-auto border-0 rounded p-0 shadow-none"
+                                                    type="text" value="1">
+                                            </div>
+                                            <div class="col-auto pr-1">
+                                                <a class="js-minus btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0"
+                                                   href="javascript:;">
+                                                    <small class="fas fa-minus btn-icon__inner"></small>
+                                                </a>
+                                                <a class="js-plus btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0"
+                                                   href="javascript:;">
+                                                    <small class="fas fa-plus btn-icon__inner"></small>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Quantity -->
+                                </td>
+
+                                <td data-title="Total">
+                                    <span class="">${{$cart->product->price}}</span>
+                                </td>
+                            </tr>
+                        @empty
+                            <h4>No Product in Cart</h4>
+                        @endforelse
+                    @endguest
                     <tr>
                         <td colspan="6" class="border-top space-top-2 justify-content-center">
                             <div class="pt-md-3 float-right">
@@ -128,14 +186,19 @@
                     </div>
                     <table class="table mb-3 mb-md-0">
                         <tbody>
-                        <tr class="cart-subtotal">
-                            <th>Subtotal</th>
-                            <td data-title="Subtotal"><span class="amount">${{Cart::instance('default')->subtotal()}}</span></td>
-                        </tr>
-                        <tr class="order-total">
-                            <th>Total</th>
-                            <td data-title="Total"><strong><span class="amount">${{Cart::instance('default')->total()}}</span></strong></td>
-                        </tr>
+                        @guest
+                            <tr class="order-total">
+                                <th>Total</th>
+                                <td data-title="Total"><strong><span
+                                            class="amount">${{Cart::instance('default')->total()}}</span></strong></td>
+                            </tr>
+                        @else
+                            <tr class="order-total">
+                                <th>Total</th>
+                                <td data-title="Total"><strong><span
+                                            class="amount">${{$total}}</span></strong></td>
+                            </tr>
+                        @endguest
                         </tbody>
                     </table>
                     <button type="button"

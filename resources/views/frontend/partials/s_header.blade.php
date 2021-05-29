@@ -454,12 +454,21 @@
                                     <a href="{{route('cart.index')}}" class="text-gray-90 position-relative d-flex "
                                        data-toggle="tooltip" data-placement="top" title="Cart">
                                         <i class="font-size-22 ec ec-shopping-bag"></i>
-                                        @if(\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->count() > 0)
+                                        @guest
+                                            @if(\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->count() > 0)
+                                                <span
+                                                    class="width-22 height-22 bg-dark position-absolute flex-content-center text-white rounded-circle left-12 top-8 font-weight-bold font-size-12">{{\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->count()}}</span>
+                                            @endif
                                             <span
-                                                class="width-22 height-22 bg-dark position-absolute flex-content-center text-white rounded-circle left-12 top-8 font-weight-bold font-size-12">{{\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->count()}}</span>
-                                        @endif
-                                        <span
-                                            class="font-weight-bold font-size-16 text-gray-90 ml-3">${{\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->total()}}</span>
+                                                class="font-weight-bold font-size-16 text-gray-90 ml-3">${{\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->total()}}</span>
+                                        @else
+                                            @if($carts->count() > 0)
+                                                <span
+                                                    class="width-22 height-22 bg-dark position-absolute flex-content-center text-white rounded-circle left-12 top-8 font-weight-bold font-size-12">{{$carts->count()}}</span>
+                                            @endif
+                                            <span
+                                                class="font-weight-bold font-size-16 text-gray-90 ml-3">${{($total==0)? '0.00' : $total }}</span>
+                                        @endguest
                                     </a>
                                 </li>
                             </ul>

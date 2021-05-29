@@ -39,10 +39,10 @@
 <script src="{{asset('assets/js/components/hs.scroll-nav.js')}}"></script>
 <script src="{{asset('assets/js/components/hs.go-to.js')}}"></script>
 <script src="{{asset('assets/js/components/hs.selectpicker.js')}}"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 <!-- partial:partials/success_error_msg.html -->
-@include('backend.partials.success_error_msg')
+@include('frontend.partials.success_error_msg')
 <!-- partial -->
 
 <!-- JS Plugins Init. -->

@@ -14,7 +14,8 @@
                              style="margin-bottom: 0;">
                             <ellipse class="ellipse-bg" fill-rule="evenodd" clip-rule="evenodd" fill="#FDD700"
                                      cx="170.05" cy="36.341" rx="5.32" ry="5.367"></ellipse>
-                            <path fill-rule="evenodd" clip-rule="evenodd" fill="#333E48" d="M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056
+                            <path fill-rule="evenodd" clip-rule="evenodd" fill="#333E48"
+                                  d="M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056
                                 C30.263,0.995,29.876,1.181,29.79,1.5c-0.148,0.548,0,1.568,0,2.427v36.459c0.265,0.221,0.506,0.465,0.725,0.734h6.187
                                 c0.2-0.25,0.423-0.477,0.669-0.678V1.387C37.124,1.185,36.9,0.959,36.701,0.71H30.514z M117.517,12.731
                                 c-0.232-0.189-0.439-0.64-0.781-0.734c-0.754-0.209-2.039,0-3.121,0h-3.176V4.435c-0.232-0.189-0.439-0.639-0.781-0.733
@@ -56,17 +57,11 @@
 
                     <!-- Fullscreen Toggle Button -->
                     <button id="sidebarHeaderInvokerMenu" type="button"
-                            class="navbar-toggler d-block btn u-hamburger mr-3 mr-xl-0"
-                            aria-controls="sidebarHeader"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            data-unfold-event="click"
-                            data-unfold-hide-on-scroll="false"
-                            data-unfold-target="#sidebarHeader1"
-                            data-unfold-type="css-animation"
-                            data-unfold-animation-in="fadeInLeft"
-                            data-unfold-animation-out="fadeOutLeft"
-                            data-unfold-duration="500">
+                            class="navbar-toggler d-block btn u-hamburger mr-3 mr-xl-0" aria-controls="sidebarHeader"
+                            aria-haspopup="true" aria-expanded="false" data-unfold-event="click"
+                            data-unfold-hide-on-scroll="false" data-unfold-target="#sidebarHeader1"
+                            data-unfold-type="css-animation" data-unfold-animation-in="fadeInLeft"
+                            data-unfold-animation-out="fadeOutLeft" data-unfold-duration="500">
                         <span id="hamburgerTriggerMenu" class="u-hamburger__box">
                             <span class="u-hamburger__inner"></span>
                         </span>
@@ -82,17 +77,11 @@
                             <div class="u-header-sidebar__footer-offset">
                                 <!-- Toggle Button -->
                                 <div class="position-absolute top-0 right-0 z-index-2 pt-4 pr-4 bg-white">
-                                    <button type="button" class="close ml-auto"
-                                            aria-controls="sidebarHeader"
-                                            aria-haspopup="true"
-                                            aria-expanded="false"
-                                            data-unfold-event="click"
-                                            data-unfold-hide-on-scroll="false"
-                                            data-unfold-target="#sidebarHeader1"
-                                            data-unfold-type="css-animation"
-                                            data-unfold-animation-in="fadeInLeft"
-                                            data-unfold-animation-out="fadeOutLeft"
-                                            data-unfold-duration="500">
+                                    <button type="button" class="close ml-auto" aria-controls="sidebarHeader"
+                                            aria-haspopup="true" aria-expanded="false" data-unfold-event="click"
+                                            data-unfold-hide-on-scroll="false" data-unfold-target="#sidebarHeader1"
+                                            data-unfold-type="css-animation" data-unfold-animation-in="fadeInLeft"
+                                            data-unfold-animation-out="fadeOutLeft" data-unfold-duration="500">
                                         <span aria-hidden="true"><i
                                                 class="ec ec-close-remove text-gray-90 font-size-20"></i></span>
                                     </button>
@@ -109,9 +98,10 @@
                                                  viewBox="0 0 175.748 42.52" enable-background="new 0 0 175.748 42.52"
                                                  style="margin-bottom: 0;">
                                                 <ellipse class="ellipse-bg" fill-rule="evenodd" clip-rule="evenodd"
-                                                         fill="#FDD700" cx="170.05" cy="36.341" rx="5.32"
-                                                         ry="5.367"></ellipse>
-                                                <path fill-rule="evenodd" clip-rule="evenodd" fill="#333E48" d="M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056
+                                                         fill="#FDD700" cx="170.05" cy="36.341" rx="5.32" ry="5.367">
+                                                </ellipse>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" fill="#333E48"
+                                                      d="M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056
                                                     C30.263,0.995,29.876,1.181,29.79,1.5c-0.148,0.548,0,1.568,0,2.427v36.459c0.265,0.221,0.506,0.465,0.725,0.734h6.187
                                                     c0.2-0.25,0.423-0.477,0.669-0.678V1.387C37.124,1.185,36.9,0.959,36.701,0.71H30.514z M117.517,12.731
                                                     c-0.232-0.189-0.439-0.64-0.781-0.734c-0.754-0.209-2.039,0-3.121,0h-3.176V4.435c-0.232-0.189-0.439-0.639-0.781-0.733
@@ -155,7 +145,8 @@
                                         <ul id="headerSidebarList" class="u-header-collapse__nav">
                                             @foreach ($categories as $category)
                                                 <li class="u-has-submenu u-header-collapse__submenu">
-                                                    <a class="u-header-collapse__nav-link" href="{{route('specific_category',$category->slug)}}"                                                     >
+                                                    <a class="u-header-collapse__nav-link"
+                                                       href="{{route('specific_category',$category->slug)}}">
                                                         {{ $category->name }}
                                                     </a>
                                                 </li>
@@ -186,8 +177,7 @@
                                 <div class="position-absolute right-0 bottom-0 left-0 z-index-n1">
                                     <img class="js-svg-injector"
                                          src="{{asset('assets/svg/components/wave-bottom-with-dots.svg')}}"
-                                         alt="Image Description"
-                                         data-parent="#SVGwaveWithDots">
+                                         alt="Image Description" data-parent="#SVGwaveWithDots">
                                 </div>
                                 <!-- End SVG Background Shape -->
                             </footer>
@@ -208,20 +198,11 @@
                         <!-- Search -->
                         <li class="col d-xl-none px-2 px-sm-3 position-static">
                             <a id="searchClassicInvoker" class="font-size-22 text-gray-90 text-lh-1 btn-text-secondary"
-                               href="javascript:;" role="button"
-                               data-toggle="tooltip"
-                               data-placement="top"
-                               title="Search"
-                               aria-controls="searchClassic"
-                               aria-haspopup="true"
-                               aria-expanded="false"
-                               data-unfold-target="#searchClassic"
-                               data-unfold-type="css-animation"
-                               data-unfold-duration="300"
-                               data-unfold-delay="300"
-                               data-unfold-hide-on-scroll="true"
-                               data-unfold-animation-in="slideInUp"
-                               data-unfold-animation-out="fadeOut">
+                               href="javascript:;" role="button" data-toggle="tooltip" data-placement="top"
+                               title="Search" aria-controls="searchClassic" aria-haspopup="true" aria-expanded="false"
+                               data-unfold-target="#searchClassic" data-unfold-type="css-animation"
+                               data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true"
+                               data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
                                 <span class="ec ec-search"></span>
                             </a>
 
@@ -229,7 +210,8 @@
                             <div id="searchClassic"
                                  class="dropdown-menu dropdown-unfold dropdown-menu-right left-0 mx-2"
                                  aria-labelledby="searchClassicInvoker">
-                                <form class="js-focus-state input-group px-3" method="GET" action="{{route('search_product')}}">
+                                <form class="js-focus-state input-group px-3" method="GET"
+                                      action="{{route('search_product')}}">
                                     @csrf
                                     <input class="form-control" name="query" type="search" placeholder="Search Product">
                                     <div class="input-group-append">
@@ -248,68 +230,120 @@
                                                              data-toggle="tooltip" data-placement="top"
                                                              title="Favorites"><i
                                     class="font-size-22 ec ec-favorites"></i></a></li>
-                        <li class="col d-xl-none px-2 px-sm-3"><a href="{{route('my-account.index')}}" class="text-gray-90"
-                                                                  data-toggle="tooltip" data-placement="top"
-                                                                  title="My Account"><i
+                        <li class="col d-xl-none px-2 px-sm-3"><a href="{{route('my-account.index')}}"
+                                                                  class="text-gray-90" data-toggle="tooltip"
+                                                                  data-placement="top" title="My Account"><i
                                     class="font-size-22 ec ec-user"></i></a></li>
                         <li class="col pr-xl-0 px-2 px-sm-3 d-xl-none">
                             <a href="{{route('cart.index')}}" class="text-gray-90 position-relative d-flex "
                                data-toggle="tooltip" data-placement="top" title="Cart">
                                 <i class="font-size-22 ec ec-shopping-bag"></i>
-                                @if(\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->count() > 0)
+                                @guest
+                                    @if(\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->count() > 0)
+                                        <span
+                                            class="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">{{\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->count()}}</span>
+                                    @endif
                                     <span
-                                        class="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">{{\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->count()}}</span>
-                                @endif
-                                <span
-                                    class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">${{\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->total()}}</span>
+                                        class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">${{\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->total()}}</span>
+                                @else
+                                    @if($carts->count() > 0)
+                                        <span
+                                            class="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">{{$carts->count()}}</span>
+                                    @endif
+                                    <span
+                                        class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">${{($total==0)? '0.00' : $total }}</span>
+                                @endguest
                             </a>
                         </li>
                         <li class="col pr-xl-0 px-2 px-sm-3 d-none d-xl-block">
                             <div id="basicDropdownHoverInvoker" class="text-gray-90 position-relative d-flex "
                                  data-toggle="tooltip" data-placement="top" title="Cart"
-                                 aria-controls="basicDropdownHover"
-                                 aria-haspopup="true"
-                                 aria-expanded="false"
-                                 data-unfold-event="click"
-                                 data-unfold-target="#basicDropdownHover"
-                                 data-unfold-type="css-animation"
-                                 data-unfold-duration="300"
-                                 data-unfold-delay="300"
-                                 data-unfold-hide-on-scroll="true"
-                                 data-unfold-animation-in="slideInUp"
+                                 aria-controls="basicDropdownHover" aria-haspopup="true" aria-expanded="false"
+                                 data-unfold-event="click" data-unfold-target="#basicDropdownHover"
+                                 data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300"
+                                 data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp"
                                  data-unfold-animation-out="fadeOut">
                                 <i class="font-size-22 ec ec-shopping-bag"></i>
-                                @if(\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->count() > 0)
+                                @guest
+                                    @if(\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->count() > 0)
+                                        <span
+                                            class="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">{{\Gloudemans\Shoppingcart\Facades\Cart::count()}}</span>
+                                    @endif
                                     <span
-                                        class="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">{{\Gloudemans\Shoppingcart\Facades\Cart::count()}}</span>
-                                @endif
-                                <span
-                                    class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">${{\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->total()}}</span>
+                                        class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">${{\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->total()}}</span>
+                                @else
+                                    @if($carts->count() > 0)
+                                        <span
+                                            class="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">{{$carts->count()}}</span>
+                                    @endif
+                                    <span
+                                        class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">${{($total==0)? '0.00' : $total }}</span>
+                                @endguest
                             </div>
                             <div id="basicDropdownHover"
                                  class="cart-dropdown dropdown-menu dropdown-unfold border-top border-top-primary mt-3 border-width-2 border-left-0 border-right-0 border-bottom-0 left-auto right-0"
                                  aria-labelledby="basicDropdownHoverInvoker">
                                 <ul class="list-unstyled px-3 pt-3">
-                                    @forelse(\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->content() as $cart)
+                                   @guest
+                                        @forelse(\Gloudemans\Shoppingcart\Facades\Cart::instance('default')->content() as
+                                    $cart)
                                             <div class="">
                                                 <ul class="list-unstyled row mx-n2">
                                                     <li class="px-2 col-auto">
-                                                        <img class="img-fluid" src="{{$cart->model->getFirstMediaUrl('products','thumb')}}"
-                                                             alt="Image Description">
+                                                        @if ($cart->model->getFirstMediaUrl('products','thumb'))
+                                                            <img class="img-fluid"
+                                                                 src="{{$cart->model->getFirstMediaUrl('products','thumb')}}"
+                                                                 alt="Image Description">
+                                                        @endif
                                                     </li>
                                                     <li class="px-2 col">
-                                                        <h5 class="text-blue font-size-14 font-weight-bold">{{$cart->model->title}}</h5>
+                                                        <h5 class="text-blue font-size-14 font-weight-bold">
+                                                            {{$cart->model->title}}</h5>
                                                         <span class="font-size-14">1 × ${{$cart->model->price}}</span>
                                                     </li>
                                                     <li class="px-2 col-auto">
-                                                        <a href="#" class="text-gray-90"><i class="ec ec-close-remove"></i></a>
+                                                        <form action="{{route('cart.destroy',$cart->rowId)}}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn_remove"><i class="ec ec-close-remove"></i></button>
+                                                        </form>
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </li>
-                                    @empty
-                                        No item in cart!
-                                   @endforelse
+                                            </li>
+                                        @empty
+                                            No item in cart!
+                                        @endforelse
+                                    @else
+                                        @forelse($carts as $cart)
+                                            <div class="">
+                                                <ul class="list-unstyled row mx-n2">
+                                                    <li class="px-2 col-auto">
+                                                        @if ($cart->product->getFirstMediaUrl('products','thumb'))
+                                                            <img class="img-fluid"
+                                                                 src="{{$cart->product->getFirstMediaUrl('products','thumb')}}"
+                                                                 alt="Image Description">
+                                                        @endif
+                                                    </li>
+                                                    <li class="px-2 col">
+                                                        <h5 class="text-blue font-size-14 font-weight-bold">
+                                                            {{$cart->product->title}}</h5>
+                                                        <span class="font-size-14">1 × ${{$cart->product->price}}</span>
+                                                    </li>
+                                                    <li class="px-2 col-auto">
+                                                        <form action="{{route('cart.destroy',$cart->id)}}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="text-gray-90 btn_remove"><i class="ec ec-close-remove"></i></button>
+                                                        </form>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            </li>
+                                        @empty
+                                            No item in cart!
+                                        @endforelse
+                                    @endguest
                                 </ul>
                                 <div class="flex-center-between px-4 pt-2">
                                     <a href="{{route('cart.index')}}"

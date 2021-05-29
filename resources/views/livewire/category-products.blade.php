@@ -1,60 +1,5 @@
 <div>
-    <div wire:ignore.self class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
-         aria-labelledby="myLargeModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="d-flex justify-content-center">
-                            <div wire:loading>
-                                <img src="{{asset('media/loader.gif')}}" alt="loader">
-                            </div>
-                        </div>
-
-                        <div wire:loading.remove>
-                            <div class="row">
-                                <div class="col-sm">
-                                    @if(isset($product))
-                                        {{$product->getFirstMedia('products')}}
-                                    @endif
-                                </div>
-                                <div class="col-sm">
-                                    <div>
-                                        @if(isset($product))
-                                            <h4>{{$product->title}}</h4>
-                                        @endif
-                                    </div>
-                                    @if(isset($product))
-                                        <b>Category</b> : &nbsp<span>{{$product->category->name}}</span>
-                                    @endif
-                                    <div style="color:#FC4A1A">
-                                        @if(isset($product))
-                                            <h5>${{$product->price}}</h5>
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="col-sm">
-                                    <div class="widget-column">
-                                        <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18"> Other
-                                            Stores</h3>
-                                        <ul class="list-unstyled products-group"
-                                            id="modal_related_products" style="max-height: 200px;">
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('frontend.partials.modal')
     <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade pt-2 show active" id="pills-one-example1" role="tabpanel"
              aria-labelledby="pills-one-example1-tab" data-target-group="groups">
@@ -84,18 +29,7 @@
                                         </div>
                                         <div class="d-none d-xl-block prodcut-add-cart">
                                             <div class="prodcut-add-cart">
-                                                <form action="{{route('cart.store')}}" method="POST">
-                                                    @csrf
-                                                    <input type="hidden" name="id"
-                                                           value="{{$product->id}}">
-                                                    <input type="hidden" name="title"
-                                                           value="{{$product->title}}">
-                                                    <input type="hidden" name="price"
-                                                           value="{{$product->price}}">
-                                                    <button type="submit"
-                                                            class="btn-add-cart btn-primary transition-3d-hover">
-                                                        <i class="ec ec-add-to-cart"></i></button>
-                                                </form>
+                                                @include('frontend.partials.cart_form')
                                             </div>
                                         </div>
                                     </div>
@@ -103,20 +37,7 @@
                                         <div class="border-top pt-2 flex-center-between flex-wrap">
                                             <a href="#" class="text-gray-6 font-size-13"><i
                                                     class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-
-                                            <form action="{{route('wishlist.store')}}" method="POST">
-                                                @csrf
-                                                <input type="hidden" name="id"
-                                                       value="{{$product->id}}">
-                                                <input type="hidden" name="title"
-                                                       value="{{$product->title}}">
-                                                <input type="hidden" name="price"
-                                                       value="{{$product->price}}">
-                                                <button class="text-gray-6 font-size-13 wishlist-btn"><i
-                                                        class="ec ec-favorites mr-1 font-size-15"></i>
-                                                    Wishlist
-                                                </button>
-                                            </form>
+                                            @include('frontend.partials.wishlist_form')
                                         </div>
                                     </div>
                                 </div>
@@ -166,39 +87,14 @@
                                                 <div class="text-gray-100">${{ $product->price }}</div>
                                             </div>
                                             <div class="prodcut-add-cart">
-                                                <form action="{{route('cart.store')}}" method="POST">
-                                                    @csrf
-                                                    <input type="hidden" name="id"
-                                                           value="{{$product->id}}">
-                                                    <input type="hidden" name="title"
-                                                           value="{{$product->title}}">
-                                                    <input type="hidden" name="price"
-                                                           value="{{$product->price}}">
-                                                    <button type="submit"
-                                                            class="btn btn-sm btn-block btn-primary-dark btn-wide transition-3d-hover">
-                                                        Add
-                                                        to cart
-                                                    </button>
-                                                </form>
+                                                @include('frontend.partials.cart_form')
                                             </div>
                                         </div>
                                         <div
                                             class="flex-horizontal-center justify-content-between justify-content-wd-center flex-wrap">
                                             <a href="#" class="text-gray-6 font-size-13 mx-wd-3"><i
                                                     class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                            <form action="{{route('wishlist.store')}}" method="POST">
-                                                @csrf
-                                                <input type="hidden" name="id"
-                                                       value="{{$product->id}}">
-                                                <input type="hidden" name="title"
-                                                       value="{{$product->title}}">
-                                                <input type="hidden" name="price"
-                                                       value="{{$product->price}}">
-                                                <button class="text-gray-6 font-size-13 mx-wd-3 wishlist-btn"><i
-                                                        class="ec ec-favorites mr-1 font-size-15"></i>
-                                                    Wishlist
-                                                </button>
-                                            </form>
+                                            @include('frontend.partials.wishlist_form')
                                         </div>
                                     </div>
                                 </div>
@@ -267,37 +163,14 @@
                                                 <div class="text-gray-100">${{ $product->price }}</div>
                                             </div>
                                             <div class="prodcut-add-cart">
-                                                <form action="{{route('cart.store')}}" method="POST">
-                                                    @csrf
-                                                    <input type="hidden" name="id"
-                                                           value="{{$product->id}}">
-                                                    <input type="hidden" name="title"
-                                                           value="{{$product->title}}">
-                                                    <input type="hidden" name="price"
-                                                           value="{{$product->price}}">
-                                                    <button type="submit"
-                                                            class="btn-add-cart btn-primary transition-3d-hover">
-                                                        <i class="ec ec-add-to-cart"></i></button>
-                                                </form>
+                                                @include('frontend.partials.cart_form')
                                             </div>
                                         </div>
                                         <div
                                             class="flex-horizontal-center justify-content-between justify-content-wd-center flex-wrap border-top pt-3">
                                             <a href="#" class="text-gray-6 font-size-13 mx-wd-3"><i
                                                     class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                            <form action="{{route('wishlist.store')}}" method="POST">
-                                                @csrf
-                                                <input type="hidden" name="id"
-                                                       value="{{$product->id}}">
-                                                <input type="hidden" name="title"
-                                                       value="{{$product->title}}">
-                                                <input type="hidden" name="price"
-                                                       value="{{$product->price}}">
-                                                <button class="text-gray-6 font-size-13 mx-wd-3 wishlist-btn"><i
-                                                        class="ec ec-favorites mr-1 font-size-15"></i>
-                                                    Wishlist
-                                                </button>
-                                            </form>
+                                            @include('frontend.partials.wishlist_form')
                                         </div>
                                     </div>
                                 </div>

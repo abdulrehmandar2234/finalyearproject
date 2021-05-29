@@ -37,13 +37,14 @@ Route::get('/empty', function () {
 });
 Route::view('my-account', 'frontend.account');
 Route::resource('/my-account', AccountController::class);
-Route::post('/switch-to-cart{id}', [WishlistController::class, 'switch_to_cart'])->name('switch_to_cart');
+Route::post('/switch-to-cart/{id}', [WishlistController::class, 'switch_to_cart'])->name('switch_to_cart');
 Route::resource('/cart', CartController::class);
 Route::resource('/wishlist', WishlistController::class);
 Route::resource('/contact-us', \App\Http\Controllers\Frontend\ContactUsController::class);
 Route::get('/search', [HomeController::class, 'search'])->name('search_product');
 Route::get('/category/{slug}', [HomeController::class, 'category'])->name('specific_category');
 Route::get('/best-promotions', [HomeController::class, 'bestPromotions'])->name('best_promotions');
+Route::get('/shopping_lists', [HomeController::class, 'shoppingLists'])->name('shopping_lists');
 // Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {

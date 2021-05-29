@@ -1,3 +1,47 @@
+<style>
+    .wishlist-btn {
+        border: none;
+        background-color: white;
+    }
+
+    .list-result {
+        position: absolute;
+        z-index: 99;
+        background: #fff;
+        margin: 15px !important;
+        border: 1px solid #f1f1f1;
+    }
+
+    .list-result ul {
+        list-style: none;
+        padding: 15px;
+        margin: 0;
+    }
+
+    .ser-txt-clr {
+        font-weight: 600;
+        border: none;
+        background: transparent;
+    }
+
+    .list-result ul li {
+        padding: 5px 10px;
+    }
+
+    .list-result ul li:hover {
+        background-color: #f7f7f7;
+    }
+
+    .sear-field {
+        position: relative;
+    }
+
+    .btn_remove {
+        border: none;
+        background-color: transparent;
+    }
+</style>
+
 <!-- Favicon -->
 <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
 
@@ -20,4 +64,5 @@
 <link rel="stylesheet" href="{{ asset('assets/css/theme.css') }}">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
 <script src="{{ asset('js/app.js') }}" defer></script>
