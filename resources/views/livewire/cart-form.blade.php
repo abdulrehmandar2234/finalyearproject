@@ -5,7 +5,7 @@
         <input type="hidden" name="quantity" wire:model.defer="quantity">
         <input type="hidden" name="title" wire:model.defer="title">
         <input type="hidden" name="price" wire:model.defer="price">
-        <button wire:click="$refresh" class="btn-add-cart btn-primary transition-3d-hover">
+        <button class="btn-add-cart btn-primary transition-3d-hover">
             <i class="ec ec-add-to-cart"></i></button>
     </form>
 </div>

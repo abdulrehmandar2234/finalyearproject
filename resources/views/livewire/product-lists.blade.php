@@ -23,26 +23,24 @@
                                                                             class="text-blue font-weight-bold">{{ $product->title }}</a>
                                     </h5>
                                     <div class="mb-2">
-                                        <a href="#" class="d-block text-center"><img
-                                                class="img-fluid"
-                                                src="{{ $product->getFirstMediaUrl('products') }}"
-                                                alt="Image Description"></a>
+                                        <a href="#" class="d-block text-center"><img class="img-fluid"
+                                                                                     src="{{ $product->getFirstMediaUrl('products') }}"
+                                                                                     alt="Image Description"></a>
                                     </div>
                                 </div>
                                 <div class="flex-center-between mb-1">
-                                    <div
-                                        class="prodcut-price d-flex align-items-center flex-wrap position-relative">
-                                        <ins
-                                            class="font-size-20 text-red text-decoration-none mr-2">
+                                    <div class="prodcut-price d-flex align-items-center flex-wrap position-relative">
+                                        <ins class="font-size-20 text-red text-decoration-none mr-2">
                                             ${{ $product->price }}</ins>
-                                        <del
-                                            class="font-size-12 tex-gray-6 position-absolute bottom-100">
+                                        <del class="font-size-12 tex-gray-6 position-absolute bottom-100">
                                             $2
                                             299,00
                                         </del>
                                     </div>
                                     <div class="d-none d-xl-block prodcut-add-cart">
-                                        @include('frontend.partials.cart_form')
+                                        @livewire('cart-form',['product_id' => $product->id, 'quantity' =>
+                                        1, 'price' => $product->price,'title' => $product->title
+                                        ])
                                     </div>
                                 </div>
                                 <div class="product-item__footer">
@@ -82,26 +80,24 @@
                                                                             class="text-blue font-weight-bold">{{ $product->title }}</a>
                                     </h5>
                                     <div class="mb-2">
-                                        <a href="#" class="d-block text-center"><img
-                                                class="img-fluid"
-                                                src="{{ $product->getFirstMediaUrl('products') }}"
-                                                alt="Image Description"></a>
+                                        <a href="#" class="d-block text-center"><img class="img-fluid"
+                                                                                     src="{{ $product->getFirstMediaUrl('products') }}"
+                                                                                     alt="Image Description"></a>
                                     </div>
                                 </div>
                                 <div class="flex-center-between mb-1">
-                                    <div
-                                        class="prodcut-price d-flex align-items-center flex-wrap position-relative">
-                                        <ins
-                                            class="font-size-20 text-red text-decoration-none mr-2">
+                                    <div class="prodcut-price d-flex align-items-center flex-wrap position-relative">
+                                        <ins class="font-size-20 text-red text-decoration-none mr-2">
                                             ${{ $product->price }}</ins>
-                                        <del
-                                            class="font-size-12 tex-gray-6 position-absolute bottom-100">
+                                        <del class="font-size-12 tex-gray-6 position-absolute bottom-100">
                                             $2
                                             299,00
                                         </del>
                                     </div>
                                     <div class="d-none d-xl-block prodcut-add-cart">
-                                        @include('frontend.partials.cart_form')
+                                        @livewire('cart-form',['product_id' => $product->id, 'quantity' =>
+                                        1, 'price' => $product->price,'title' => $product->title
+                                        ])
                                     </div>
                                 </div>
                                 <div class="product-item__footer">
@@ -145,26 +141,25 @@
                                                                                 class="text-blue font-weight-bold">{{ $product->product->title }}</a>
                                         </h5>
                                         <div class="mb-2">
-                                            <a href="#" class="d-block text-center"><img
-                                                    class="img-fluid"
-                                                    src="{{ $product->product->getFirstMediaUrl('products') }}"
-                                                    alt="Image Description"></a>
+                                            <a href="#" class="d-block text-center"><img class="img-fluid"
+                                                                                         src="{{ $product->product->getFirstMediaUrl('products') }}"
+                                                                                         alt="Image Description"></a>
                                         </div>
                                     </div>
                                     <div class="flex-center-between mb-1">
                                         <div
                                             class="prodcut-price d-flex align-items-center flex-wrap position-relative">
-                                            <ins
-                                                class="font-size-20 text-red text-decoration-none mr-2">
+                                            <ins class="font-size-20 text-red text-decoration-none mr-2">
                                                 ${{ $product->product->price }}</ins>
-                                            <del
-                                                class="font-size-12 tex-gray-6 position-absolute bottom-100">
+                                            <del class="font-size-12 tex-gray-6 position-absolute bottom-100">
                                                 $2
                                                 299,00
                                             </del>
                                         </div>
                                         <div class="d-none d-xl-block prodcut-add-cart">
-                                            @include('frontend.partials.cart_form')
+                                            @livewire('cart-form',['product_id' => $product->id, 'quantity' =>
+                                            1, 'price' => $product->price,'title' => $product->title
+                                            ])
                                         </div>
                                     </div>
                                     <div class="product-item__footer">
@@ -200,20 +195,17 @@
                                                                                 class="text-blue font-weight-bold">{{ $product->product->title }}</a>
                                         </h5>
                                         <div class="mb-2">
-                                            <a href="#" class="d-block text-center"><img
-                                                    class="img-fluid"
-                                                    src="{{ $product->product->getFirstMediaUrl('products') }}"
-                                                    alt="Image Description"></a>
+                                            <a href="#" class="d-block text-center"><img class="img-fluid"
+                                                                                         src="{{ $product->product->getFirstMediaUrl('products') }}"
+                                                                                         alt="Image Description"></a>
                                         </div>
                                     </div>
                                     <div class="flex-center-between mb-1">
                                         <div
                                             class="prodcut-price d-flex align-items-center flex-wrap position-relative">
-                                            <ins
-                                                class="font-size-20 text-red text-decoration-none mr-2">
+                                            <ins class="font-size-20 text-red text-decoration-none mr-2">
                                                 ${{ $product->product->price }}</ins>
-                                            <del
-                                                class="font-size-12 tex-gray-6 position-absolute bottom-100">
+                                            <del class="font-size-12 tex-gray-6 position-absolute bottom-100">
                                                 $2
                                                 299,00
                                             </del>
