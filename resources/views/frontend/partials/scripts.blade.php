@@ -45,6 +45,18 @@
 @include('frontend.partials.success_error_msg')
 <!-- partial -->
 
+<script>
+    $(function () {
+        $("#getDataValue").click(function () {
+            let min = $("#rangeSliderExample3MinResult").first().text();
+            let max = $("#rangeSliderExample3MaxResult").first().text();
+            $('#min').val(min);
+            $('#max').val(max);
+        });
+    });
+</script>
+
+
 <!-- JS Plugins Init. -->
 <script>
     $(window).on('load', function () {
@@ -56,9 +68,6 @@
             breakpoint: 767.98,
             hideTimeOut: 0
         });
-
-        // initialization of svg injector module
-        $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
     });
 
     $(document).on('ready', function () {
@@ -74,6 +83,14 @@
                 $(this).find('input[type="search"]').focus();
             }
         });
+
+        // initialization of HSScrollNav component
+        $.HSCore.components.HSScrollNav.init($('.js-scroll-nav'), {
+            duration: 700
+        });
+
+        // initialization of quantity counter
+        $.HSCore.components.HSQantityCounter.init('.js-quantity');
 
         // initialization of popups
         $.HSCore.components.HSFancyBox.init('.js-fancybox');
@@ -102,6 +119,9 @@
                 }
             }
         });
+
+        // initialization of forms
+        $.HSCore.components.HSRangeSlider.init('.js-range-slider');
 
         // initialization of show animations
         $.HSCore.components.HSShowAnimation.init('.js-animation-link');

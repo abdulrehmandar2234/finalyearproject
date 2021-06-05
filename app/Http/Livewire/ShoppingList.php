@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class ShoppingList extends Component
 {
-    public $top_rated_cart, $top_rated_wishlist;
+    public $top_rated_cart, $top_rated_wishlist, $products;
     public $product, $stores = [];
 
     public function getProduct($id)

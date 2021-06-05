@@ -13,9 +13,12 @@ use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\WebsiteController;
 use App\Http\Controllers\Frontend\AccountController;
+use App\Http\Controllers\Frontend\BestPromotionController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\FilterController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ProfileController;
+use App\Http\Controllers\Frontend\SearchController;
 use App\Http\Controllers\Frontend\WishlistController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,7 +32,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
  */
-
+Route::get('/category/price_filter', [\App\Http\Controllers\Frontend\CategoryController::class, 'priceFilter'])->name('category.priceFilter');
 Route::resource('/', HomeController::class);
 Route::get('/empty', function () {
     Cart::instance('wishlist')->destroy();
@@ -41,10 +44,14 @@ Route::post('/switch-to-cart/{id}', [WishlistController::class, 'switch_to_cart'
 Route::resource('/cart', CartController::class);
 Route::resource('/wishlist', WishlistController::class);
 Route::resource('/contact-us', \App\Http\Controllers\Frontend\ContactUsController::class);
-Route::get('/search', [HomeController::class, 'search'])->name('search_product');
-Route::get('/category/{slug}', [HomeController::class, 'category'])->name('specific_category');
-Route::get('/best-promotions', [HomeController::class, 'bestPromotions'])->name('best_promotions');
-Route::get('/shopping_lists', [HomeController::class, 'shoppingLists'])->name('shopping_lists');
+Route::get('/search', [SearchController::class, 'search'])->name('search_product');
+Route::get('/category/{slug}', [\App\Http\Controllers\Frontend\CategoryController::class, 'index'])->name('specific_category');
+
+Route::get('/best-promotions', [BestPromotionController::class, 'index'])->name('best_promotions');
+Route::get('/best-promotions/price_filter', [BestPromotionController::class, 'priceFilter'])->name('best_promotions.priceFilter');
+Route::get('/shopping_lists', [\App\Http\Controllers\Frontend\ShoppingListController::class, 'index'])->name('shopping_lists');
+Route::get('/shopping_lists/price_filter', [\App\Http\Controllers\Frontend\ShoppingListController::class, 'priceFilter'])->name('shopping_lists.priceFilter');
+Route::get('/search/price_filter', [SearchController::class, 'priceFilter'])->name('search.priceFilter');
 // Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {

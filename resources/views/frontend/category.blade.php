@@ -1,44 +1,3 @@
-@section('styles')
-    <style>
-        .wishlist-btn {
-            border: none;
-            background-color: white;
-        }
-
-        .list-result {
-            position: absolute;
-            z-index: 99;
-            background: #fff;
-            margin: 15px !important;
-            border: 1px solid #f1f1f1;
-        }
-
-        .list-result ul {
-            list-style: none;
-            padding: 15px;
-            margin: 0;
-        }
-
-        .ser-txt-clr {
-            font-weight: 600;
-            border: none;
-            background: transparent;
-        }
-
-        .list-result ul li {
-            padding: 5px 10px;
-        }
-
-        .list-result ul li:hover {
-            background-color: #f7f7f7;
-        }
-
-        .sear-field {
-            position: relative;
-        }
-
-    </style>
-@endsection
 @extends('layouts.shop')
 @section('content')
     <!-- breadcrumb -->
@@ -51,7 +10,7 @@
                         <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="{{ url('/') }}">Home</a>
                         </li>
                         <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">
-                            {{ $selected_category[0]['name'] }}</li>
+                            {{ $selected_category->title }}</li>
                     </ol>
                 </nav>
             </div>
@@ -89,9 +48,9 @@
                         </li>
                         <li>
                             <a class="dropdown-current active"
-                               href="{{ route('specific_category', $selected_category[0]['slug']) }}">{{ $selected_category[0]['name'] }}
+                               href="{{ route('specific_category', $selected_category->slug) }}">{{ $selected_category->name }}
                                 <span class="text-gray-25 font-size-12 font-weight-normal">
-                                    ({{ $selected_category[0]['products_count'] }})</span></a>
+                                    ({{ $selected_category->products_count }})</span></a>
                         </li>
                     </ul>
                     <!-- End List -->
@@ -191,33 +150,13 @@
                         </a>
                         <!-- End Link -->
                     </div>
-                    <div class="range-slider">
-                        <h4 class="font-size-14 mb-3 font-weight-bold">Price</h4>
-                        <!-- Range Slider -->
-                        <input class="js-range-slider" type="text"
-                               data-extra-classes="u-range-slider u-range-slider-indicator u-range-slider-grid"
-                               data-type="double" data-grid="false" data-hide-from-to="true" data-prefix="$"
-                               data-min="{{ round($product_min_price) }}" data-max="{{ round($product_max_price) }}"
-                               data-from="{{ round($product_max_price) }}" data-to="{{ round($product_min_price) }}"
-                               data-result-min="#rangeSliderExample3MinResult"
-                               data-result-max="#rangeSliderExample3MaxResult">
-                        <!-- End Range Slider -->
-                        <div class="mt-1 text-gray-111 d-flex mb-4">
-                            <span class="mr-0dot5">Price: </span>
-                            <span>$</span>
-                            <span id="rangeSliderExample3MinResult" class=""></span>
-                            <span class="mx-0dot5"> — </span>
-                            <span>$</span>
-                            <span id="rangeSliderExample3MaxResult" class=""></span>
-                        </div>
-                        <button type="submit" class="btn px-4 btn-primary-dark-w py-2 rounded-lg">Filter</button>
-                    </div>
+                    @include('frontend.partials.price_filter',['route'=>'category.priceFilter', 'category_id'=>$selected_category->id])
                 </div>
             </div>
             <div class="col-xl-9 col-wd-9gdot5">
                 <!-- Shop-control-bar Title -->
                 <div class="d-block d-md-flex flex-center-between mb-3">
-                    <h3 class="font-size-25 mb-2 mb-md-0">{{ $selected_category[0]['name'] }}</h3>
+                    <h3 class="font-size-25 mb-2 mb-md-0">{{ $selected_category->name }}</h3>
                     <p class="font-size-14 text-gray-90 mb-0">Showing 1–25 of 56 results</p>
                 </div>
                 <!-- End shop-control-bar Title -->

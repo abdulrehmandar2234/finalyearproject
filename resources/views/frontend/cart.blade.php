@@ -1,11 +1,3 @@
-@section('styles')
-    <style>
-        .remove_cart {
-            border: none;
-            background-color: white;
-        }
-    </style>
-@endsection
 @extends('layouts.shop')
 @section('content')
     <!-- breadcrumb -->

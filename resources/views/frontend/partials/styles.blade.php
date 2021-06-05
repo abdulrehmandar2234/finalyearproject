@@ -4,6 +4,11 @@
         background-color: white;
     }
 
+    .remove_cart {
+        border: none;
+        background-color: white;
+    }
+
     .list-result {
         position: absolute;
         z-index: 99;

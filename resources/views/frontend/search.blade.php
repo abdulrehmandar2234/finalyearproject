@@ -1,44 +1,3 @@
-@section('styles')
-    <style>
-        .wishlist-btn {
-            border: none;
-            background-color: white;
-        }
-
-        .list-result {
-            position: absolute;
-            z-index: 99;
-            background: #fff;
-            margin: 15px !important;
-            border: 1px solid #f1f1f1;
-        }
-
-        .list-result ul {
-            list-style: none;
-            padding: 15px;
-            margin: 0;
-        }
-
-        .ser-txt-clr {
-            font-weight: 600;
-            border: none;
-            background: transparent;
-        }
-
-        .list-result ul li {
-            padding: 5px 10px;
-        }
-
-        .list-result ul li:hover {
-            background-color: #f7f7f7;
-        }
-
-        .sear-field {
-            position: relative;
-        }
-
-    </style>
-@endsection
 @extends('layouts.shop')
 @section('content')
     <!-- breadcrumb -->
@@ -176,32 +135,7 @@
                         </a>
                         <!-- End Link -->
                     </div>
-                    <div class="range-slider">
-                        <h4 class="font-size-14 mb-3 font-weight-bold">Price</h4>
-                        <!-- Range Slider -->
-                        <input class="js-range-slider" type="text"
-                               data-extra-classes="u-range-slider u-range-slider-indicator u-range-slider-grid"
-                               data-type="double"
-                               data-grid="false"
-                               data-hide-from-to="true"
-                               data-prefix="$"
-                               data-min="{{round($product_min_price)}}"
-                               data-max="{{round($product_max_price)}}"
-                               data-from="{{round($product_min_price)}}"
-                               data-to="{{round($product_max_price)}}"
-                               data-result-min="#rangeSliderExample3MinResult"
-                               data-result-max="#rangeSliderExample3MaxResult">
-                        <!-- End Range Slider -->
-                        <div class="mt-1 text-gray-111 d-flex mb-4">
-                            <span class="mr-0dot5">Price: </span>
-                            <span>$</span>
-                            <span id="rangeSliderExample3MinResult" class=""></span>
-                            <span class="mx-0dot5"> — </span>
-                            <span>$</span>
-                            <span id="rangeSliderExample3MaxResult" class=""></span>
-                        </div>
-                        <button type="submit" class="btn px-4 btn-primary-dark-w py-2 rounded-lg">Filter</button>
-                    </div>
+                    @include('frontend.partials.price_filter',['route'=>'search.priceFilter'])
                 </div>
             </div>
             <div class="col-xl-9 col-wd-9gdot5">
@@ -215,7 +149,7 @@
                 <div class="bg-gray-1 flex-center-between borders-radius-9 py-1">
                     <div class="d-xl-none">
                         <!-- Account Sidebar Toggle Button -->
-                        <a id="sidebarNavToggler1" class="btn btn-sm py-1 font-weight-normal" href="javascript:;"
+                        <a id="sidebarNavToggler1" class="btn btn-sm py-1 font-weight-normal" href="javascript:"
                            role="button"
                            aria-controls="sidebarContent1"
                            aria-haspopup="true"
