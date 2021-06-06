@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CategoryLinksTableSeeder extends Seeder
 {
@@ -13,6 +14,16 @@ class CategoryLinksTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $currencies = [
+
+            [
+                'category_link' => 'https://comuniti.pt/pt/63-arroz',
+                'request_type' => 'GET',
+                'scrape_method' => 'HTML',
+                'website_id' => 1,
+                'category_id' => 1,
+            ],
+        ];
+        DB::table('category_links')->insert($currencies);
     }
 }
