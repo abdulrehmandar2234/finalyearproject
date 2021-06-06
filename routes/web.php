@@ -20,6 +20,10 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ProfileController;
 use App\Http\Controllers\Frontend\SearchController;
 use App\Http\Controllers\Frontend\WishlistController;
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\User;
+use App\Models\Website;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -56,7 +60,11 @@ Route::get('/search/price_filter', [SearchController::class, 'priceFilter'])->na
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {
     Route::get('/', function () {
-        return view('backend.index');
+        $users = User::count();
+        $products = Product::count();
+        $categories = Category::count();
+        $websites = Website::count();
+        return view('backend.index',compact('users','products', 'categories', 'websites'));
     })->name('dashboard');
     Route::resource('users', UserController::class);
     Route::resource('roles', RoleController::class);
@@ -76,8 +84,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/update-password', [ProfileController::class, 'update'])->name('profile.update');
 });
 
-Route::get('auth/social', [LoginController::class, 'show'])->name('social.login');
-Route::get('oauth/{driver}', [LoginController::class, 'redirectToProvider'])->name('social.oauth');
-Route::get('oauth/{driver}/callback', [LoginController::class, 'handleProviderCallback'])->name('social.callback');
+//Route::get('auth/social', [LoginController::class, 'show'])->name('social.login');
+//Route::get('oauth/{driver}', [LoginController::class, 'redirectToProvider'])->name('social.oauth');
+//Route::get('oauth/{driver}/callback', [LoginController::class, 'handleProviderCallback'])->name('social.callback');
 
 require __DIR__ . '/auth.php';

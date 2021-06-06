@@ -109,11 +109,13 @@
 
                                 <!-- Login Buttons -->
                                 <div class="d-flex">
-                                    <a class="btn btn-block btn-sm btn-soft-facebook transition-3d-hover mr-1" href="{{ route('social.oauth', 'facebook') }}">
+                                    <a class="btn btn-block btn-sm btn-soft-facebook transition-3d-hover mr-1" href="#">
+{{--                                        {{ route('social.oauth', 'facebook') }}--}}
                                       <span class="fab fa-facebook-square mr-1"></span>
                                       Facebook
                                     </a>
-                                    <a class="btn btn-block btn-sm btn-soft-google transition-3d-hover ml-1 mt-0" href="{{ route('social.oauth', 'google') }}">
+                                    <a class="btn btn-block btn-sm btn-soft-google transition-3d-hover ml-1 mt-0" href="#">
+{{--                                        {{ route('social.oauth', 'google') }}--}}
                                       <span class="fab fa-google mr-1"></span>
                                       Google
                                     </a>
