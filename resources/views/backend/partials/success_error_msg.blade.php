@@ -4,7 +4,7 @@
             {
                 "closeButton": true,
                 "progressBar": true,
-                "timeOut": 10
+                "timeOut": 60
             }
         toastr.success("{!!Session::get('success') !!}");
     </script>
@@ -16,7 +16,7 @@
             {
                 "closeButton": true,
                 "progressBar": true,
-                "timeOut": 10
+                "timeOut": 60
             }
         toastr.error("{!!Session::get('error') !!}");
     </script>
@@ -29,7 +29,7 @@
                 {
                     "closeButton": true,
                     "progressBar": true,
-                    "timeOut": 10
+                    "timeOut": 60
                 }
             toastr.error("{{ $error }}");
         </script>
