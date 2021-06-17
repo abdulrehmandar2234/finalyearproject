@@ -23,6 +23,24 @@ class ShoppingListController extends Controller
         $total = ShoppingCart::where('user_id', auth()->id())->sum('price');
         $top_rated_cart = ShoppingCart::with('product.website', 'product.category', 'user')->inRandomOrder()->take(25)->get();
         $top_rated_wishlist = Wishlist::with('product.website', 'product.category', 'user')->inRandomOrder()->take(25)->get();
+        if (request()->sort == 'low_high') {
+            $top_rated_cart = $top_rated_cart->sortBy('price');
+            $top_rated_wishlist = $top_rated_wishlist->sortBy('price');
+        } elseif (request()->sort == 'high_low') {
+            $top_rated_cart = $top_rated_cart->sortByDesc('price');
+            $top_rated_wishlist = $top_rated_wishlist->sortByDesc('price');
+        } elseif (request()->sort == 'lastest') {
+            $top_rated_cart = $top_rated_cart->latest();
+            $top_rated_wishlist = $top_rated_wishlist->latest();
+        }
+
+        if (request()->paginate == '100') {
+            $top_rated_cart = ShoppingCart::with('product.website', 'product.category', 'user')->inRandomOrder()->take(50)->get();
+            $top_rated_wishlist = Wishlist::with('product.website', 'product.category', 'user')->inRandomOrder()->take(50)->get();
+        } elseif (request()->paginate == 'all') {
+            $top_rated_cart = ShoppingCart::with('product.website', 'product.category', 'user')->inRandomOrder()->get();
+            $top_rated_wishlist = Wishlist::with('product.website', 'product.category', 'user')->inRandomOrder()->get();
+        }
         $product_max_price = Product::max('price');
         $product_min_price = Product::min('price');
         $brands = Product::groupBy('brand')->get();

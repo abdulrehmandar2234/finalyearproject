@@ -68,6 +68,7 @@ class AuthenticatedSessionController extends Controller
                     $store_carts[] = ['product_id' => $cart->id,
                         'user_id' => auth()->id(),
                         'quantity' => $cart->qty,
+                        'price' => $cart->price,
                         'created_at' => now(),
                         'updated_at' => now(),
                     ];

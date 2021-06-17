@@ -34,6 +34,21 @@ class SearchController extends Controller
         $brands = Product::groupBy('brand')->get();
         $categories = Category::withCount('products')->get();
         $websites = Website::withCount('products')->get();
+
+        if (request()->sort == 'low_high') {
+            $products = $products->sortBy('price');
+        } elseif (request()->sort == 'high_low') {
+            $products = $products->sortByDesc('price');
+        } elseif (request()->sort == 'lastest') {
+            $products = $products->lastest();
+        }
+
+        if (request()->paginate == '100') {
+            $products = $products->take(100);
+        } elseif (request()->paginate == 'all') {
+            $products = Product::where('title', 'LIKE', '%' . request()->input('query') . '%')->with('category')->get();
+        }
+
         return view('frontend.search', compact('products', 'categories', 'websites', 'brands', 'product_max_price', 'product_min_price', 'carts', 'total'));
     }
 
