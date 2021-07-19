@@ -19,47 +19,28 @@ class ShoppingListController extends Controller
      */
     public function index()
     {
+        $top_rated_cart = ShoppingCart::with('product.website', 'product.category', 'user')->paginate(25);
         $carts = ShoppingCart::where('user_id', auth()->id())->with('product', 'user')->get();
         $total = ShoppingCart::where('user_id', auth()->id())->sum('price');
-        $top_rated_cart = ShoppingCart::with('product.website', 'product.category', 'user')->inRandomOrder()->take(25)->get();
-        $top_rated_wishlist = Wishlist::with('product.website', 'product.category', 'user')->inRandomOrder()->take(25)->get();
-        if (request()->sort == 'low_high') {
-            $top_rated_cart = $top_rated_cart->sortBy('price');
-            $top_rated_wishlist = $top_rated_wishlist->sortBy('price');
-        } elseif (request()->sort == 'high_low') {
-            $top_rated_cart = $top_rated_cart->sortByDesc('price');
-            $top_rated_wishlist = $top_rated_wishlist->sortByDesc('price');
-        } elseif (request()->sort == 'lastest') {
-            $top_rated_cart = $top_rated_cart->latest();
-            $top_rated_wishlist = $top_rated_wishlist->latest();
-        }
-
-        if (request()->paginate == '100') {
-            $top_rated_cart = ShoppingCart::with('product.website', 'product.category', 'user')->inRandomOrder()->take(50)->get();
-            $top_rated_wishlist = Wishlist::with('product.website', 'product.category', 'user')->inRandomOrder()->take(50)->get();
-        } elseif (request()->paginate == 'all') {
-            $top_rated_cart = ShoppingCart::with('product.website', 'product.category', 'user')->inRandomOrder()->get();
-            $top_rated_wishlist = Wishlist::with('product.website', 'product.category', 'user')->inRandomOrder()->get();
-        }
         $product_max_price = Product::max('price');
         $product_min_price = Product::min('price');
         $brands = Product::groupBy('brand')->get();
         $categories = Category::withCount('products')->get();
         $websites = Website::withCount('products')->get();
-        return view('frontend.shopping_lists', compact('categories', 'websites', 'brands', 'product_max_price', 'product_min_price', 'carts', 'total', 'top_rated_cart', 'top_rated_wishlist'));
+        return view('frontend.shopping_lists', compact('categories', 'websites', 'brands', 'product_max_price', 'product_min_price', 'carts', 'total', 'top_rated_cart'));
     }
 
     public function priceFilter(Request $request)
     {
         $carts = ShoppingCart::where('user_id', auth()->id())->with('product', 'user')->get();
         $total = ShoppingCart::where('user_id', auth()->id())->sum('price');
-        $products = Product::whereBetween('price', [$request->min, $request->max])->with('category')->take(50)->get();
+        $top_rated_cart = ShoppingCart::whereBetween('price', [$request->min, $request->max])->paginate(50);
         $product_max_price = Product::max('price');
         $product_min_price = Product::min('price');
         $brands = Product::groupBy('brand')->get();
         $categories = Category::withCount('products')->get();
         $websites = Website::withCount('products')->get();
-        return view('frontend.shopping_lists', compact('products', 'categories', 'websites', 'brands', 'product_max_price', 'product_min_price', 'carts', 'total'));
+        return view('frontend.shopping_lists', compact('top_rated_cart', 'categories', 'websites', 'brands', 'product_max_price', 'product_min_price', 'carts', 'total'));
 
     }
 }

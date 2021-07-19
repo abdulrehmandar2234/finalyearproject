@@ -142,7 +142,12 @@
                 <!-- Shop-control-bar Title -->
                 <div class="flex-center-between mb-3">
                     <h3 class="font-size-25 mb-0">Shopping Lists</h3>
-                    <p class="font-size-14 text-gray-90 mb-0">Showing 1–25 of 56 results</p>
+                    <p class="font-size-14 text-gray-90 mb-0"> @if(isset($products))
+                            {{$products->count()}} results found
+                        @else
+                            {{$top_rated_cart->count()}} results found
+                        @endif
+                    </p>
                 </div>
                 <!-- End shop-control-bar Title -->
                 <!-- Shop-control-bar -->
@@ -230,22 +235,10 @@
                 @if(isset($products))
                     @livewire('shopping-list',['products' => $products])
                 @else
-                    @livewire('shopping-list',['top_rated_cart' => $top_rated_cart, 'top_rated_wishlist' =>
-                    $top_rated_wishlist])
+                    @livewire('shopping-list',['top_rated_cart' => $top_rated_cart])
             @endif
             <!-- End Tab Content -->
                 <!-- End Shop Body -->
-                <!-- Shop Pagination -->
-                <nav class="d-md-flex justify-content-between align-items-center border-top pt-3"
-                     aria-label="Page navigation example">
-                    <div class="text-center text-md-left mb-3 mb-md-0">Showing 1–25 of 56 results</div>
-                    <ul class="pagination mb-0 pagination-shop justify-content-center justify-content-md-start">
-                        <li class="page-item"><a class="page-link current" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    </ul>
-                </nav>
-                <!-- End Shop Pagination -->
             </div>
         </div>
         <!-- Brand Carousel -->
