@@ -74,13 +74,13 @@
                         <ul class="list-inline mb-0 opacity-7">
                             <li class="list-inline-item mr-0">
                                 <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
-                                   href="#">
+                                   href="https://www.facebook.com/AbdulRehmanDar123/">
                                     <span class="fab fa-facebook-f btn-icon__inner"></span>
                                 </a>
                             </li>
                             <li class="list-inline-item mr-0">
                                 <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
-                                   href="#">
+                                   href="https://abdulrehmandar2234@gmail.com">
                                     <span class="fab fa-google btn-icon__inner"></span>
                                 </a>
                             </li>
@@ -92,7 +92,7 @@
                             </li>
                             <li class="list-inline-item mr-0">
                                 <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
-                                   href="#">
+                                   href="https://github.com/abdulrehmandar2234">
                                     <span class="fab fa-github btn-icon__inner"></span>
                                 </a>
                             </li>

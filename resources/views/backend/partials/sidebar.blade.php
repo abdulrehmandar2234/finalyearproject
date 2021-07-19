@@ -80,6 +80,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a href="{{ route('advertising.index') }}" class="nav-link">
+                    <i class="link-icon" data-feather="film"></i>
+                    <span class="link-title">Advertising</span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="{{ route('contact.index') }}" class="nav-link">
                     <i class="link-icon" data-feather="inbox"></i>
                     <span class="link-title">Contact Us</span>

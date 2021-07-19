@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\AdvertisingController;
 use App\Http\Controllers\Admin\CategoryLinkController;
 use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\CurrencyController;
@@ -64,7 +65,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
         $products = Product::count();
         $categories = Category::count();
         $websites = Website::count();
-        return view('backend.index',compact('users','products', 'categories', 'websites'));
+        return view('backend.index', compact('users', 'products', 'categories', 'websites'));
     })->name('dashboard');
     Route::resource('users', UserController::class);
     Route::resource('roles', RoleController::class);
@@ -77,6 +78,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
     Route::resource('product-nodes', ProductNodeController::class);
     Route::resource('category-links', CategoryLinkController::class);
     Route::resource('contact', ContactUsController::class);
+    Route::resource('advertising', AdvertisingController::class);
     Route::get('scrape-products', ScrapeProductController::class)->name('scrape');
 });
 Route::group(['middleware' => ['auth']], function () {

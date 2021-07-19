@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Slider;
+namespace App\Http\Requests\Advertising;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SliderUpdateRequest extends FormRequest
+class AdvertisingUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,12 +25,8 @@ class SliderUpdateRequest extends FormRequest
     {
         return [
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'banner' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'title' => 'nullable|max:75',
-            'sub_title' => 'nullable|max:50',
-            'price' => 'nullable|regex:/^\d+(\.\d{1,2})?$/',
-            'btn_text' => 'nullable|max:25',
-            'link' => 'nullable|url',
+            'title' => 'required|max:75',
+            'link' => 'required|url',
         ];
     }
 }
