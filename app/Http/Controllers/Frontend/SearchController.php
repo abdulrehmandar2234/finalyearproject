@@ -15,7 +15,7 @@ class SearchController extends Controller
     {
         $carts = ShoppingCart::where('user_id', auth()->id())->with('product', 'user')->get();
         $total = ShoppingCart::where('user_id', auth()->id())->sum('price');
-        $products = Product::all();
+        $products = Product::where('title', 'LIKE', '%' . request()->input('query') . '%')->with('category')->paginate(50);
 //        $products = (new Search())
 //            ->registerModel(Product::class, function(ModelSearchAspect $modelSearchAspect) {
 //                $modelSearchAspect

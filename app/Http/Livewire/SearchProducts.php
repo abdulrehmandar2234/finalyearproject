@@ -24,20 +24,19 @@ class SearchProducts extends Component
 
     public function render()
     {
-        $products = Product::where('title', 'LIKE', '%' . request()->input('query') . '%')->with('category')->paginate(50);
         if (request()->sort == 'low_high') {
-            $products = $products->sortBy('price');
+            return view('livewire.search-products', ['products' => Product::where('title', 'LIKE', '%' . request()->input('query') . '%')->with('category')->orderBy('price')->paginate(100)]);
         } elseif (request()->sort == 'high_low') {
-            $products = $products->sortByDesc('price');
+            return view('livewire.search-products', ['products' => Product::where('title', 'LIKE', '%' . request()->input('query') . '%')->with('category')->orderBy('price','DESC')->paginate(100)]);
         } elseif (request()->sort == 'lastest') {
-            $products = $products->lastest();
+            return view('livewire.search-products', ['products' => Product::where('title', 'LIKE', '%' . request()->input('query') . '%')->with('category')->paginate(100)->latest()]);
         }
 
         if (request()->paginate == '100') {
-            $products = Product::where('title', 'LIKE', '%' . request()->input('query') . '%')->with('category')->paginate(100);
+            return view('livewire.search-products', ['products' => Product::where('title', 'LIKE', '%' . request()->input('query') . '%')->with('category')->paginate(100)]);
         } elseif (request()->paginate == 'all') {
-            $products = Product::where('title', 'LIKE', '%' . request()->input('query') . '%')->with('category')->get();
+            return view('livewire.search-products', ['products' => Product::where('title', 'LIKE', '%' . request()->input('query') . '%')->with('category')->paginate()]);
         }
-        return view('livewire.search-products', ['products' => Product::paginate(10)]);
+        return view('livewire.search-products', ['products' => Product::where('title', 'LIKE', '%' . request()->input('query') . '%')->with('category')->paginate()]);
     }
 }
