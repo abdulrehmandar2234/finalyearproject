@@ -5,7 +5,7 @@
              aria-labelledby="pills-one-example1-tab">
             <ul class="row list-unstyled products-group no-gutters">
                 @forelse ($products as $product)
-                    <li class="col-6 col-wd-3 col-md-3 product-item" wire:click="getProduct({{$product->id}})">
+                    <li class="col-6 col-wd-3 col-md-3 product-item" wire:key="{{ $loop->index }}" wire:click="getProduct({{$product->id}})">
                         <div class="product-item__outer h-100">
                             <div class="product-item__inner px-xl-4 p-3">
                                 <div class="product-item__body pb-xl-2" data-toggle="modal"
@@ -64,7 +64,7 @@
              aria-labelledby="pills-two-example1-tab">
             <ul class="row list-unstyled products-group no-gutters">
                 @forelse ($discounted_products as $product)
-                    <li class="col-6 col-wd-3 col-md-3 product-item" wire:click="getProduct({{$product->id}})">
+                    <li class="col-6 col-wd-3 col-md-3 product-item" wire:key="{{ $loop->index }}" wire:click="getProduct({{$product->id}})">
                         <div class="product-item__outer h-100">
                             <div class="product-item__inner px-xl-4 p-3">
                                 <div class="product-item__body pb-xl-2" data-toggle="modal"
@@ -124,7 +124,7 @@
             <ul class="row list-unstyled products-group no-gutters">
                 @if($top_rated_cart->count() != 0 && $top_rated_wishlist->count() != 0)
                     @foreach ($top_rated_cart as $product)
-                        <li class="col-6 col-wd-3 col-md-3 product-item"
+                        <li class="col-6 col-wd-3 col-md-3 product-item" wire:key="{{ $loop->index }}"
                             wire:click="getProduct({{$product->product->id}})">
                             <div class="product-item__outer h-100">
                                 <div class="product-item__inner px-xl-4 p-3">
@@ -179,7 +179,7 @@
                         </li>
                     @endforeach
                     @foreach ($top_rated_wishlist as $product)
-                        <li class="col-6 col-wd-3 col-md-3 product-item"
+                        <li class="col-6 col-wd-3 col-md-3 product-item" wire:key="{{ $loop->index }}"
                             wire:click="getProduct({{$product->product->id}})">
                             <div class="product-item__outer h-100">
                                 <div class="product-item__inner px-xl-4 p-3">

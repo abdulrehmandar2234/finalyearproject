@@ -250,4 +250,6 @@
             </ul>
         </div>
     </div>
+    {{ $products->links('custom-pagination') }}
 </div>
+
