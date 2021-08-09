@@ -4,7 +4,7 @@
         <div class="tab-pane fade pt-2 show active" id="pills-one-example1" role="tabpanel"
              aria-labelledby="pills-one-example1-tab" data-target-group="groups">
             <ul class="row list-unstyled products-group no-gutters">
-                @forelse ($selected_category->products as $product)
+                @forelse ($products as $product)
                     <li class="col-6 col-md-3 col-wd-2gdot4 product-item" wire:click="getProduct({{$product->id}})">
                         <div class="product-item__outer h-100">
                             <div class="product-item__outer h-100">
@@ -51,7 +51,7 @@
         <div class="tab-pane fade pt-2" id="pills-three-example1" role="tabpanel"
              aria-labelledby="pills-three-example1-tab" data-target-group="groups">
             <ul class="d-block list-unstyled products-group prodcut-list-view">
-                @forelse ($selected_category->products as $product)
+                @forelse ($products as $product)
                     <li class="product-item remove-divider" wire:click="getProduct({{$product->id}})">
                         <div class="product-item__outer h-100">
                             <div class="product-item__outer w-100">
@@ -108,7 +108,7 @@
         <div class="tab-pane fade pt-2" id="pills-four-example1" role="tabpanel"
              aria-labelledby="pills-four-example1-tab" data-target-group="groups">
             <ul class="d-block list-unstyled products-group prodcut-list-view-small">
-                @forelse ($selected_category->products as $product)
+                @forelse ($products as $product)
                     <li class="product-item remove-divider" wire:click="getProduct({{$product->id}})">
                         <div class="product-item__outer h-100">
                             <div class="product-item__outer w-100">
@@ -182,4 +182,5 @@
             </ul>
         </div>
     </div>
+        {{ $products->links('custom-pagination') }}
 </div>

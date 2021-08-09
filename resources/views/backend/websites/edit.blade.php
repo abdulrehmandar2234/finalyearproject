@@ -36,7 +36,8 @@
                             <label for="currency_id">Select Currency</label>
                             <select class="js-example-basic-single w-100" name="currency_id" id="currency_id">
                                 @foreach($currencies as $currency)
-                                    <option value="{{$currency->id}}" {{$website->currency_id == $currency->id ? 'selected' : ''}}>{{$currency->name}}</option>
+                                    <option
+                                        value="{{$currency->id}}" {{$website->currency_id == $currency->id ? 'selected' : ''}}>{{$currency->name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -45,11 +46,12 @@
                             <input type="text" class="form-control" id="source" autocomplete="off"
                                    placeholder="Source"
                                    name="source" value="{{ $website->source }}">
-                        </div>                  
+                        </div>
                         <div class="form-group">
                             <label for="logo">Logo</label>
-                            
-                            <input type="file" class="file-upload-default" name="logo" value="{{$website->getFirstMediaUrl('logos')}}">
+
+                            <input type="file" class="file-upload-default" name="logo"
+                                   value="{{$website->getFirstMediaUrl('logos')}}">
                             <div class="input-group col-xs-12">
                                 <input type="text" id="logo" class="form-control file-upload-info" disabled=""
                                        placeholder="Logo" name="logo">

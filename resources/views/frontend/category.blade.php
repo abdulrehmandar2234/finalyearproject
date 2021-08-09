@@ -10,7 +10,7 @@
                         <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="{{ url('/') }}">Home</a>
                         </li>
                         <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">
-                            {{ $selected_category->title }}</li>
+                            {{$products[0]['category']['name'] }}</li>
                     </ol>
                 </nav>
             </div>
@@ -48,9 +48,9 @@
                         </li>
                         <li>
                             <a class="dropdown-current active"
-                               href="{{ route('specific_category', $selected_category->slug) }}">{{ $selected_category->name }}
+                               href="{{ route('specific_category', $products[0]['category']->slug) }}">{{ $products[0]['category']->name }}
                                 <span class="text-gray-25 font-size-12 font-weight-normal">
-                                    ({{ $selected_category->products_count }})</span></a>
+                                    ({{ $products->count() }})</span></a>
                         </li>
                     </ul>
                     <!-- End List -->
@@ -150,13 +150,13 @@
                         </a>
                         <!-- End Link -->
                     </div>
-                    @include('frontend.partials.price_filter',['route'=>'category.priceFilter', 'category_id'=>$selected_category->id])
+                    @include('frontend.partials.price_filter',['route'=>'category.priceFilter', 'category_id'=>$products[0]['category']['id']])
                 </div>
             </div>
             <div class="col-xl-9 col-wd-9gdot5">
                 <!-- Shop-control-bar Title -->
                 <div class="d-block d-md-flex flex-center-between mb-3">
-                    <h3 class="font-size-25 mb-2 mb-md-0">{{ $selected_category->name }}</h3>
+                    <h3 class="font-size-25 mb-2 mb-md-0">{{ $products[0]['category']['name'] }}</h3>
                     <p class="font-size-14 text-gray-90 mb-0">Showing 1–25 of 56 results</p>
                 </div>
                 <!-- End shop-control-bar Title -->
@@ -212,14 +212,19 @@
                                 class="js-select selectpicker dropdown-select max-width-200 max-width-160-sm right-dropdown-0 px-2 px-xl-0"
                                 data-style="btn-sm bg-white font-weight-normal py-2 border text-gray-20 bg-lg-down-transparent border-lg-down-0">
                             <option>Sort By</option>
-                            <option value="{{route('specific_category', ['slug'=>request()->slug,'sort'=>'latest'])}}">Sort by
+                            <option value="{{route('specific_category', ['slug'=>request()->slug,'sort'=>'latest'])}}">
+                                Sort by
                                 latest
                             </option>
-                            <option value="{{route('specific_category', ['slug'=>request()->slug,'sort'=>'low_high'])}}">Sort by
+                            <option
+                                value="{{route('specific_category', ['slug'=>request()->slug,'sort'=>'low_high'])}}">
+                                Sort by
                                 price: low to
                                 high
                             </option>
-                            <option value="{{route('specific_category', ['slug'=>request()->slug,'sort'=>'high_low'])}}">Sort by
+                            <option
+                                value="{{route('specific_category', ['slug'=>request()->slug,'sort'=>'high_low'])}}">
+                                Sort by
                                 price: high to
                                 low
                             </option>
@@ -231,10 +236,12 @@
                                 data-style="btn-sm bg-white font-weight-normal py-2 border text-gray-20 bg-lg-down-transparent border-lg-down-0">
                             <option>Show</option>
                             <option value="{{route('specific_category',['slug'=>request()->slug])}}">Show 50</option>
-                            <option value="{{route('specific_category', ['slug'=>request()->slug,'paginate'=>'100'])}}">Show
+                            <option value="{{route('specific_category', ['slug'=>request()->slug,'paginate'=>'100'])}}">
+                                Show
                                 100
                             </option>
-                            <option value="{{route('specific_category', ['slug'=>request()->slug,'paginate'=>'all'])}}">Show
+                            <option value="{{route('specific_category', ['slug'=>request()->slug,'paginate'=>'all'])}}">
+                                Show
                                 All
                             </option>
                         </select>
@@ -244,20 +251,10 @@
                 <!-- End Shop-control-bar -->
                 <!-- Shop Body -->
                 <!-- Tab Content -->
-                @livewire('category-products',['selected_category' => $selected_category])
+                @livewire('category-products',['products' => $products, 'slug' => $slug])
                 <!-- End Tab Content -->
                 <!-- End Shop Body -->
-                <!-- Shop Pagination -->
-                <nav class="d-md-flex justify-content-between align-items-center border-top pt-3"
-                     aria-label="Page navigation example">
-                    <div class="text-center text-md-left mb-3 mb-md-0">Showing 1–25 of 56 results</div>
-                    <ul class="pagination mb-0 pagination-shop justify-content-center justify-content-md-start">
-                        <li class="page-item"><a class="page-link current" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    </ul>
-                </nav>
-                <!-- End Shop Pagination -->
+
             </div>
         </div>
         <!-- Brand Carousel -->

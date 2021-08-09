@@ -2,12 +2,16 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Category;
 use App\Models\Product;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class CategoryProducts extends Component
 {
-    public $selected_category;
+    use withPagination;
+
+    public $slug;
     public $product, $stores = [];
 
     public function getProduct($id)
@@ -22,6 +26,31 @@ class CategoryProducts extends Component
 
     public function render()
     {
-        return view('livewire.category-products');
+        $slug = $this->slug;
+        if (request()->sort == 'low_high') {
+            return view('livewire.category-products', ['products' => Product::with(['category' => function ($query) use($slug) {
+                $query->where('slug', $slug)->firstOrFail();
+            }])->OrderBy('price')->paginate(50)]);
+        } elseif (request()->sort == 'high_low') {
+            return view('livewire.category-products', ['products' =>  Product::with(['category' => function ($query) use($slug) {
+                $query->where('slug', $slug)->firstOrFail();
+            }])->OrderBy('price','DESC')->paginate(50)]);
+        } elseif (request()->sort == 'lastest') {
+            return view('livewire.category-products', ['products' => Product::with(['category' => function ($query) use($slug) {
+                $query->where('slug', $slug)->firstOrFail();
+            }])->latest()->paginate(50)]);
+        }
+        if (request()->paginate == '100') {
+            return view('livewire.category-products', ['products' => Product::with(['category' => function ($query) use($slug) {
+                $query->where('slug', $slug)->firstOrFail();
+            }])->OrderBy('price')->paginate(100)]);
+        } elseif (request()->paginate == 'all') {
+            return view('livewire.category-products', ['products' => Product::with(['category' => function ($query) use($slug) {
+                $query->where('slug', $slug)->firstOrFail();
+            }])->OrderBy('price')->get()]);
+        }
+        return view('livewire.category-products', ['products' => Product::with(['category' => function ($query) use($slug) {
+            $query->where('slug', $slug)->firstOrFail();
+        }])->paginate(50)]);
     }
 }
