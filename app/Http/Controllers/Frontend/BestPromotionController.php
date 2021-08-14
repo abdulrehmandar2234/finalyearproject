@@ -23,19 +23,6 @@ class BestPromotionController extends Controller
         $categories = Category::withCount('products')->get();
         $websites = Website::withCount('products')->get();
 
-        if (request()->sort == 'low_high') {
-            $products = $products->sortBy('price');
-        } elseif (request()->sort == 'high_low') {
-            $products = $products->sortByDesc('price');
-        } elseif (request()->sort == 'lastest') {
-            $products = $products->latest();
-        }
-
-        if (request()->paginate == '100') {
-            $products = Product::where('discount', '!=', '')->with('category')->take(100)->get();
-        } elseif (request()->paginate == 'all') {
-            $products = Product::where('discount', '!=', '')->with('category')->get();
-        }
         return view('frontend.promotions', compact('products', 'categories', 'websites', 'brands', 'product_max_price', 'product_min_price', 'carts', 'total'));
     }
 

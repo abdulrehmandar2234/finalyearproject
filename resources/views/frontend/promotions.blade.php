@@ -224,17 +224,6 @@
                 @livewire('best-promotion',['products' => $products])
                 <!-- End Tab Content -->
                 <!-- End Shop Body -->
-                <!-- Shop Pagination -->
-                <nav class="d-md-flex justify-content-between align-items-center border-top pt-3"
-                     aria-label="Page navigation example">
-                    <div class="text-center text-md-left mb-3 mb-md-0">Showing 1–25 of 56 results</div>
-                    <ul class="pagination mb-0 pagination-shop justify-content-center justify-content-md-start">
-                        <li class="page-item"><a class="page-link current" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    </ul>
-                </nav>
-                <!-- End Shop Pagination -->
             </div>
         </div>
         <!-- Brand Carousel -->
