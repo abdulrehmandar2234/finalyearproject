@@ -34,7 +34,7 @@ Route::get('/shopping_lists/price_filter', [\App\Http\Controllers\Frontend\Shopp
 Route::get('/search/price_filter', [\App\Http\Controllers\Frontend\SearchController::class, 'priceFilter'])->name('search.priceFilter');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {
-    Route::get('/', function () {
+    Route::get('/dashboard', function () {
         $users = \App\Models\User::count();
         $products = \App\Models\Product::count();
         $categories = \App\Models\Category::count();
