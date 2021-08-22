@@ -12,39 +12,39 @@
                     <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
                         <a href="../shop/track-your-order.html" class="u-header-topbar__nav-link"><i class="ec ec-transport mr-1"></i> Track Your Order</a>
                     </li> --}}
-                    <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single">
-                        <div class="d-flex align-items-center">
-                            <!-- Language -->
-                            <div class="position-relative">
-                                <a id="languageDropdownInvoker"
-                                   class="dropdown-nav-link dropdown-toggle d-flex align-items-center u-header-topbar__nav-link font-weight-normal"
-                                   href="javascript:;" role="button"
-                                   aria-controls="languageDropdown"
-                                   aria-haspopup="true"
-                                   aria-expanded="false"
-                                   data-unfold-event="hover"
-                                   data-unfold-target="#languageDropdown"
-                                   data-unfold-type="css-animation"
-                                   data-unfold-duration="300"
-                                   data-unfold-delay="300"
-                                   data-unfold-hide-on-scroll="true"
-                                   data-unfold-animation-in="slideInUp"
-                                   data-unfold-animation-out="fadeOut">
-                                    <span class="d-inline-block d-sm-none">US</span>
-                                    <span class="d-none d-sm-inline-flex align-items-center"><i
-                                            class="ec ec-dollar mr-1"></i> Dollar (US)</span>
-                                </a>
+{{--                    <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single">--}}
+{{--                        <div class="d-flex align-items-center">--}}
+{{--                            <!-- Language -->--}}
+{{--                            <div class="position-relative">--}}
+{{--                                <a id="languageDropdownInvoker"--}}
+{{--                                   class="dropdown-nav-link dropdown-toggle d-flex align-items-center u-header-topbar__nav-link font-weight-normal"--}}
+{{--                                   href="javascript:;" role="button"--}}
+{{--                                   aria-controls="languageDropdown"--}}
+{{--                                   aria-haspopup="true"--}}
+{{--                                   aria-expanded="false"--}}
+{{--                                   data-unfold-event="hover"--}}
+{{--                                   data-unfold-target="#languageDropdown"--}}
+{{--                                   data-unfold-type="css-animation"--}}
+{{--                                   data-unfold-duration="300"--}}
+{{--                                   data-unfold-delay="300"--}}
+{{--                                   data-unfold-hide-on-scroll="true"--}}
+{{--                                   data-unfold-animation-in="slideInUp"--}}
+{{--                                   data-unfold-animation-out="fadeOut">--}}
+{{--                                    <span class="d-inline-block d-sm-none">US</span>--}}
+{{--                                    <span class="d-none d-sm-inline-flex align-items-center"><i--}}
+{{--                                            class="ec ec-dollar mr-1"></i> Dollar (US)</span>--}}
+{{--                                </a>--}}
 
-                                <div id="languageDropdown" class="dropdown-menu dropdown-unfold"
-                                     aria-labelledby="languageDropdownInvoker">
-                                    <a class="dropdown-item active" href="#">English</a>
-                                    <a class="dropdown-item" href="#">Deutsch</a>
-                                    <a class="dropdown-item" href="#">Español‎</a>
-                                </div>
-                            </div>
-                            <!-- End Language -->
-                        </div>
-                    </li>
+{{--                                <div id="languageDropdown" class="dropdown-menu dropdown-unfold"--}}
+{{--                                     aria-labelledby="languageDropdownInvoker">--}}
+{{--                                    <a class="dropdown-item active" href="#">English</a>--}}
+{{--                                    <a class="dropdown-item" href="#">Deutsch</a>--}}
+{{--                                    <a class="dropdown-item" href="#">Español‎</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <!-- End Language -->--}}
+{{--                        </div>--}}
+{{--                    </li>--}}
                     <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
                         <!-- Account Sidebar Toggle Button -->
                         @auth

@@ -53,6 +53,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
     Route::resource('category-links', \App\Http\Controllers\Admin\CategoryLinkController::class);
     Route::resource('contact', \App\Http\Controllers\Admin\ContactUsController::class);
     Route::resource('advertising', \App\Http\Controllers\Admin\AdvertisingController::class);
+    Route::resource('banners', \App\Http\Controllers\Admin\BannerController::class);
     Route::get('scrape-products', \App\Http\Controllers\Admin\ScrapeProductController::class)->name('scrape');
 });
 Route::group(['middleware' => ['auth']], function () {

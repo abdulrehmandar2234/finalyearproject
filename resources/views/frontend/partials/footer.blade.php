@@ -1,6 +1,6 @@
 <footer>
     <!-- Footer-newsletter -->
-@include('frontend.partials.news_letter')
+{{--@include('frontend.partials.news_letter')--}}
 <!-- End Footer-newsletter -->
     <!-- Footer-bottom-widgets -->
     <div class="pt-8 pb-4 bg-gray-13">
@@ -160,23 +160,23 @@
                 <div class="mb-3 mb-md-0">© <a href="{{ url('/') }}" class="font-weight-bold text-gray-90">Electro</a> -
                     All rights Reserved
                 </div>
-                <div class="text-md-right">
-                    <span class="d-inline-block bg-white border rounded p-1">
-                        <img class="max-width-5" src="{{asset('assets/img/100X60/img1.jpg')}}" alt="Image Description">
-                    </span>
-                    <span class="d-inline-block bg-white border rounded p-1">
-                        <img class="max-width-5" src="{{asset('assets/img/100X60/img2.jpg')}}" alt="Image Description">
-                    </span>
-                    <span class="d-inline-block bg-white border rounded p-1">
-                        <img class="max-width-5" src="{{asset('assets/img/100X60/img3.jpg')}}" alt="Image Description">
-                    </span>
-                    <span class="d-inline-block bg-white border rounded p-1">
-                        <img class="max-width-5" src="{{asset('assets/img/100X60/img4.jpg')}}" alt="Image Description">
-                    </span>
-                    <span class="d-inline-block bg-white border rounded p-1">
-                        <img class="max-width-5" src="{{asset('assets/img/100X60/img5.jpg')}}" alt="Image Description">
-                    </span>
-                </div>
+{{--                <div class="text-md-right">--}}
+{{--                    <span class="d-inline-block bg-white border rounded p-1">--}}
+{{--                        <img class="max-width-5" src="{{asset('assets/img/100X60/img1.jpg')}}" alt="Image Description">--}}
+{{--                    </span>--}}
+{{--                    <span class="d-inline-block bg-white border rounded p-1">--}}
+{{--                        <img class="max-width-5" src="{{asset('assets/img/100X60/img2.jpg')}}" alt="Image Description">--}}
+{{--                    </span>--}}
+{{--                    <span class="d-inline-block bg-white border rounded p-1">--}}
+{{--                        <img class="max-width-5" src="{{asset('assets/img/100X60/img3.jpg')}}" alt="Image Description">--}}
+{{--                    </span>--}}
+{{--                    <span class="d-inline-block bg-white border rounded p-1">--}}
+{{--                        <img class="max-width-5" src="{{asset('assets/img/100X60/img4.jpg')}}" alt="Image Description">--}}
+{{--                    </span>--}}
+{{--                    <span class="d-inline-block bg-white border rounded p-1">--}}
+{{--                        <img class="max-width-5" src="{{asset('assets/img/100X60/img5.jpg')}}" alt="Image Description">--}}
+{{--                    </span>--}}
+{{--                </div>--}}
             </div>
         </div>
     </div>

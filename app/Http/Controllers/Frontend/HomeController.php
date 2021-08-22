@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Advertising;
+use App\Models\Banner;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\ShoppingCart;
@@ -30,6 +31,7 @@ class HomeController extends Controller
         $top_rated_wishlist = Wishlist::with('product.website', 'user')->inRandomOrder()->take(25)->get();
         $categories = Category::all();
         $advertisements = Advertising::all();
-        return view('frontend.index', compact('sliders', 'discounted_products', 'products', 'categories', 'websites', 'total', 'carts', 'top_rated_cart', 'top_rated_wishlist', 'advertisements'));
+        $banner = Banner::first();
+        return view('frontend.index', compact('sliders', 'discounted_products', 'products', 'categories', 'websites', 'total', 'carts', 'top_rated_cart', 'top_rated_wishlist', 'advertisements', 'banner'));
     }
 }
