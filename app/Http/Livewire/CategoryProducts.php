@@ -28,29 +28,29 @@ class CategoryProducts extends Component
     {
         $slug = $this->slug;
         if (request()->sort == 'low_high') {
-            return view('livewire.category-products', ['products' => Product::with(['category' => function ($query) use($slug) {
-                $query->where('slug', $slug)->firstOrFail();
-            }])->OrderBy('price')->paginate(50)]);
+            return view('livewire.category-products', ['products' => Product::with('category')->whereHas('category', function ($query) use ($slug) {
+                $query->where('slug', $slug);
+            })->OrderBy('price')->paginate(50)]);
         } elseif (request()->sort == 'high_low') {
-            return view('livewire.category-products', ['products' =>  Product::with(['category' => function ($query) use($slug) {
-                $query->where('slug', $slug)->firstOrFail();
-            }])->OrderBy('price','DESC')->paginate(50)]);
+            return view('livewire.category-products', ['products' => Product::with('category')->whereHas('category', function ($query) use ($slug) {
+                $query->where('slug', $slug);
+            })->OrderBy('price', "DESC")->paginate(50)]);
         } elseif (request()->sort == 'lastest') {
-            return view('livewire.category-products', ['products' => Product::with(['category' => function ($query) use($slug) {
-                $query->where('slug', $slug)->firstOrFail();
-            }])->latest()->paginate(50)]);
+            return view('livewire.category-products', ['products' => Product::with('category')->whereHas('category', function ($query) use ($slug) {
+                $query->where('slug', $slug);
+            })->latest()->paginate(50)]);
         }
         if (request()->paginate == '100') {
-            return view('livewire.category-products', ['products' => Product::with(['category' => function ($query) use($slug) {
-                $query->where('slug', $slug)->firstOrFail();
-            }])->OrderBy('price')->paginate(100)]);
+            return view('livewire.category-products', ['products' => Product::with('category')->whereHas('category', function ($query) use ($slug) {
+                $query->where('slug', $slug);
+            })->OrderBy('price')->paginate(100)]);
         } elseif (request()->paginate == 'all') {
-            return view('livewire.category-products', ['products' => Product::with(['category' => function ($query) use($slug) {
-                $query->where('slug', $slug)->firstOrFail();
-            }])->OrderBy('price')->get()]);
+            return view('livewire.category-products', ['products' => Product::with('category')->whereHas('category', function ($query) use ($slug) {
+                $query->where('slug', $slug);
+            })->OrderBy('price')->get()]);
         }
-        return view('livewire.category-products', ['products' => Product::with(['category' => function ($query) use($slug) {
-            $query->where('slug', $slug)->firstOrFail();
-        }])->paginate(50)]);
+        return view('livewire.category-products', ['products' => Product::with('category')->whereHas('category', function ($query) use ($slug) {
+            $query->where('slug', $slug);
+        })->paginate(50)]);
     }
 }

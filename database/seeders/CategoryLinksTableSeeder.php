@@ -23,6 +23,13 @@ class CategoryLinksTableSeeder extends Seeder
                 'website_id' => 1,
                 'category_id' => 1,
             ],
+            [
+                'category_link' => 'https://goodafter.com/pt/258-ver-tudo',
+                'request_type' => 'GET',
+                'scrape_method' => 'HTML',
+                'website_id' => 2,
+                'category_id' => 2,
+            ],
         ];
         DB::table('category_links')->insert($currencies);
     }

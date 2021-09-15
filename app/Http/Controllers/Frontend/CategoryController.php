@@ -14,10 +14,9 @@ class CategoryController extends Controller
     {
         $carts = ShoppingCart::where('user_id', auth()->id())->with('product', 'user')->get();
         $total = ShoppingCart::where('user_id', auth()->id())->sum('price');
-        $products = Product::with(['category' => function ($query) use($slug) {
-            $query->where('slug', $slug)->firstOrFail();
-        }])->take(50)->get();
-
+        $products = Product::with('category')->whereHas( 'category' , function ($query) use($slug) {
+            $query->where('slug', $slug);
+        })->take(50)->get();
         $product_max_price = Product::max('price');
         $product_min_price = Product::min('price');
         $brands = Product::groupBy('brand')->get();

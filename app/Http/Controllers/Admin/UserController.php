@@ -52,7 +52,6 @@ class UserController extends Controller
     {
         try {
             $input = $request->all();
-            dd($input);
             $input['password'] = bcrypt($input['password']);
             $user = User::create($input);
             $user->assignRole($request->input('roles'));

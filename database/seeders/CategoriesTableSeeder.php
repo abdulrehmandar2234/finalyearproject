@@ -17,8 +17,13 @@ class CategoriesTableSeeder extends Seeder
         $categories = [
 
             [
-                'name' => 'rice',             
-            ],            
+                'name' => 'rice',
+                'slug' => 'rice',
+            ],
+            [
+                'name' => 'beverage',
+                'slug' => 'beverage',
+            ],
         ];
         DB::table('categories')->insert($categories);
     }
